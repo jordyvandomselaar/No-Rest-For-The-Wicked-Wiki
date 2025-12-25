@@ -27,7 +27,11 @@ mise exec -- npm run items -w @nrftw/crawler
 ```
 
 Outputs `packages/crawler/out/items.json` with localization-backed item names/descriptions sourced from
-`qdb*_assets_all_*.bundle`. This is the fastest way to build a wiki item list.
+`qdb*_assets_all_*.bundle`. This also enriches items with refinery recipes sourced from
+`StreamingAssets/quantumDatabase.bin` (e.g., Pine Wood -> Pine Planks).
+
+Refinery links are written to each item as `recipes_as_input` and `recipes_as_output`. This pass
+captures input/output item IDs and a best-effort `minutes` value from the QDB blob.
 
 ## Dump candidate assets
 
@@ -43,3 +47,4 @@ and text payloads for TextAsset entries.
 - `--filter ""` to disable name filtering.
 - `--include-types ScriptableObject` to narrow the scan.
 - `--max-bundles 1` to iterate quickly while debugging.
+- `--qdb-path "/path/to/quantumDatabase.bin"` to override refinery source.
