@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { loadItems } from "../lib/items";
+
+const items = loadItems();
+const listItems = items
+  .map((item) => ({
+    id: item.id,
+    name: item.name ?? item.id,
+    description: item.description ?? "",
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Layout title="Items | No Rest For The Wicked Wiki" description="Browse all items and refinement paths.">
+  <main class="mx-auto flex min-h-screen max-w-5xl flex-col gap-10 px-6 py-16">
+    <header class="space-y-4">
+      <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Item database</p>
+      <h1 class="text-4xl font-semibold text-white md:text-6xl">Items</h1>
+      <p class="max-w-2xl text-lg text-slate-300">
+        Search every item by name, ID, or description. Click an entry to see its
+        refinement tree and details.
+      </p>
+    </header>
+
+    <section class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div class="space-y-2">
+          <label class="text-sm font-semibold text-slate-200" for="item-search">
+            Search items
+          </label>
+          <input
+            id="item-search"
+            class="w-full rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-base text-slate-100 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none md:w-[420px]"
+            placeholder="Try “plagueflask”, “pine planks”, or “items.projectiles”"
+          />
+        </div>
+        <div class="text-sm text-slate-400">
+          <span id="item-count">{listItems.length}</span> items
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <script type="application/json" id="items-data">
+        {JSON.stringify(listItems)}
+      </script>
+      <div
+        id="items-grid"
+        class="grid gap-4 md:grid-cols-2"
+        aria-live="polite"
+      >
+        {listItems.map((item) => (
+          <a
+            class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-slate-600"
+            href={`/items/${encodeURIComponent(item.id)}`}
+          >
+            <h3 class="text-lg font-semibold text-white">{item.name}</h3>
+            <p class="mt-1 text-xs text-slate-400">{item.id}</p>
+            <p class="mt-3 text-sm text-slate-300">
+              {item.description || "No description yet."}
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    import Fuse from "fuse.js";
+
+    const data = JSON.parse(document.getElementById("items-data").textContent);
+    const grid = document.getElementById("items-grid");
+    const input = document.getElementById("item-search");
+    const count = document.getElementById("item-count");
+
+    const fuse = new Fuse(data, {
+      keys: ["name", "id", "description"],
+      threshold: 0.3,
+      ignoreLocation: true,
+    });
+
+    const render = (list) => {
+      grid.innerHTML = "";
+      const fragment = document.createDocumentFragment();
+      list.forEach((item) => {
+        const card = document.createElement("a");
+        card.href = `/items/${encodeURIComponent(item.id)}`;
+        card.className =
+          "rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-slate-600";
+        card.innerHTML = `
+          <h3 class=\"text-lg font-semibold text-white\">${item.name}</h3>
+          <p class=\"mt-1 text-xs text-slate-400\">${item.id}</p>
+          <p class=\"mt-3 text-sm text-slate-300\">${item.description || "No description yet."}</p>
+        `;
+        fragment.appendChild(card);
+      });
+      grid.appendChild(fragment);
+      count.textContent = String(list.length);
+    };
+
+    render(data);
+
+    input.addEventListener("input", (event) => {
+      const query = event.target.value.trim();
+      if (!query) {
+        render(data);
+        return;
+      }
+      const results = fuse.search(query).map((result) => result.item);
+      render(results);
+    });
+  </script>
+</Layout>

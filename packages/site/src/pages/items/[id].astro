@@ -1,0 +1,182 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { loadItems } from "../../lib/items";
+
+const items = loadItems();
+const itemsById = new Map(items.map((item) => [item.id, item]));
+
+export async function getStaticPaths() {
+  return items.map((item) => ({
+    params: { id: encodeURIComponent(item.id) },
+    props: { itemId: item.id },
+  }));
+}
+
+type Props = { itemId: string };
+const { itemId } = Astro.props;
+
+const item = itemsById.get(itemId);
+if (!item) {
+  throw new Error(`Item not found: ${itemId}`);
+}
+
+const itemName = item.name ?? item.id;
+
+function buildTree(targetId: string, depth = 0, visited = new Set<string>()) {
+  const node = itemsById.get(targetId);
+  if (!node) return null;
+  const label = node.name ?? node.id;
+  if (visited.has(targetId) || depth > 6) {
+    return { id: targetId, name: label, children: [], truncated: true };
+  }
+  const nextVisited = new Set(visited);
+  nextVisited.add(targetId);
+  const inputs = node.recipes_as_output ?? [];
+  const children = inputs
+    .map((recipe) => {
+      if (!recipe.input) return null;
+      const child = buildTree(recipe.input, depth + 1, nextVisited);
+      if (!child) return null;
+      return { ...child, minutes: recipe.minutes ?? null };
+    })
+    .filter(Boolean);
+
+  return { id: targetId, name: label, children, truncated: false };
+}
+
+const tree = buildTree(item.id);
+const recipesAsInput = item.recipes_as_input ?? [];
+const recipesAsOutput = item.recipes_as_output ?? [];
+
+const escapeHtml = (value: string) =>
+  value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+
+const renderTree = (node: any): string => {
+  if (!node) {
+    return '<p class="text-sm text-slate-400">No known refinement chain.</p>';
+  }
+
+  const link = `/items/${encodeURIComponent(node.id)}`;
+  const children = node.children || [];
+  const childHtml = children
+    .map((child: any) => {
+      const minutes =
+        child.minutes !== null && child.minutes !== undefined
+          ? `<span>${child.minutes} min</span>`
+          : "";
+      return [
+        '<div class="mt-3">',
+        '  <div class="flex items-center gap-2 text-xs text-slate-400">',
+        '    <span class="rounded-full bg-white/10 px-2 py-1">Input</span>',
+        `    ${minutes}`,
+        "  </div>",
+        `  ${renderTree(child)}`,
+        "</div>",
+      ].join("");
+    })
+    .join("");
+
+  const truncated = node.truncated
+    ? '<p class="text-xs text-slate-500">Branch truncated to avoid loops.</p>'
+    : "";
+  const childBlock = children.length
+    ? `<div class="mt-3 border-l border-slate-800 pl-4">${childHtml}</div>`
+    : "";
+
+  return [
+    '<ul class="space-y-3">',
+    '  <li class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">',
+    '    <div class="flex flex-col gap-1">',
+    `      <a class="text-base font-semibold text-white" href="${link}">`,
+    `        ${escapeHtml(node.name)}`,
+    "      </a>",
+    `      <p class="text-xs text-slate-500">${escapeHtml(node.id)}</p>`,
+    `      ${truncated}`,
+    "    </div>",
+    `    ${childBlock}`,
+    "  </li>",
+    "</ul>",
+  ].join("");
+};
+---
+
+<Layout
+  title={itemName + " | No Rest For The Wicked Wiki"}
+  description={item.description ?? "Details for " + itemName + "."}
+>
+  <main class="mx-auto flex min-h-screen max-w-5xl flex-col gap-10 px-6 py-16">
+    <header class="space-y-4">
+      <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Item detail</p>
+      <h1 class="text-4xl font-semibold text-white md:text-6xl">{itemName}</h1>
+      <p class="text-sm text-slate-400">{item.id}</p>
+      <p class="max-w-2xl text-lg text-slate-300">
+        {item.description ?? "No description yet."}
+      </p>
+    </header>
+
+    <section class="grid gap-6 md:grid-cols-2">
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h2 class="text-lg font-semibold text-white">Refinement tree</h2>
+        <p class="mt-2 text-sm text-slate-300">
+          Items and processes that build toward this item.
+        </p>
+        <div class="mt-4" set:html={renderTree(tree)} />
+      </div>
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h2 class="text-lg font-semibold text-white">Refinery links</h2>
+        <div class="mt-4 space-y-4 text-sm text-slate-300">
+          <div>
+            <p class="font-semibold text-slate-200">Used as input</p>
+            {recipesAsInput.length ? (
+              <ul class="mt-2 space-y-2">
+                {recipesAsInput.map((recipe) => (
+                  <li>
+                    <a
+                      class="text-white underline decoration-slate-600 underline-offset-4"
+                      href={`/items/${encodeURIComponent(recipe.output ?? "")}`}
+                    >
+                      {itemsById.get(recipe.output ?? "")?.name ?? recipe.output}
+                    </a>
+                    {recipe.minutes !== null && recipe.minutes !== undefined ? (
+                      <span class="ml-2 text-xs text-slate-400">{recipe.minutes} min</span>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="mt-2 text-slate-500">No refinery outputs recorded.</p>
+            )}
+          </div>
+
+          <div>
+            <p class="font-semibold text-slate-200">Produced by</p>
+            {recipesAsOutput.length ? (
+              <ul class="mt-2 space-y-2">
+                {recipesAsOutput.map((recipe) => (
+                  <li>
+                    <a
+                      class="text-white underline decoration-slate-600 underline-offset-4"
+                      href={`/items/${encodeURIComponent(recipe.input ?? "")}`}
+                    >
+                      {itemsById.get(recipe.input ?? "")?.name ?? recipe.input}
+                    </a>
+                    {recipe.minutes !== null && recipe.minutes !== undefined ? (
+                      <span class="ml-2 text-xs text-slate-400">{recipe.minutes} min</span>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="mt-2 text-slate-500">No refinery inputs recorded.</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

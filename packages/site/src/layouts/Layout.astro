@@ -9,13 +9,14 @@ type Props = {
 const { title, description } = Astro.props;
 const pathname = Astro.url.pathname;
 
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/overview", label: "Overview" },
-  { href: "/story-and-setting", label: "Story & Setting" },
-  { href: "/gameplay", label: "Gameplay" },
-  { href: "/early-access", label: "Early Access" },
-];
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/items", label: "Items" },
+    { href: "/overview", label: "Overview" },
+    { href: "/story-and-setting", label: "Story & Setting" },
+    { href: "/gameplay", label: "Gameplay" },
+    { href: "/early-access", label: "Early Access" },
+  ];
 ---
 
 <!doctype html>
@@ -29,7 +30,7 @@ const navItems = [
     <title>{title}</title>
   </head>
   <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
-    <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-8 px-6 py-10 md:flex-row md:gap-10">
+    <div class="mx-auto flex min-h-screen max-w-6IPxl flex-col gap-8 px-6 py-10 md:flex-row md:gap-10">
       <aside class="md:w-56">
         <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
           <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Wiki</p>
