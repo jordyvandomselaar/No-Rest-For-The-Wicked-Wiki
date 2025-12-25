@@ -13,20 +13,6 @@ description: "Combat, progression, and core systems overview."
       and RPG buildcraft. This page highlights the systems players interact with
       most.
     </p>
-    <nav class="flex flex-wrap gap-3 text-sm text-slate-300">
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/">
-        Home
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/overview">
-        Overview
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/story-and-setting">
-        Story & Setting
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/early-access">
-        Early Access
-      </a>
-    </nav>
   </header>
 
   <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">

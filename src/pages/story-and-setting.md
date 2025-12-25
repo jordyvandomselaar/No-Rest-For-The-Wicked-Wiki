@@ -13,20 +13,6 @@ description: "The world, timeline, and key factions of No Rest For The Wicked."
       plague resurfaces. This page summarizes the world state and the core
       conflict.
     </p>
-    <nav class="flex flex-wrap gap-3 text-sm text-slate-300">
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/">
-        Home
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/overview">
-        Overview
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/gameplay">
-        Gameplay
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/early-access">
-        Early Access
-      </a>
-    </nav>
   </header>
 
   <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">

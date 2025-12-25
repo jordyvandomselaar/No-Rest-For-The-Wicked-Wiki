@@ -12,20 +12,6 @@ description: "What No Rest For The Wicked is, who makes it, and where to play."
       No Rest For The Wicked is a precision-focused action RPG from Moon Studios.
       This page captures the high-level facts for quick reference.
     </p>
-    <nav class="flex flex-wrap gap-3 text-sm text-slate-300">
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/">
-        Home
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/story-and-setting">
-        Story & Setting
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/gameplay">
-        Gameplay
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/early-access">
-        Early Access
-      </a>
-    </nav>
   </header>
 
   <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">

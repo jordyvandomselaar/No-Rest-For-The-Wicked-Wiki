@@ -12,20 +12,6 @@ description: "What Early Access includes today and what the team plans to add."
       Wicked launched in Early Access so Moon Studios can ship new systems,
       regions, and story updates with community feedback.
     </p>
-    <nav class="flex flex-wrap gap-3 text-sm text-slate-300">
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/">
-        Home
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/overview">
-        Overview
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/story-and-setting">
-        Story & Setting
-      </a>
-      <a class="rounded-full border border-slate-700 px-4 py-1 hover:border-slate-500" href="/gameplay">
-        Gameplay
-      </a>
-    </nav>
   </header>
 
   <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
