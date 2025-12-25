@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="No Rest For The Wicked Wiki"
+  description="Community wiki for No Rest For The Wicked items, refinement, and guides."
+>
+  <main class="mx-auto flex min-h-screen max-w-5xl flex-col gap-10 px-6 py-16">
+    <header class="space-y-4">
+      <p class="text-sm uppercase tracking-[0.35em] text-slate-400">
+        Community-led game wiki
+      </p>
+      <h1 class="text-4xl font-semibold text-white md:text-6xl">
+        No Rest For The Wicked
+      </h1>
+      <p class="max-w-2xl text-lg text-slate-300">
+        Track rare drops, item refinement, crafting steps, and where to find
+        everything across the Isles.
+      </p>
+    </header>
+
+    <section class="grid gap-6 md:grid-cols-3">
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h2 class="text-lg font-semibold text-white">Items & Drops</h2>
+        <p class="mt-2 text-sm text-slate-300">
+          Learn where to farm specific weapons, armor, and materials.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h2 class="text-lg font-semibold text-white">Refinement</h2>
+        <p class="mt-2 text-sm text-slate-300">
+          Map the exact refinements and upgrade paths for every tier.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h2 class="text-lg font-semibold text-white">Guides</h2>
+        <p class="mt-2 text-sm text-slate-300">
+          Curated builds, progression tips, and boss strategies.
+        </p>
+      </div>
+    </section>
+
+    <section class="rounded-2xl border border-slate-800 bg-slate-900/70 p-8">
+      <h2 class="text-xl font-semibold text-white">Get started</h2>
+      <p class="mt-2 text-sm text-slate-300">
+        Add your first item entry or begin a refinement guide. We will wire up
+        content collections next.
+      </p>
+      <div class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-900">
+        Build the first entry
+      </div>
+    </section>
+  </main>
+</Layout>
