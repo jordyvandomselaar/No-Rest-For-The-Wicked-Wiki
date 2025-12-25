@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "node src/index.js",
+    "crawl": "python src/crawl_items.py",
+    "items": "python src/extract_items.py"
   }
 }
