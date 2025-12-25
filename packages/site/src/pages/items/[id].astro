@@ -6,6 +6,7 @@ const items = loadItems();
 const itemsById = new Map(items.map((item) => [item.id, item]));
 
 export async function getStaticPaths() {
+  const items = loadItems();
   return items.map((item) => ({
     params: { id: encodeURIComponent(item.id) },
     props: { itemId: item.id },
