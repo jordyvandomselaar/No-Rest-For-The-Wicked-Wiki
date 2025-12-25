@@ -7,6 +7,15 @@ type Props = {
 };
 
 const { title, description } = Astro.props;
+const pathname = Astro.url.pathname;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/overview", label: "Overview" },
+  { href: "/story-and-setting", label: "Story & Setting" },
+  { href: "/gameplay", label: "Gameplay" },
+  { href: "/early-access", label: "Early Access" },
+];
 ---
 
 <!doctype html>
@@ -20,6 +29,31 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
-    <slot />
+    <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-8 px-6 py-10 md:flex-row md:gap-10">
+      <aside class="md:w-56">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+          <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Wiki</p>
+          <h2 class="mt-2 text-lg font-semibold text-white">No Rest For The Wicked</h2>
+          <nav class="mt-5 flex flex-col gap-2 text-sm">
+            {navItems.map((item) => (
+              <a
+                class:list={[
+                  "rounded-lg px-3 py-2 transition",
+                  pathname === item.href
+                    ? "bg-white/10 text-white"
+                    : "text-slate-300 hover:bg-white/5 hover:text-white",
+                ]}
+                href={item.href}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </aside>
+      <div class="flex-1">
+        <slot />
+      </div>
+    </div>
   </body>
 </html>
