@@ -42,9 +42,7 @@ const listItems = items
     </section>
 
     <section>
-      <script type="application/json" id="items-data">
-        {JSON.stringify(listItems)}
-      </script>
+      <script type="application/json" id="items-data" set:html={JSON.stringify(listItems)}></script>
       <div
         id="items-grid"
         class="grid gap-4 md:grid-cols-2"
@@ -66,49 +64,6 @@ const listItems = items
     </section>
   </main>
 
-  <script type="module">
-    import Fuse from "fuse.js";
+  <script type="module" src="/scripts/item-search.js"></script>
 
-    const data = JSON.parse(document.getElementById("items-data").textContent);
-    const grid = document.getElementById("items-grid");
-    const input = document.getElementById("item-search");
-    const count = document.getElementById("item-count");
-
-    const fuse = new Fuse(data, {
-      keys: ["name", "id", "description"],
-      threshold: 0.3,
-      ignoreLocation: true,
-    });
-
-    const render = (list) => {
-      grid.innerHTML = "";
-      const fragment = document.createDocumentFragment();
-      list.forEach((item) => {
-        const card = document.createElement("a");
-        card.href = `/items/${encodeURIComponent(item.id)}`;
-        card.className =
-          "rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-slate-600";
-        card.innerHTML = `
-          <h3 class=\"text-lg font-semibold text-white\">${item.name}</h3>
-          <p class=\"mt-1 text-xs text-slate-400\">${item.id}</p>
-          <p class=\"mt-3 text-sm text-slate-300\">${item.description || "No description yet."}</p>
-        `;
-        fragment.appendChild(card);
-      });
-      grid.appendChild(fragment);
-      count.textContent = String(list.length);
-    };
-
-    render(data);
-
-    input.addEventListener("input", (event) => {
-      const query = event.target.value.trim();
-      if (!query) {
-        render(data);
-        return;
-      }
-      const results = fuse.search(query).map((result) => result.item);
-      render(results);
-    });
-  </script>
 </Layout>
