@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "npm run dev -w @nrftw/site",
     "build": "npm run build -w @nrftw/site",
-    "preview": "npm run preview -w @nrftw/site"
+    "preview": "npm run preview -w @nrftw/site",
+    "crawl": "npm run crawl -w @nrftw/crawler"
   }
 }
