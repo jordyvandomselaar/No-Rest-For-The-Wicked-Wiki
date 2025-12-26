@@ -1,13 +1,14 @@
 {
   "name": "no-rest-for-the-wicked",
   "private": true,
+  "packageManager": "bun@1.3.5",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev -w @nrftw/site",
-    "build": "npm run build -w @nrftw/site",
-    "preview": "npm run preview -w @nrftw/site",
-    "crawl": "npm run crawl -w @nrftw/crawler"
+    "dev": "bun run --cwd packages/site dev",
+    "build": "bun run --cwd packages/site build",
+    "preview": "bun run --cwd packages/site preview",
+    "crawl": "bun run --cwd packages/crawler crawl"
   }
 }

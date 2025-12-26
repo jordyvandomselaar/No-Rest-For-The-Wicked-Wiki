@@ -15,7 +15,7 @@ mise exec -- python -m pip install UnityPy
 ## Scan for item-like assets
 
 ```bash
-mise exec -- npm run scan-items -w @nrftw/crawler
+mise exec -- bun run --cwd packages/crawler scan-items
 ```
 
 Outputs `packages/crawler/out/items_scan.jsonl` with the bundle name, object type, and asset name.
@@ -23,7 +23,7 @@ Outputs `packages/crawler/out/items_scan.jsonl` with the bundle name, object typ
 ## Extract item names/descriptions
 
 ```bash
-mise exec -- npm run crawl -w @nrftw/crawler
+mise exec -- bun run --cwd packages/crawler crawl
 ```
 
 Outputs `packages/crawler/out/items.json` with localization-backed item names/descriptions sourced from
@@ -40,7 +40,7 @@ and `utility_runes` (player utility runes) arrays of item IDs where found. Each 
 ## Dump candidate assets
 
 ```bash
-mise exec -- npm run dump-assets -w @nrftw/crawler -- --max-objects 200
+mise exec -- bun run --cwd packages/crawler dump-assets -- --max-objects 200
 ```
 
 Outputs `packages/crawler/out/items_dump.jsonl` with typetree data for ScriptableObject/MonoBehaviour
@@ -63,7 +63,7 @@ Bundle filenames can change with game updates. Use the lightweight scanner in
 `packages/crawler/src/scan_bundles.py` to discover which bundles contain the
 `items.*` prefixes and rune hints you care about. This scanner streams bundle
 data and avoids loading full assets, so it is safe to run on large bundles.
-You can run it directly with Python or via `npm run scan-bundles -w @nrftw/crawler -- ...`.
+You can run it directly with Python or via `bun run --cwd packages/crawler scan-bundles -- ...`.
 
 ### 1) List bundle files (names + sizes)
 
@@ -149,7 +149,7 @@ Once you know which bundles contain item definitions and rune hints, pass them
 into the crawler:
 
 ```bash
-npm run crawl -w @nrftw/crawler -- \
+bun run --cwd packages/crawler crawl -- \
   --bundle-pattern "qdb_assets_all_*.bundle" \
   --item-bundle-pattern "static_scenes_all_*.bundle"
 ```

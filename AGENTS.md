@@ -4,19 +4,19 @@
 - `packages/site/` — Astro website. Pages in `packages/site/src/pages/`, layouts in `packages/site/src/layouts/`, styles in `packages/site/src/styles/`, static assets in `packages/site/public/`.
 - `packages/crawler/` — Data-mining scripts. Entry points in `packages/crawler/src/`.
 - Generated data lives in `packages/crawler/out/` (e.g., `items.json`).
-- Root `package.json` uses npm workspaces (`packages/*`).
+- Root `package.json` uses Bun workspaces (`packages/*`).
 
 ## Build, Test, and Development Commands
-- `npm install` — install workspace dependencies.
-- `npm run dev` — run the Astro site (`@nrftw/site`).
-- `npm run build` — build the Astro site.
-- `npm run preview` — preview the site build.
-- `npm run crawl -w @nrftw/crawler` — build `packages/crawler/out/items.json`.
-- `npm run scan-items -w @nrftw/crawler` — scan bundles for item-like assets (writes `packages/crawler/out/items_scan.jsonl`).
-- `npm run dump-assets -w @nrftw/crawler` — dump candidate assets (writes `packages/crawler/out/items_dump.jsonl`).
-- `npm run scan-bundles -w @nrftw/crawler` — scan bundle files for specific strings/prefixes.
+- `bun install` — install workspace dependencies.
+- `bun run dev` — run the Astro site (`@nrftw/site`).
+- `bun run build` — build the Astro site.
+- `bun run preview` — preview the site build.
+- `bun run crawl` — build `packages/crawler/out/items.json`.
+- `bun run --cwd packages/crawler scan-items` — scan bundles for item-like assets (writes `packages/crawler/out/items_scan.jsonl`).
+- `bun run --cwd packages/crawler dump-assets` — dump candidate assets (writes `packages/crawler/out/items_dump.jsonl`).
+- `bun run --cwd packages/crawler scan-bundles` — scan bundle files for specific strings/prefixes.
 
-Tip: If port 4321 is blocked, run `npm run dev -w @nrftw/site -- --port 4322`.
+Tip: If port 4321 is blocked, run `bun run dev -- --port 4322`.
 
 ## Coding Style & Naming Conventions
 - JavaScript/TypeScript, Astro, and Python are used.

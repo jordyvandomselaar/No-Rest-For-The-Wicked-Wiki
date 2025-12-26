@@ -10,14 +10,14 @@ This repo is split into multiple packages.
 ## Quick start
 
 ```sh
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 ## Package commands
 
 ```sh
-npm run dev -w @nrftw/site
-npm run build -w @nrftw/site
-npm run preview -w @nrftw/site
+bun run --cwd packages/site dev
+bun run --cwd packages/site build
+bun run --cwd packages/site preview
 ```
