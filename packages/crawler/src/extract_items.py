@@ -10,6 +10,7 @@ import tempfile
 from pathlib import Path
 
 import UnityPy
+from UnityPy import config as unity_config
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -52,6 +53,12 @@ def iter_bundles(bundles_dir: Path, pattern: str):
             paths.append(path)
     for path in sorted(paths):
         yield path
+
+
+def iter_env_objects(env):
+    for asset in env.assets:
+        for obj in asset.objects.values():
+            yield obj
 
 
 def try_read_typetree(obj):
@@ -171,7 +178,7 @@ def scan_bundle_runes(bundle_path: Path, rune_guid_to_id):
     item_ids_by_path = {}
 
     # Pass 1: map item path IDs to item IDs (minimal retention to reduce memory).
-    for obj in env.objects:
+    for obj in iter_env_objects(env):
         if obj.type.name not in {"MonoBehaviour", "ScriptableObject"}:
             continue
         tree = try_read_typetree(obj)
@@ -202,7 +209,7 @@ def scan_bundle_runes(bundle_path: Path, rune_guid_to_id):
         return runes_by_item
 
     # Pass 2: rescan only item objects to find rune references.
-    for obj in env.objects:
+    for obj in iter_env_objects(env):
         item_id = item_ids_by_path.get(obj.path_id)
         if not item_id:
             continue
@@ -279,6 +286,8 @@ def extract_item_runes(bundles_dir: Path, pattern: str, rune_guid_to_id, use_sub
 
 
 def crawl(args):
+    unity_config.SERIALIZED_FILE_PARSE_TYPETREE = False
+
     game_dir = Path(args.game_dir)
     bundles_dir = Path(args.bundles_dir) if args.bundles_dir else game_dir / DEFAULT_BUNDLES_SUBDIR
     qdb_path = Path(args.qdb_path) if args.qdb_path else game_dir / DEFAULT_QDB_SUBPATH
@@ -294,7 +303,7 @@ def crawl(args):
 
     for bundle_path in iter_bundles(bundles_dir, args.bundle_pattern):
         env = UnityPy.load(str(bundle_path))
-        for obj in env.objects:
+        for obj in iter_env_objects(env):
             scanned += 1
             if obj.type.name != "MonoBehaviour":
                 continue
@@ -349,6 +358,9 @@ def crawl(args):
             else:
                 # keep the raw id in sources so we can revisit other metadata later
                 record.setdefault("other_ids", []).append(raw_id)
+
+        env = None
+        gc.collect()
 
     # attach asset guid mapping based on ItemNameMsg path ids
     for item in items.values():
@@ -539,6 +551,7 @@ def build_parser():
 def main():
     parser = build_parser()
     args = parser.parse_args()
+    unity_config.SERIALIZED_FILE_PARSE_TYPETREE = False
     if args.scan_runes_bundle:
         if not args.rune_guid_map or not args.rune_scan_output:
             raise SystemExit("--scan-runes-bundle requires --rune-guid-map and --rune-scan-output")
