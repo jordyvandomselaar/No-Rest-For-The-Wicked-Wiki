@@ -9,7 +9,10 @@ type Props = {
 const { title, description } = Astro.props;
 const pathname = Astro.url.pathname;
 
-  const navItems = [
+const umamiSrc = import.meta.env.PUBLIC_UMAMI_SRC;
+const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+
+const navItems = [
     { href: "/", label: "Home" },
     { href: "/items", label: "Items" },
     { href: "/overview", label: "Overview" },
@@ -28,11 +31,9 @@ const pathname = Astro.url.pathname;
     <meta name="generator" content={Astro.generator} />
     {description ? <meta name="description" content={description} /> : null}
     <title>{title}</title>
-    <script
-      defer
-      src="https://umami.jordy.app/script.js"
-      data-website-id="d513a0a4-149e-4f9b-abed-aac3c8ae1d7e"
-    ></script>
+    {umamiSrc && umamiWebsiteId ? (
+      <script defer src={umamiSrc} data-website-id={umamiWebsiteId}></script>
+    ) : null}
   </head>
   <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
     <div class="mx-auto flex min-h-screen max-w-6IPxl flex-col gap-8 px-6 py-10 md:flex-row md:gap-10">
