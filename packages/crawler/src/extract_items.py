@@ -12,6 +12,7 @@ DEFAULT_GAME_DIR = "/mnt/c/Program Files (x86)/Steam/steamapps/common/NoRestForT
 DEFAULT_BUNDLES_SUBDIR = "NoRestForTheWicked_Data/StreamingAssets/aa/StandaloneWindows64"
 DEFAULT_QDB_SUBPATH = "NoRestForTheWicked_Data/StreamingAssets/quantumDatabase.bin"
 DEFAULT_OUTPUT_DIR = str(SCRIPT_DIR.parent / "out")
+DEFAULT_ITEM_BUNDLE_PATTERN = ""
 
 
 LANG_KEYS = {
@@ -36,13 +37,23 @@ def iter_bundles(bundles_dir: Path, pattern: str):
             yield path
 
 
-def extract_locales(tree):
-    locales = {}
+def try_read_typetree(obj):
+    try:
+        return obj.read_typetree()
+    except Exception:
+        return None
+
+
+def extract_english_and_has_locale(tree):
+    english = None
+    has_locale = False
     for key in LANG_KEYS:
         value = tree.get(key)
         if isinstance(value, str) and value:
-            locales[key] = value
-    return locales
+            has_locale = True
+            if key == "English":
+                english = value
+    return english, has_locale
 
 
 def normalize_id(raw_id: str):
@@ -59,6 +70,125 @@ def classify_entry(raw_id: str):
     if raw_id.endswith(".Description"):
         return "description"
     return "other"
+
+
+def classify_rune_bucket(key_path):
+    if not key_path:
+        return "runes"
+    lowered = " ".join(key_path).lower()
+    if "utility" in lowered:
+        return "utility_runes"
+    if "rune" in lowered:
+        return "runes"
+    return "runes"
+
+
+def collect_rune_refs(tree, rune_path_ids, rune_guid_to_id):
+    runes = []
+    utility_runes = []
+    seen = set()
+    seen_utility = set()
+
+    def add_rune(bucket, rune_id):
+        if bucket == "utility_runes":
+            if rune_id in seen_utility:
+                return
+            seen_utility.add(rune_id)
+            utility_runes.append(rune_id)
+            return
+        if rune_id in seen:
+            return
+        seen.add(rune_id)
+        runes.append(rune_id)
+
+    stack = [(tree, ())]
+    while stack:
+        node, key_path = stack.pop()
+        if isinstance(node, dict):
+            if "m_PathID" in node and "m_FileID" in node:
+                path_id = node.get("m_PathID")
+                if isinstance(path_id, int) and path_id in rune_path_ids:
+                    bucket = classify_rune_bucket(key_path)
+                    add_rune(bucket, rune_path_ids[path_id])
+            for key, value in node.items():
+                stack.append((value, key_path + (str(key),)))
+            continue
+
+        if isinstance(node, list):
+            for value in node:
+                stack.append((value, key_path))
+            continue
+
+        if isinstance(node, str):
+            if node.startswith("items.runes."):
+                bucket = classify_rune_bucket(key_path)
+                add_rune(bucket, node)
+            continue
+
+        if isinstance(node, int):
+            if rune_guid_to_id and any("guid" in key.lower() for key in key_path):
+                rune_id = rune_guid_to_id.get(node)
+                if rune_id:
+                    bucket = classify_rune_bucket(key_path)
+                    add_rune(bucket, rune_id)
+            continue
+
+    return runes, utility_runes
+
+
+def extract_item_runes(bundles_dir: Path, pattern: str, rune_guid_to_id):
+    runes_by_item = {}
+
+    for bundle_path in iter_bundles(bundles_dir, pattern):
+        env = UnityPy.load(str(bundle_path))
+        item_ids_by_path = {}
+        item_trees_by_path = {}
+
+        for obj in env.objects:
+            if obj.type.name not in {"MonoBehaviour", "ScriptableObject"}:
+                continue
+            tree = try_read_typetree(obj)
+            if not isinstance(tree, dict):
+                continue
+            raw_id = tree.get("Id")
+            if not isinstance(raw_id, str):
+                continue
+            if not raw_id.startswith("items."):
+                continue
+            item_id = normalize_id(raw_id)
+            item_ids_by_path[obj.path_id] = item_id
+            item_trees_by_path[obj.path_id] = tree
+
+        if not item_ids_by_path:
+            continue
+
+        rune_path_ids = {
+            path_id: item_id
+            for path_id, item_id in item_ids_by_path.items()
+            if item_id.startswith("items.runes.")
+        }
+
+        if not rune_path_ids and not rune_guid_to_id:
+            continue
+
+        for path_id, tree in item_trees_by_path.items():
+            item_id = item_ids_by_path[path_id]
+            if item_id.startswith("items.runes."):
+                continue
+
+            runes, utility_runes = collect_rune_refs(tree, rune_path_ids, rune_guid_to_id)
+            if not runes and not utility_runes:
+                continue
+
+            entry = runes_by_item.setdefault(item_id, {"runes": [], "utility_runes": []})
+            for rune_id in runes:
+                if rune_id not in entry["runes"]:
+                    entry["runes"].append(rune_id)
+            for rune_id in utility_runes:
+                if rune_id not in entry["utility_runes"]:
+                    entry["utility_runes"].append(rune_id)
+
+    return runes_by_item
 
 
 def crawl(args):
@@ -106,8 +236,8 @@ def crawl(args):
             if entry_kind == "other" and not args.include_other:
                 continue
 
-            locales = extract_locales(tree)
-            if not locales and entry_kind != "other":
+            english, has_locale = extract_english_and_has_locale(tree)
+            if not has_locale and entry_kind != "other":
                 continue
 
             item_id = normalize_id(raw_id)
@@ -117,20 +247,18 @@ def crawl(args):
                     "id": item_id,
                     "name": None,
                     "description": None,
-                    "name_locales": {},
-                    "description_locales": {},
                     "sources": set(),
                 },
             )
             record["sources"].add(bundle_path.name)
 
             if entry_kind == "name":
-                record["name"] = locales.get("English", record["name"])
-                record["name_locales"].update(locales)
+                if english:
+                    record["name"] = english
                 record["name_path_id"] = obj.path_id
             elif entry_kind == "description":
-                record["description"] = locales.get("English", record["description"])
-                record["description_locales"].update(locales)
+                if english:
+                    record["description"] = english
             else:
                 # keep the raw id in sources so we can revisit other metadata later
                 record.setdefault("other_ids", []).append(raw_id)
@@ -144,6 +272,22 @@ def crawl(args):
     if qdb_path.exists():
         recipes = extract_refinery_recipes(qdb_path)
         attach_refinery_recipes(items, recipes)
+
+    item_bundle_pattern = args.item_bundle_pattern or args.bundle_pattern
+    rune_guid_to_id = {
+        item["asset_guid"]: item["id"]
+        for item in items.values()
+        if item.get("asset_guid") is not None and item["id"].startswith("items.runes.")
+    }
+    runes_by_item = extract_item_runes(bundles_dir, item_bundle_pattern, rune_guid_to_id)
+    for item_id, runes in runes_by_item.items():
+        item = items.get(item_id)
+        if not item:
+            continue
+        if runes.get("runes"):
+            item["runes"] = runes["runes"]
+        if runes.get("utility_runes"):
+            item["utility_runes"] = runes["utility_runes"]
 
     out_path = output_dir / "items.json"
     cleaned = []
@@ -257,6 +401,11 @@ def build_parser():
         "--bundle-pattern",
         default="qdb*_assets_all_*.bundle",
         help="Glob pattern for bundles to scan.",
+    )
+    parser.add_argument(
+        "--item-bundle-pattern",
+        default=DEFAULT_ITEM_BUNDLE_PATTERN,
+        help="Glob pattern for bundles to scan for rune metadata (defaults to --bundle-pattern).",
     )
     parser.add_argument(
         "--include-other",

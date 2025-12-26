@@ -11,8 +11,6 @@ export type ItemRecord = {
   id: string;
   name?: string | null;
   description?: string | null;
-  name_locales?: Record<string, string>;
-  description_locales?: Record<string, string>;
   sources?: string[];
   asset_guid?: number;
   recipes_as_input?: ItemRecipe[];
