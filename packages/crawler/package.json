@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "node src/index.js",
-    "crawl": "python src/crawl_items.py",
-    "items": "python src/extract_items.py",
+    "crawl": "python src/extract_items.py",
+    "items": "npm run crawl",
+    "scan-items": "python src/crawl_items.py --mode scan",
+    "dump-assets": "python src/crawl_items.py --mode dump",
     "scan-bundles": "python src/scan_bundles.py"
   }
 }

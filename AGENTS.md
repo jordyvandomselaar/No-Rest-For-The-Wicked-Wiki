@@ -11,8 +11,10 @@
 - `npm run dev` — run the Astro site (`@nrftw/site`).
 - `npm run build` — build the Astro site.
 - `npm run preview` — preview the site build.
-- `npm run crawl -w @nrftw/crawler` — scan Unity bundles (see `packages/crawler/src/crawl_items.py`).
-- `npm run items -w @nrftw/crawler` — regenerate `packages/crawler/out/items.json`.
+- `npm run crawl -w @nrftw/crawler` — build `packages/crawler/out/items.json`.
+- `npm run scan-items -w @nrftw/crawler` — scan bundles for item-like assets (writes `packages/crawler/out/items_scan.jsonl`).
+- `npm run dump-assets -w @nrftw/crawler` — dump candidate assets (writes `packages/crawler/out/items_dump.jsonl`).
+- `npm run scan-bundles -w @nrftw/crawler` — scan bundle files for specific strings/prefixes.
 
 Tip: If port 4321 is blocked, run `npm run dev -w @nrftw/site -- --port 4322`.
 

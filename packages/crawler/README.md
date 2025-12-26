@@ -15,7 +15,7 @@ mise exec -- python -m pip install UnityPy
 ## Scan for item-like assets
 
 ```bash
-mise exec -- npm run crawl -w @nrftw/crawler -- --mode scan
+mise exec -- npm run scan-items -w @nrftw/crawler
 ```
 
 Outputs `packages/crawler/out/items_scan.jsonl` with the bundle name, object type, and asset name.
@@ -23,7 +23,7 @@ Outputs `packages/crawler/out/items_scan.jsonl` with the bundle name, object typ
 ## Extract item names/descriptions
 
 ```bash
-mise exec -- npm run items -w @nrftw/crawler
+mise exec -- npm run crawl -w @nrftw/crawler
 ```
 
 Outputs `packages/crawler/out/items.json` with localization-backed item names/descriptions sourced from
@@ -40,7 +40,7 @@ and `utility_runes` (player utility runes) arrays of item IDs where found. Each 
 ## Dump candidate assets
 
 ```bash
-mise exec -- npm run crawl -w @nrftw/crawler -- --mode dump --max-objects 200
+mise exec -- npm run dump-assets -w @nrftw/crawler -- --max-objects 200
 ```
 
 Outputs `packages/crawler/out/items_dump.jsonl` with typetree data for ScriptableObject/MonoBehaviour
@@ -149,7 +149,7 @@ Once you know which bundles contain item definitions and rune hints, pass them
 into the crawler:
 
 ```bash
-npm run items -w @nrftw/crawler -- \
+npm run crawl -w @nrftw/crawler -- \
   --bundle-pattern "qdb_assets_all_*.bundle" \
   --item-bundle-pattern "static_scenes_all_*.bundle"
 ```
