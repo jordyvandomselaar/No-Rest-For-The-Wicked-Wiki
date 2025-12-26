@@ -33,6 +33,9 @@ Outputs `packages/crawler/out/items.json` with localization-backed item names/de
 Refinery links are written to each item as `recipes_as_input` and `recipes_as_output`. This pass
 captures input/output item IDs and a best-effort `minutes` value from the QDB blob.
 
+Rune links are captured by scanning item definitions in bundles and attaching `runes` (weapon runes)
+and `utility_runes` (player utility runes) arrays of item IDs where found.
+
 ## Dump candidate assets
 
 ```bash
@@ -48,3 +51,4 @@ and text payloads for TextAsset entries.
 - `--include-types ScriptableObject` to narrow the scan.
 - `--max-bundles 1` to iterate quickly while debugging.
 - `--qdb-path "/path/to/quantumDatabase.bin"` to override refinery source.
+- `--item-bundle-pattern "items*_assets_all_*.bundle"` to override where rune metadata is scanned.
