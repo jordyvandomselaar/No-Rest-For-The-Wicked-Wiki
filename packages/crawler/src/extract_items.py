@@ -17,7 +17,7 @@ DEFAULT_GAME_DIR = "/mnt/c/Program Files (x86)/Steam/steamapps/common/NoRestForT
 DEFAULT_BUNDLES_SUBDIR = "NoRestForTheWicked_Data/StreamingAssets/aa/StandaloneWindows64"
 DEFAULT_QDB_SUBPATH = "NoRestForTheWicked_Data/StreamingAssets/quantumDatabase.bin"
 DEFAULT_OUTPUT_DIR = str(SCRIPT_DIR.parent / "out")
-DEFAULT_ITEM_BUNDLE_PATTERN = "items*_assets_all_*.bundle"
+DEFAULT_ITEM_BUNDLE_PATTERN = "qdb_assets_all_*.bundle,static_scenes_all_*.bundle"
 
 
 LANG_KEYS = {
@@ -37,9 +37,21 @@ LANG_KEYS = {
 
 
 def iter_bundles(bundles_dir: Path, pattern: str):
-    for path in sorted(bundles_dir.glob(pattern)):
-        if path.is_file():
-            yield path
+    patterns = [part.strip() for part in pattern.split(",") if part.strip()]
+    if not patterns:
+        return
+    seen = set()
+    paths = []
+    for pat in patterns:
+        for path in bundles_dir.glob(pat):
+            if not path.is_file():
+                continue
+            if path in seen:
+                continue
+            seen.add(path)
+            paths.append(path)
+    for path in sorted(paths):
+        yield path
 
 
 def try_read_typetree(obj):
@@ -499,13 +511,13 @@ def build_parser():
     parser.add_argument("--qdb-path", default="", help="Override quantumDatabase.bin path.")
     parser.add_argument(
         "--bundle-pattern",
-        default="qdb*_assets_all_*.bundle",
-        help="Glob pattern for bundles to scan.",
+        default="qdb_assets_all_*.bundle",
+        help="Glob pattern for bundles to scan (comma-separated globs supported).",
     )
     parser.add_argument(
         "--item-bundle-pattern",
         default=DEFAULT_ITEM_BUNDLE_PATTERN,
-        help="Glob pattern for bundles to scan for rune metadata.",
+        help="Glob pattern for bundles to scan for rune metadata (comma-separated globs supported).",
     )
     parser.add_argument(
         "--rune-scan-subprocess",
