@@ -34,7 +34,8 @@ Refinery links are written to each item as `recipes_as_input` and `recipes_as_ou
 captures input/output item IDs and a best-effort `minutes` value from the QDB blob.
 
 Rune links are captured by scanning item definitions in bundles and attaching `runes` (weapon runes)
-and `utility_runes` (player utility runes) arrays of item IDs where found.
+and `utility_runes` (player utility runes) arrays of item IDs where found. Each entry also includes
+`runes_data` / `utility_runes_data` arrays with `{ id, name, description }` for the linked runes.
 
 ## Dump candidate assets
 
@@ -51,4 +52,4 @@ and text payloads for TextAsset entries.
 - `--include-types ScriptableObject` to narrow the scan.
 - `--max-bundles 1` to iterate quickly while debugging.
 - `--qdb-path "/path/to/quantumDatabase.bin"` to override refinery source.
-- `--item-bundle-pattern "items*_assets_all_*.bundle"` to override where rune metadata is scanned.
+- `--item-bundle-pattern "items*_assets_all_*.bundle"` to override where rune metadata is scanned (this is the default).

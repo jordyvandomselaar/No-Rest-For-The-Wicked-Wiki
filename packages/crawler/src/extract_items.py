@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import gc
 import json
 import struct
 from pathlib import Path
@@ -12,7 +13,7 @@ DEFAULT_GAME_DIR = "/mnt/c/Program Files (x86)/Steam/steamapps/common/NoRestForT
 DEFAULT_BUNDLES_SUBDIR = "NoRestForTheWicked_Data/StreamingAssets/aa/StandaloneWindows64"
 DEFAULT_QDB_SUBPATH = "NoRestForTheWicked_Data/StreamingAssets/quantumDatabase.bin"
 DEFAULT_OUTPUT_DIR = str(SCRIPT_DIR.parent / "out")
-DEFAULT_ITEM_BUNDLE_PATTERN = ""
+DEFAULT_ITEM_BUNDLE_PATTERN = "items*_assets_all_*.bundle"
 
 
 LANG_KEYS = {
@@ -142,8 +143,8 @@ def extract_item_runes(bundles_dir: Path, pattern: str, rune_guid_to_id):
     for bundle_path in iter_bundles(bundles_dir, pattern):
         env = UnityPy.load(str(bundle_path))
         item_ids_by_path = {}
-        item_trees_by_path = {}
 
+        # Pass 1: map item path IDs to item IDs (minimal retention to reduce memory).
         for obj in env.objects:
             if obj.type.name not in {"MonoBehaviour", "ScriptableObject"}:
                 continue
@@ -157,9 +158,10 @@ def extract_item_runes(bundles_dir: Path, pattern: str, rune_guid_to_id):
                 continue
             item_id = normalize_id(raw_id)
             item_ids_by_path[obj.path_id] = item_id
-            item_trees_by_path[obj.path_id] = tree
 
         if not item_ids_by_path:
+            env = None
+            gc.collect()
             continue
 
         rune_path_ids = {
@@ -169,11 +171,19 @@ def extract_item_runes(bundles_dir: Path, pattern: str, rune_guid_to_id):
         }
 
         if not rune_path_ids and not rune_guid_to_id:
+            env = None
+            gc.collect()
             continue
 
-        for path_id, tree in item_trees_by_path.items():
-            item_id = item_ids_by_path[path_id]
+        # Pass 2: rescan only item objects to find rune references.
+        for obj in env.objects:
+            item_id = item_ids_by_path.get(obj.path_id)
+            if not item_id:
+                continue
             if item_id.startswith("items.runes."):
+                continue
+            tree = try_read_typetree(obj)
+            if not isinstance(tree, dict):
                 continue
 
             runes, utility_runes = collect_rune_refs(tree, rune_path_ids, rune_guid_to_id)
@@ -187,6 +197,9 @@ def extract_item_runes(bundles_dir: Path, pattern: str, rune_guid_to_id):
             for rune_id in utility_runes:
                 if rune_id not in entry["utility_runes"]:
                     entry["utility_runes"].append(rune_id)
+
+        env = None
+        gc.collect()
 
     return runes_by_item
 
@@ -279,6 +292,22 @@ def crawl(args):
         for item in items.values()
         if item.get("asset_guid") is not None and item["id"].startswith("items.runes.")
     }
+    rune_details = {
+        item["id"]: {
+            "id": item["id"],
+            "name": item.get("name"),
+            "description": item.get("description"),
+        }
+        for item in items.values()
+        if item["id"].startswith("items.runes.")
+    }
+
+    def rune_detail_for(rune_id):
+        detail = rune_details.get(rune_id)
+        if detail:
+            return dict(detail)
+        return {"id": rune_id, "name": None, "description": None}
+
     runes_by_item = extract_item_runes(bundles_dir, item_bundle_pattern, rune_guid_to_id)
     for item_id, runes in runes_by_item.items():
         item = items.get(item_id)
@@ -286,8 +315,12 @@ def crawl(args):
             continue
         if runes.get("runes"):
             item["runes"] = runes["runes"]
+            item["runes_data"] = [rune_detail_for(rune_id) for rune_id in runes["runes"]]
         if runes.get("utility_runes"):
             item["utility_runes"] = runes["utility_runes"]
+            item["utility_runes_data"] = [
+                rune_detail_for(rune_id) for rune_id in runes["utility_runes"]
+            ]
 
     out_path = output_dir / "items.json"
     cleaned = []
@@ -405,7 +438,7 @@ def build_parser():
     parser.add_argument(
         "--item-bundle-pattern",
         default=DEFAULT_ITEM_BUNDLE_PATTERN,
-        help="Glob pattern for bundles to scan for rune metadata (defaults to --bundle-pattern).",
+        help="Glob pattern for bundles to scan for rune metadata.",
     )
     parser.add_argument(
         "--include-other",
