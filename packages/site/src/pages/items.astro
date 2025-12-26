@@ -212,10 +212,7 @@ const renderGroupSection = (node: GroupNode, level: number): string => {
 };
 
 const groupedHtml = (() => {
-  const rootChildrenCount = rootGroup.children.size + (rootGroup.items.length ? 1 : 0);
-  const rootCountLabel = `${rootChildrenCount} ${pluralize(rootChildrenCount, "group")} · ${listItems.length} ${pluralize(listItems.length, "item")}`;
-
-  const childBlocks: string[] = [];
+  const blocks: string[] = [];
 
   if (rootGroup.items.length) {
     const ungroupedNode: GroupNode = {
@@ -225,23 +222,20 @@ const groupedHtml = (() => {
       children: new Map(),
       items: [...rootGroup.items],
     };
-    childBlocks.push(renderGroupSection(ungroupedNode, 1));
+    blocks.push(renderGroupSection(ungroupedNode, 0));
   }
 
   for (const child of getSortedChildren(rootGroup)) {
-    childBlocks.push(renderGroupSection(child, 1));
+    blocks.push(renderGroupSection(child, 0));
   }
 
-  const contentHtml = childBlocks.length
-    ? `<div class="ml-6 space-y-1 border-l-2 border-slate-800 pl-6 py-2">${childBlocks.join("")}</div>`
+  const contentHtml = blocks.length
+    ? `<div class="space-y-1 py-2">${blocks.join("")}</div>`
     : '<div class="p-4 text-sm text-slate-500">No items found.</div>';
 
   return [
     '<div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">',
-    '<details class="group" open aria-labelledby="group-items">',
-    renderGroupSummary(0, "group-items", "Items", rootCountLabel),
     contentHtml,
-    "</details>",
     "</div>",
   ].join("");
 })();
@@ -293,7 +287,7 @@ const groupedHtml = (() => {
 
   <script type="module" src="/scripts/item-search.js"></script>
 
-  <style>
+  <style is:global>
     #items-grid summary {
       list-style: none;
     }
@@ -309,6 +303,10 @@ const groupedHtml = (() => {
     #items-grid .items-chevron {
       transition: transform 160ms ease;
       transform-origin: center;
+    }
+
+    #items-grid details:not([open]) > summary .items-chevron {
+      transform: rotate(0deg);
     }
 
     #items-grid details[open] > summary .items-chevron {

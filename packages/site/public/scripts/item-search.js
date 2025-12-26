@@ -312,18 +312,8 @@ const renderGrouped = (list) => {
   const wrapper = document.createElement("div");
   wrapper.className = "overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60";
 
-  const rootDetails = document.createElement("details");
-  rootDetails.className = "group";
-  rootDetails.open = true;
-  rootDetails.setAttribute("aria-labelledby", "group-items");
-
-  const rootChildrenCount = root.children.size + (root.items.length ? 1 : 0);
-  const rootCountLabel = `${rootChildrenCount} ${pluralize(rootChildrenCount, "group")} · ${list.length} ${pluralize(list.length, "item")}`;
-
-  rootDetails.appendChild(createGroupSummary(0, "group-items", "Items", rootCountLabel));
-
   const content = document.createElement("div");
-  content.className = "ml-6 space-y-1 border-l-2 border-slate-800 pl-6 py-2";
+  content.className = "space-y-1 py-2";
 
   if (root.items.length) {
     const ungroupedNode = {
@@ -332,23 +322,22 @@ const renderGrouped = (list) => {
       children: new Map(),
       items: root.items,
     };
-    content.appendChild(renderGroupDetails(ungroupedNode, 1));
+    content.appendChild(renderGroupDetails(ungroupedNode, 0));
   }
 
   getSortedChildren(root).forEach((child) => {
-    content.appendChild(renderGroupDetails(child, 1));
+    content.appendChild(renderGroupDetails(child, 0));
   });
 
   if (content.childNodes.length) {
-    rootDetails.appendChild(content);
+    wrapper.appendChild(content);
   } else {
     const empty = document.createElement("div");
     empty.className = "p-4 text-sm text-slate-500";
     empty.textContent = "No items found.";
-    rootDetails.appendChild(empty);
+    wrapper.appendChild(empty);
   }
 
-  wrapper.appendChild(rootDetails);
   grid.appendChild(wrapper);
 
   count.textContent = String(list.length);
