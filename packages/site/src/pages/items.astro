@@ -2,7 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import { loadItems } from "../lib/items";
 
-type ListItem = { id: string; name: string; description: string };
+type ListItem = {
+  id: string;
+  name: string;
+  description: string;
+  assetGuid?: number | null;
+  source?: string | null;
+};
 
 type GroupNode = {
   segment: string;
@@ -18,6 +24,8 @@ const listItems: ListItem[] = items
     id: item.id,
     name: item.name ?? item.id,
     description: item.description ?? "",
+    assetGuid: item.asset_guid ?? null,
+    source: item.sources?.[0] ?? null,
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -100,88 +108,142 @@ const escapeHtml = (value: string) =>
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 
-const renderSummary = (level: number, id: string, label: string, totalCount: number) => {
+const pluralize = (count: number, singular: string, plural = `${singular}s`) =>
+  count === 1 ? singular : plural;
+
+const getCountLabel = (node: GroupNode) => {
+  const childCount = node.children.size;
+  const totalItems = countGroupItems(node);
+  if (childCount > 0) {
+    return `${childCount} ${pluralize(childCount, "group")} · ${totalItems} ${pluralize(totalItems, "item")}`;
+  }
+  return `${node.items.length} ${pluralize(node.items.length, "item")}`;
+};
+
+const renderGroupSummary = (level: number, id: string, label: string, countLabel: string) => {
+  const paddingClass = level === 0 ? "p-4" : "p-3";
   const labelClassName =
     level === 0
-      ? "text-xl font-semibold text-white md:text-2xl"
+      ? "text-lg font-semibold text-white"
       : level === 1
-        ? "text-lg font-semibold text-white"
+        ? "text-base font-semibold text-slate-100"
         : level === 2
-          ? "text-base font-semibold text-white"
-          : "text-sm font-semibold text-white";
+          ? "text-sm font-semibold text-slate-200"
+          : "text-sm font-medium text-slate-300";
+  const iconClassName = level === 0 ? "h-5 w-5" : "h-4 w-4";
 
   return [
-    `<summary id="${escapeHtml(id)}" class="cursor-pointer select-none p-5 [&::-webkit-details-marker]:hidden">`,
-    '  <div class="flex items-center justify-between gap-3">',
-    `    <span class="${labelClassName}">${escapeHtml(label)}</span>`,
-    `    <span class="rounded-full bg-white/10 px-2 py-1 text-xs text-slate-200">${totalCount}</span>`,
-    "  </div>",
+    `<summary id="${escapeHtml(id)}" class="flex cursor-pointer select-none items-center gap-2 ${paddingClass} hover:bg-white/5">`,
+    `  <svg class="${iconClassName} items-chevron shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">`,
+    '    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>',
+    "  </svg>",
+    `  <span class="${labelClassName}">${escapeHtml(label)}</span>`,
+    `  <span class="ml-auto text-xs text-slate-400">${escapeHtml(countLabel)}</span>`,
     "</summary>",
   ].join("");
 };
 
 const renderItemCard = (item: ListItem) => {
   const href = `/items/${encodeURIComponent(item.id)}`;
+  const description = item.description || "No description yet.";
+
+  const idPill = item.assetGuid
+    ? `<span class="shrink-0 rounded bg-white/5 px-2 py-1 text-xs text-slate-300">ID: ${item.assetGuid}</span>`
+    : "";
+
+  const sourceLine = item.source
+    ? [
+        '<div class="mt-3 flex items-center gap-2 text-xs text-slate-400">',
+        '  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">',
+        '    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>',
+        "  </svg>",
+        `  <span class="truncate">${escapeHtml(item.source)}</span>`,
+        "</div>",
+      ].join("")
+    : "";
+
   return [
-    `<a class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-slate-600" href="${escapeHtml(href)}">`,
-    `  <h3 class="text-lg font-semibold text-white">${escapeHtml(item.name)}</h3>`,
-    `  <p class="mt-1 text-xs text-slate-400">${escapeHtml(item.id)}</p>`,
-    `  <p class="mt-3 text-sm text-slate-300">${escapeHtml(item.description || "No description yet.")}</p>`,
+    `<a class="block rounded-xl border border-slate-800 bg-gradient-to-r from-slate-950/40 to-slate-900/40 p-4 transition hover:border-slate-600" href="${escapeHtml(href)}">`,
+    '  <div class="flex items-start justify-between gap-3">',
+    `    <h3 class="font-semibold text-white">${escapeHtml(item.name)}</h3>`,
+    `    ${idPill}`,
+    "  </div>",
+    `  <p class="mt-2 text-sm leading-relaxed text-slate-300">${escapeHtml(description)}</p>`,
+    `  ${sourceLine}`,
+    `  <div class="mt-3 text-xs text-slate-400"><code class="rounded bg-white/5 px-2 py-1">${escapeHtml(item.id)}</code></div>`,
     "</a>",
-  ].join("");
+  ]
+    .filter(Boolean)
+    .join("");
 };
 
-const renderItemsGrid = (items: ListItem[]) => {
+const renderItemList = (items: ListItem[]) => {
   const cards = items.map(renderItemCard).join("");
-  return `<div class="grid gap-4 md:grid-cols-2">${cards}</div>`;
+  return `<div class="space-y-3 py-2">${cards}</div>`;
 };
 
 const renderGroupSection = (node: GroupNode, level: number): string => {
   const children = getSortedChildren(node);
   const items = [...node.items].sort((a, b) => a.name.localeCompare(b.name));
-  const totalCount = countGroupItems(node);
   const headingId = toGroupDomId(node.path);
 
-  const itemsHtml = items.length ? renderItemsGrid(items) : "";
-  const childHtml = children.length
-    ? `<div class="space-y-8 border-l border-slate-800 pl-5">${children
-        .map((child) => renderGroupSection(child, level + 1))
-        .join("")}</div>`
-    : "";
+  const childrenHtml = children.map((child) => renderGroupSection(child, level + 1)).join("");
+  const itemsHtml = items.length ? renderItemList(items) : "";
 
-  const contentBlocks = [itemsHtml, childHtml].filter(Boolean).join("");
-  const contentHtml = contentBlocks
-    ? `<div class="px-5 pb-5 space-y-8">${contentBlocks}</div>`
-    : "";
+  let contentHtml = "";
+
+  if (children.length) {
+    const blocks: string[] = [];
+    if (childrenHtml) blocks.push(childrenHtml);
+    if (itemsHtml) {
+      blocks.push(`<div class="pl-6 ml-6">${itemsHtml}</div>`);
+    }
+    contentHtml = `<div class="ml-6 space-y-1 border-l-2 border-slate-800 pl-6">${blocks.join("")}</div>`;
+  } else if (itemsHtml) {
+    contentHtml = `<div class="ml-6 pl-6">${itemsHtml}</div>`;
+  }
 
   return [
-    `<details class="rounded-2xl border border-slate-800 bg-slate-900/60 transition hover:border-slate-600" data-group aria-labelledby="${escapeHtml(headingId)}">`,
-    renderSummary(level, headingId, node.label, totalCount),
+    `<details class="group" data-group aria-labelledby="${escapeHtml(headingId)}">`,
+    renderGroupSummary(level, headingId, node.label, getCountLabel(node)),
     contentHtml,
     "</details>",
   ].join("");
 };
 
 const groupedHtml = (() => {
-  const blocks: string[] = [];
+  const rootChildrenCount = rootGroup.children.size + (rootGroup.items.length ? 1 : 0);
+  const rootCountLabel = `${rootChildrenCount} ${pluralize(rootChildrenCount, "group")} · ${listItems.length} ${pluralize(listItems.length, "item")}`;
+
+  const childBlocks: string[] = [];
 
   if (rootGroup.items.length) {
-    const items = [...rootGroup.items].sort((a, b) => a.name.localeCompare(b.name));
-    blocks.push(
-      [
-        '<details class="rounded-2xl border border-slate-800 bg-slate-900/60 transition hover:border-slate-600" data-group aria-labelledby="group-ungrouped">',
-        renderSummary(0, "group-ungrouped", "Ungrouped", rootGroup.items.length),
-        `<div class="px-5 pb-5 space-y-8">${renderItemsGrid(items)}</div>`,
-        "</details>",
-      ].join("")
-    );
+    const ungroupedNode: GroupNode = {
+      segment: "ungrouped",
+      label: "Ungrouped",
+      path: ["ungrouped"],
+      children: new Map(),
+      items: [...rootGroup.items],
+    };
+    childBlocks.push(renderGroupSection(ungroupedNode, 1));
   }
 
   for (const child of getSortedChildren(rootGroup)) {
-    blocks.push(renderGroupSection(child, 0));
+    childBlocks.push(renderGroupSection(child, 1));
   }
 
-  return blocks.join("");
+  const contentHtml = childBlocks.length
+    ? `<div class="ml-6 space-y-1 border-l-2 border-slate-800 pl-6 py-2">${childBlocks.join("")}</div>`
+    : '<div class="p-4 text-sm text-slate-500">No items found.</div>';
+
+  return [
+    '<div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60">',
+    '<details class="group" open aria-labelledby="group-items">',
+    renderGroupSummary(0, "group-items", "Items", rootCountLabel),
+    contentHtml,
+    "</details>",
+    "</div>",
+  ].join("");
 })();
 ---
 
@@ -231,4 +293,26 @@ const groupedHtml = (() => {
 
   <script type="module" src="/scripts/item-search.js"></script>
 
+  <style>
+    #items-grid summary {
+      list-style: none;
+    }
+
+    #items-grid summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #items-grid summary::marker {
+      content: "";
+    }
+
+    #items-grid .items-chevron {
+      transition: transform 160ms ease;
+      transform-origin: center;
+    }
+
+    #items-grid details[open] > summary .items-chevron {
+      transform: rotate(90deg);
+    }
+  </style>
 </Layout>

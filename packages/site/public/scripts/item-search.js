@@ -132,98 +132,173 @@ const countGroupItems = (node) => {
 const getSortedChildren = (node) =>
   [...node.children.values()].sort((a, b) => a.label.localeCompare(b.label));
 
+const pluralize = (count, singular, plural = `${singular}s`) =>
+  count === 1 ? singular : plural;
+
+const createOutlineSvg = (className, pathD) => {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", className);
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("aria-hidden", "true");
+
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("stroke-linecap", "round");
+  path.setAttribute("stroke-linejoin", "round");
+  path.setAttribute("stroke-width", "2");
+  path.setAttribute("d", pathD);
+
+  svg.appendChild(path);
+  return svg;
+};
+
+const getCountLabel = (node) => {
+  const childCount = node.children.size;
+  const totalItems = countGroupItems(node);
+
+  if (childCount > 0) {
+    return `${childCount} ${pluralize(childCount, "group")} · ${totalItems} ${pluralize(totalItems, "item")}`;
+  }
+
+  return `${node.items.length} ${pluralize(node.items.length, "item")}`;
+};
+
 const createItemCard = (item) => {
   const card = document.createElement("a");
   card.href = `/items/${encodeURIComponent(item.id)}`;
   card.className =
-    "rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition hover:border-slate-600";
+    "block rounded-xl border border-slate-800 bg-gradient-to-r from-slate-950/40 to-slate-900/40 p-4 transition hover:border-slate-600";
+
+  const header = document.createElement("div");
+  header.className = "flex items-start justify-between gap-3";
 
   const title = document.createElement("h3");
-  title.className = "text-lg font-semibold text-white";
+  title.className = "font-semibold text-white";
   title.textContent = item.name || item.id;
 
-  const id = document.createElement("p");
-  id.className = "mt-1 text-xs text-slate-400";
-  id.textContent = item.id;
+  header.appendChild(title);
+
+  if (item.assetGuid) {
+    const pill = document.createElement("span");
+    pill.className = "shrink-0 rounded bg-white/5 px-2 py-1 text-xs text-slate-300";
+    pill.textContent = `ID: ${item.assetGuid}`;
+    header.appendChild(pill);
+  }
 
   const description = document.createElement("p");
-  description.className = "mt-3 text-sm text-slate-300";
+  description.className = "mt-2 text-sm leading-relaxed text-slate-300";
   description.textContent = item.description || "No description yet.";
 
-  card.appendChild(title);
-  card.appendChild(id);
+  const codeRow = document.createElement("div");
+  codeRow.className = "mt-3 text-xs text-slate-400";
+
+  const code = document.createElement("code");
+  code.className = "rounded bg-white/5 px-2 py-1";
+  code.textContent = item.id;
+
+  codeRow.appendChild(code);
+
+  card.appendChild(header);
   card.appendChild(description);
 
+  if (item.source) {
+    const sourceRow = document.createElement("div");
+    sourceRow.className = "mt-3 flex items-center gap-2 text-xs text-slate-400";
+
+    sourceRow.appendChild(
+      createOutlineSvg(
+        "h-4 w-4",
+        "M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+      )
+    );
+
+    const sourceLabel = document.createElement("span");
+    sourceLabel.className = "truncate";
+    sourceLabel.textContent = item.source;
+
+    sourceRow.appendChild(sourceLabel);
+    card.appendChild(sourceRow);
+  }
+
+  card.appendChild(codeRow);
   return card;
 };
 
-const createGroupSummary = (level, id, label, totalCount) => {
+const createItemList = (items) => {
+  const container = document.createElement("div");
+  container.className = "space-y-3 py-2";
+  items.forEach((item) => container.appendChild(createItemCard(item)));
+  return container;
+};
+
+const createGroupSummary = (level, id, label, countLabel) => {
+  const paddingClass = level === 0 ? "p-4" : "p-3";
   const labelClassName =
     level === 0
-      ? "text-xl font-semibold text-white md:text-2xl"
+      ? "text-lg font-semibold text-white"
       : level === 1
-        ? "text-lg font-semibold text-white"
+        ? "text-base font-semibold text-slate-100"
         : level === 2
-          ? "text-base font-semibold text-white"
-          : "text-sm font-semibold text-white";
+          ? "text-sm font-semibold text-slate-200"
+          : "text-sm font-medium text-slate-300";
+  const iconClassName = level === 0 ? "h-5 w-5" : "h-4 w-4";
 
   const summary = document.createElement("summary");
   summary.id = id;
-  summary.className = "cursor-pointer select-none p-5 [&::-webkit-details-marker]:hidden";
+  summary.className = `flex cursor-pointer select-none items-center gap-2 ${paddingClass} hover:bg-white/5`;
 
-  const row = document.createElement("div");
-  row.className = "flex items-center justify-between gap-3";
+  summary.appendChild(
+    createOutlineSvg(`${iconClassName} items-chevron shrink-0 text-slate-400`, "M9 5l7 7-7 7")
+  );
 
   const labelNode = document.createElement("span");
   labelNode.className = labelClassName;
   labelNode.textContent = label;
 
   const countNode = document.createElement("span");
-  countNode.className = "rounded-full bg-white/10 px-2 py-1 text-xs text-slate-200";
-  countNode.textContent = String(totalCount);
+  countNode.className = "ml-auto text-xs text-slate-400";
+  countNode.textContent = countLabel;
 
-  row.appendChild(labelNode);
-  row.appendChild(countNode);
+  summary.appendChild(labelNode);
+  summary.appendChild(countNode);
 
-  summary.appendChild(row);
   return summary;
 };
 
 const renderGroupDetails = (node, level) => {
   const children = getSortedChildren(node);
   const items = [...node.items].sort((a, b) => (a.name || a.id).localeCompare(b.name || b.id));
-  const totalCount = countGroupItems(node);
   const headingId = toGroupDomId(node.path);
 
   const details = document.createElement("details");
-  details.className =
-    "rounded-2xl border border-slate-800 bg-slate-900/60 transition hover:border-slate-600";
+  details.className = "group";
   details.setAttribute("data-group", "");
   details.setAttribute("aria-labelledby", headingId);
 
-  details.appendChild(createGroupSummary(level, headingId, node.label, totalCount));
-
-  const content = document.createElement("div");
-  content.className = "px-5 pb-5 space-y-8";
-
-  if (items.length) {
-    const itemsGrid = document.createElement("div");
-    itemsGrid.className = "grid gap-4 md:grid-cols-2";
-    items.forEach((item) => itemsGrid.appendChild(createItemCard(item)));
-    content.appendChild(itemsGrid);
-  }
+  details.appendChild(createGroupSummary(level, headingId, node.label, getCountLabel(node)));
 
   if (children.length) {
-    const childContainer = document.createElement("div");
-    childContainer.className = "space-y-8 border-l border-slate-800 pl-5";
-    children.forEach((child) => {
-      childContainer.appendChild(renderGroupDetails(child, level + 1));
-    });
-    content.appendChild(childContainer);
-  }
+    const container = document.createElement("div");
+    container.className = "ml-6 space-y-1 border-l-2 border-slate-800 pl-6";
 
-  if (content.childNodes.length) {
-    details.appendChild(content);
+    children.forEach((child) => {
+      container.appendChild(renderGroupDetails(child, level + 1));
+    });
+
+    if (items.length) {
+      const itemWrap = document.createElement("div");
+      itemWrap.className = "pl-6 ml-6";
+      itemWrap.appendChild(createItemList(items));
+      container.appendChild(itemWrap);
+    }
+
+    details.appendChild(container);
+  } else if (items.length) {
+    const itemWrap = document.createElement("div");
+    itemWrap.className = "ml-6 pl-6";
+    itemWrap.appendChild(createItemList(items));
+    details.appendChild(itemWrap);
   }
 
   return details;
@@ -233,7 +308,22 @@ const renderGrouped = (list) => {
   grid.textContent = "";
 
   const root = buildGroupTree(list);
-  const fragment = document.createDocumentFragment();
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60";
+
+  const rootDetails = document.createElement("details");
+  rootDetails.className = "group";
+  rootDetails.open = true;
+  rootDetails.setAttribute("aria-labelledby", "group-items");
+
+  const rootChildrenCount = root.children.size + (root.items.length ? 1 : 0);
+  const rootCountLabel = `${rootChildrenCount} ${pluralize(rootChildrenCount, "group")} · ${list.length} ${pluralize(list.length, "item")}`;
+
+  rootDetails.appendChild(createGroupSummary(0, "group-items", "Items", rootCountLabel));
+
+  const content = document.createElement("div");
+  content.className = "ml-6 space-y-1 border-l-2 border-slate-800 pl-6 py-2";
 
   if (root.items.length) {
     const ungroupedNode = {
@@ -242,37 +332,26 @@ const renderGrouped = (list) => {
       children: new Map(),
       items: root.items,
     };
-
-    const details = document.createElement("details");
-    details.className =
-      "rounded-2xl border border-slate-800 bg-slate-900/60 transition hover:border-slate-600";
-    details.setAttribute("data-group", "");
-    details.setAttribute("aria-labelledby", "group-ungrouped");
-
-    details.appendChild(createGroupSummary(0, "group-ungrouped", "Ungrouped", root.items.length));
-
-    const content = document.createElement("div");
-    content.className = "px-5 pb-5 space-y-8";
-
-    const itemsGrid = document.createElement("div");
-    itemsGrid.className = "grid gap-4 md:grid-cols-2";
-    [...ungroupedNode.items]
-      .sort((a, b) => (a.name || a.id).localeCompare(b.name || b.id))
-      .forEach((item) => itemsGrid.appendChild(createItemCard(item)));
-
-    content.appendChild(itemsGrid);
-    details.appendChild(content);
-
-    fragment.appendChild(details);
+    content.appendChild(renderGroupDetails(ungroupedNode, 1));
   }
 
   getSortedChildren(root).forEach((child) => {
-    fragment.appendChild(renderGroupDetails(child, 0));
+    content.appendChild(renderGroupDetails(child, 1));
   });
 
-  grid.appendChild(fragment);
-  count.textContent = String(list.length);
+  if (content.childNodes.length) {
+    rootDetails.appendChild(content);
+  } else {
+    const empty = document.createElement("div");
+    empty.className = "p-4 text-sm text-slate-500";
+    empty.textContent = "No items found.";
+    rootDetails.appendChild(empty);
+  }
 
+  wrapper.appendChild(rootDetails);
+  grid.appendChild(wrapper);
+
+  count.textContent = String(list.length);
   applyGroupExpansionState();
 };
 
