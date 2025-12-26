@@ -53,3 +53,4 @@ and text payloads for TextAsset entries.
 - `--max-bundles 1` to iterate quickly while debugging.
 - `--qdb-path "/path/to/quantumDatabase.bin"` to override refinery source.
 - `--item-bundle-pattern "items*_assets_all_*.bundle"` to override where rune metadata is scanned (this is the default).
+- `--no-rune-scan-subprocess` to scan rune bundles in-process (the default uses subprocesses to keep memory down).

@@ -2,7 +2,11 @@
 import argparse
 import gc
 import json
+import os
 import struct
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
 
 import UnityPy
@@ -137,69 +141,127 @@ def collect_rune_refs(tree, rune_path_ids, rune_guid_to_id):
     return runes, utility_runes
 
 
-def extract_item_runes(bundles_dir: Path, pattern: str, rune_guid_to_id):
+def merge_rune_results(target, incoming):
+    for item_id, runes in incoming.items():
+        entry = target.setdefault(item_id, {"runes": [], "utility_runes": []})
+        for rune_id in runes.get("runes", []):
+            if rune_id not in entry["runes"]:
+                entry["runes"].append(rune_id)
+        for rune_id in runes.get("utility_runes", []):
+            if rune_id not in entry["utility_runes"]:
+                entry["utility_runes"].append(rune_id)
+
+
+def scan_bundle_runes(bundle_path: Path, rune_guid_to_id):
     runes_by_item = {}
 
-    for bundle_path in iter_bundles(bundles_dir, pattern):
-        env = UnityPy.load(str(bundle_path))
-        item_ids_by_path = {}
+    env = UnityPy.load(str(bundle_path))
+    item_ids_by_path = {}
 
-        # Pass 1: map item path IDs to item IDs (minimal retention to reduce memory).
-        for obj in env.objects:
-            if obj.type.name not in {"MonoBehaviour", "ScriptableObject"}:
-                continue
-            tree = try_read_typetree(obj)
-            if not isinstance(tree, dict):
-                continue
-            raw_id = tree.get("Id")
-            if not isinstance(raw_id, str):
-                continue
-            if not raw_id.startswith("items."):
-                continue
-            item_id = normalize_id(raw_id)
-            item_ids_by_path[obj.path_id] = item_id
-
-        if not item_ids_by_path:
-            env = None
-            gc.collect()
+    # Pass 1: map item path IDs to item IDs (minimal retention to reduce memory).
+    for obj in env.objects:
+        if obj.type.name not in {"MonoBehaviour", "ScriptableObject"}:
             continue
-
-        rune_path_ids = {
-            path_id: item_id
-            for path_id, item_id in item_ids_by_path.items()
-            if item_id.startswith("items.runes.")
-        }
-
-        if not rune_path_ids and not rune_guid_to_id:
-            env = None
-            gc.collect()
+        tree = try_read_typetree(obj)
+        if not isinstance(tree, dict):
             continue
+        raw_id = tree.get("Id")
+        if not isinstance(raw_id, str):
+            continue
+        if not raw_id.startswith("items."):
+            continue
+        item_id = normalize_id(raw_id)
+        item_ids_by_path[obj.path_id] = item_id
 
-        # Pass 2: rescan only item objects to find rune references.
-        for obj in env.objects:
-            item_id = item_ids_by_path.get(obj.path_id)
-            if not item_id:
-                continue
-            if item_id.startswith("items.runes."):
-                continue
-            tree = try_read_typetree(obj)
-            if not isinstance(tree, dict):
-                continue
-
-            runes, utility_runes = collect_rune_refs(tree, rune_path_ids, rune_guid_to_id)
-            if not runes and not utility_runes:
-                continue
-
-            entry = runes_by_item.setdefault(item_id, {"runes": [], "utility_runes": []})
-            for rune_id in runes:
-                if rune_id not in entry["runes"]:
-                    entry["runes"].append(rune_id)
-            for rune_id in utility_runes:
-                if rune_id not in entry["utility_runes"]:
-                    entry["utility_runes"].append(rune_id)
-
+    if not item_ids_by_path:
         env = None
         gc.collect()
+        return runes_by_item
+
+    rune_path_ids = {
+        path_id: item_id
+        for path_id, item_id in item_ids_by_path.items()
+        if item_id.startswith("items.runes.")
+    }
+
+    if not rune_path_ids and not rune_guid_to_id:
+        env = None
+        gc.collect()
+        return runes_by_item
+
+    # Pass 2: rescan only item objects to find rune references.
+    for obj in env.objects:
+        item_id = item_ids_by_path.get(obj.path_id)
+        if not item_id:
+            continue
+        if item_id.startswith("items.runes."):
+            continue
+        tree = try_read_typetree(obj)
+        if not isinstance(tree, dict):
+            continue
+
+        runes, utility_runes = collect_rune_refs(tree, rune_path_ids, rune_guid_to_id)
+        if not runes and not utility_runes:
+            continue
+
+        entry = runes_by_item.setdefault(item_id, {"runes": [], "utility_runes": []})
+        for rune_id in runes:
+            if rune_id not in entry["runes"]:
+                entry["runes"].append(rune_id)
+        for rune_id in utility_runes:
+            if rune_id not in entry["utility_runes"]:
+                entry["utility_runes"].append(rune_id)
+
+    env = None
+    gc.collect()
+
+    return runes_by_item
+
+
+def extract_item_runes(bundles_dir: Path, pattern: str, rune_guid_to_id, use_subprocess: bool):
+    runes_by_item = {}
+
+    if not use_subprocess:
+        for bundle_path in iter_bundles(bundles_dir, pattern):
+            merge_rune_results(runes_by_item, scan_bundle_runes(bundle_path, rune_guid_to_id))
+        return runes_by_item
+
+    rune_guid_pairs = sorted(rune_guid_to_id.items())
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", delete=False) as mapping_fh:
+        json.dump(rune_guid_pairs, mapping_fh, ensure_ascii=True)
+        mapping_path = mapping_fh.name
+
+    try:
+        for bundle_path in iter_bundles(bundles_dir, pattern):
+            with tempfile.NamedTemporaryFile("w", encoding="utf-8", delete=False) as out_fh:
+                out_path = out_fh.name
+            try:
+                cmd = [
+                    sys.executable,
+                    os.fspath(Path(__file__).resolve()),
+                    "--scan-runes-bundle",
+                    os.fspath(bundle_path),
+                    "--rune-guid-map",
+                    mapping_path,
+                    "--rune-scan-output",
+                    out_path,
+                ]
+                proc = subprocess.run(cmd, text=True, capture_output=True)
+                if proc.returncode != 0:
+                    raise SystemExit(
+                        "Rune scan subprocess failed for "
+                        f"{bundle_path.name}:\n{proc.stderr.strip() or proc.stdout.strip()}"
+                    )
+                with open(out_path, "r", encoding="utf-8") as fh:
+                    payload = json.load(fh)
+                if payload:
+                    merge_rune_results(runes_by_item, payload)
+            finally:
+                if os.path.exists(out_path):
+                    os.unlink(out_path)
+    finally:
+        if os.path.exists(mapping_path):
+            os.unlink(mapping_path)
 
     return runes_by_item
 
@@ -308,7 +370,12 @@ def crawl(args):
             return dict(detail)
         return {"id": rune_id, "name": None, "description": None}
 
-    runes_by_item = extract_item_runes(bundles_dir, item_bundle_pattern, rune_guid_to_id)
+    runes_by_item = extract_item_runes(
+        bundles_dir,
+        item_bundle_pattern,
+        rune_guid_to_id,
+        args.rune_scan_subprocess,
+    )
     for item_id, runes in runes_by_item.items():
         item = items.get(item_id)
         if not item:
@@ -441,16 +508,37 @@ def build_parser():
         help="Glob pattern for bundles to scan for rune metadata.",
     )
     parser.add_argument(
+        "--rune-scan-subprocess",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Scan rune bundles in a fresh subprocess per bundle to reduce memory.",
+    )
+    parser.add_argument(
         "--include-other",
         action="store_true",
         help="Include localization entries that are not Name/Description.",
     )
+    parser.add_argument("--scan-runes-bundle", default="", help=argparse.SUPPRESS)
+    parser.add_argument("--rune-guid-map", default="", help=argparse.SUPPRESS)
+    parser.add_argument("--rune-scan-output", default="", help=argparse.SUPPRESS)
     return parser
 
 
 def main():
     parser = build_parser()
     args = parser.parse_args()
+    if args.scan_runes_bundle:
+        if not args.rune_guid_map or not args.rune_scan_output:
+            raise SystemExit("--scan-runes-bundle requires --rune-guid-map and --rune-scan-output")
+        with open(args.rune_guid_map, "r", encoding="utf-8") as fh:
+            rune_guid_pairs = json.load(fh)
+        rune_guid_to_id = {int(guid): item_id for guid, item_id in rune_guid_pairs}
+        result = scan_bundle_runes(Path(args.scan_runes_bundle), rune_guid_to_id)
+        Path(args.rune_scan_output).write_text(
+            json.dumps(result, ensure_ascii=True),
+            encoding="utf-8",
+        )
+        return
     crawl(args)
 
 
