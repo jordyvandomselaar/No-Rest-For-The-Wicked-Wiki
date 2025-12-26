@@ -55,6 +55,7 @@ and text payloads for TextAsset entries.
 - `--bundle-pattern "qdb_assets_all_*.bundle"` to override which bundles are scanned for item names/descriptions (comma-separated globs supported).
 - `--item-bundle-pattern "qdb_assets_all_*.bundle,static_scenes_all_*.bundle"` to override where rune metadata is scanned (comma-separated globs supported; this is the default).
 - `--no-rune-scan-subprocess` to scan rune bundles in-process (the default uses subprocesses to keep memory down).
+  - These defaults avoid scanning the largest bundles (e.g., `world_scenes_all_*.bundle`) to keep memory usage manageable on WSL.
 
 ## Finding bundle names after game updates
 
