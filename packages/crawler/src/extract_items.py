@@ -433,20 +433,19 @@ def crawl(args):
             if not item:
                 continue
             item["default_runes"] = rune_ids
-            item["default_runes_data"] = [rune_detail_for(rune_id) for rune_id in rune_ids]
 
     out_path = output_dir / "items.json"
-    cleaned = []
+    cleaned = {}
     for item in items.values():
         item["sources"] = sorted(item["sources"])
         if "other_ids" in item:
             item["other_ids"] = sorted(set(item["other_ids"]))
         item.pop("name_path_id", None)
-        cleaned.append(item)
+        cleaned[item["id"]] = item
 
-    cleaned.sort(key=lambda x: x["id"])
-    out_path.write_text(json.dumps(cleaned, ensure_ascii=True, indent=2), encoding="utf-8")
-    print(f"Scanned {scanned} objects. Wrote {len(cleaned)} items to {out_path}")
+    ordered = {item_id: cleaned[item_id] for item_id in sorted(cleaned)}
+    out_path.write_text(json.dumps(ordered, ensure_ascii=True, indent=2), encoding="utf-8")
+    print(f"Scanned {scanned} objects. Wrote {len(ordered)} items to {out_path}")
 
 
 def extract_refinery_recipes(qdb_path: Path):

@@ -15,10 +15,15 @@ export type ItemRecord = {
   asset_guid?: number;
   recipes_as_input?: ItemRecipe[];
   recipes_as_output?: ItemRecipe[];
+  runes?: string[];
+  utility_runes?: string[];
+  default_runes?: string[];
 };
 
-export function loadItems(): ItemRecord[] {
+export type ItemsById = Record<string, ItemRecord>;
+
+export function loadItems(): ItemsById {
   const itemsPath = new URL("../../../crawler/out/items.json", import.meta.url);
   const raw = fs.readFileSync(itemsPath, "utf-8");
-  return JSON.parse(raw) as ItemRecord[];
+  return JSON.parse(raw) as ItemsById;
 }

@@ -2,21 +2,20 @@
 import Layout from "../../layouts/Layout.astro";
 import { loadItems } from "../../lib/items";
 
-const items = loadItems();
-const itemsById = new Map(items.map((item) => [item.id, item]));
+const itemsById = loadItems();
 
 export async function getStaticPaths() {
   const items = loadItems();
-  return items.map((item) => ({
-    params: { id: encodeURIComponent(item.id) },
-    props: { itemId: item.id },
+  return Object.keys(items).map((itemId) => ({
+    params: { id: encodeURIComponent(itemId) },
+    props: { itemId },
   }));
 }
 
 type Props = { itemId: string };
 const { itemId } = Astro.props;
 
-const item = itemsById.get(itemId);
+const item = itemsById[itemId];
 if (!item) {
   throw new Error(`Item not found: ${itemId}`);
 }
@@ -24,7 +23,7 @@ if (!item) {
 const itemName = item.name ?? item.id;
 
 function buildTree(targetId: string, depth = 0, visited = new Set<string>()) {
-  const node = itemsById.get(targetId);
+  const node = itemsById[targetId];
   if (!node) return null;
   const label = node.name ?? node.id;
   if (visited.has(targetId) || depth > 6) {
@@ -141,7 +140,7 @@ const renderTree = (node: any): string => {
                       class="text-white underline decoration-slate-600 underline-offset-4"
                       href={`/items/${encodeURIComponent(recipe.output ?? "")}`}
                     >
-                      {itemsById.get(recipe.output ?? "")?.name ?? recipe.output}
+                    {itemsById[recipe.output ?? ""]?.name ?? recipe.output}
                     </a>
                     {recipe.minutes !== null && recipe.minutes !== undefined ? (
                       <span class="ml-2 text-xs text-slate-400">{recipe.minutes} min</span>
@@ -164,7 +163,7 @@ const renderTree = (node: any): string => {
                       class="text-white underline decoration-slate-600 underline-offset-4"
                       href={`/items/${encodeURIComponent(recipe.input ?? "")}`}
                     >
-                      {itemsById.get(recipe.input ?? "")?.name ?? recipe.input}
+                    {itemsById[recipe.input ?? ""]?.name ?? recipe.input}
                     </a>
                     {recipe.minutes !== null && recipe.minutes !== undefined ? (
                       <span class="ml-2 text-xs text-slate-400">{recipe.minutes} min</span>

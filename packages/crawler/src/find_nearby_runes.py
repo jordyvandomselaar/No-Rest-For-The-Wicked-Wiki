@@ -18,8 +18,13 @@ def load_rune_guids():
     with open(items_path) as f:
         items = json.load(f)
 
+    if isinstance(items, dict):
+        items_iter = items.values()
+    else:
+        items_iter = items
+
     runes = {}
-    for item in items:
+    for item in items_iter:
         if item["id"].startswith("items.runes.") and item.get("asset_guid"):
             runes[item["asset_guid"]] = item["id"]
     return runes

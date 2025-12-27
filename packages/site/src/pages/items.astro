@@ -19,7 +19,7 @@ type GroupNode = {
 };
 
 const items = loadItems();
-const listItems: ListItem[] = items
+const listItems: ListItem[] = Object.values(items)
   .map((item) => ({
     id: item.id,
     name: item.name ?? item.id,
