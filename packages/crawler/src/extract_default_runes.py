@@ -14,10 +14,10 @@ from pathlib import Path
 DEFAULT_BUNDLE_PATTERN = "static_scenes_all_*.bundle"
 MAX_WORKERS = min(8, os.cpu_count() or 4)
 
-RUNE_MARKER_OFFSET = 80
 RUNE_MARKER_BYTE = 0x22
 RUNE_ENTRY_SIZE = 16
 MAX_RUNE_SLOTS = 4
+SEARCH_WINDOW = 256
 
 
 def iter_bundles(bundles_dir: Path, pattern: str):
@@ -48,22 +48,33 @@ def search_patterns_worker(args):
                     idx = mm.find(pattern, pos)
                     if idx == -1:
                         break
-                    marker_offset = idx + RUNE_MARKER_OFFSET
-                    if marker_offset + 1 + RUNE_ENTRY_SIZE <= file_size:
-                        if mm[marker_offset] == RUNE_MARKER_BYTE:
-                            rune_guids = []
-                            for slot_index in range(MAX_RUNE_SLOTS):
-                                entry_offset = marker_offset + 1 + (RUNE_ENTRY_SIZE * slot_index)
-                                if entry_offset + 8 > file_size:
-                                    break
-                                rune_guid = struct.unpack_from("<Q", mm, entry_offset)[0]
-                                if rune_guid == 0:
-                                    break
-                                if rune_guid not in rune_guid_to_id:
-                                    break
-                                rune_guids.append(rune_guid)
-                            if rune_guids:
-                                rune_pairs[guid].append(tuple(rune_guids))
+                    window_start = idx + 1
+                    window_end = min(file_size, idx + 1 + SEARCH_WINDOW)
+                    data = mm[window_start:window_end]
+                    candidates = []
+                    for rel_offset, byte in enumerate(data):
+                        if byte != RUNE_MARKER_BYTE:
+                            continue
+                        marker_offset = window_start + rel_offset
+                        if marker_offset + 1 + RUNE_ENTRY_SIZE > file_size:
+                            continue
+                        rune_guids = []
+                        for slot_index in range(MAX_RUNE_SLOTS):
+                            entry_offset = marker_offset + 1 + (RUNE_ENTRY_SIZE * slot_index)
+                            if entry_offset + 8 > file_size:
+                                break
+                            rune_guid = struct.unpack_from("<Q", mm, entry_offset)[0]
+                            if rune_guid == 0:
+                                break
+                            if rune_guid not in rune_guid_to_id:
+                                rune_guids = []
+                                break
+                            rune_guids.append(rune_guid)
+                        if rune_guids:
+                            candidates.append((marker_offset, tuple(rune_guids)))
+                    if candidates:
+                        candidates.sort(key=lambda c: (-len(c[1]), c[0]))
+                        rune_pairs[guid].append(candidates[0][1])
                     pos = idx + 1
 
     return dict(rune_pairs)

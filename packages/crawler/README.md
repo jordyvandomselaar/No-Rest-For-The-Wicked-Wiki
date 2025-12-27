@@ -212,7 +212,7 @@ Offset  Bytes                      Description
 +8      00 00 00 00 02 00 00 00   Metadata (flags, counts)
 +16     02 00 00 00 ...           Additional parameters
 ...
-+80     22                         Rune slot marker
++80     22                         Rune slot marker (offset varies)
 +81     59 e5 d5 97 9a 11 1d 18   Rune 1 GUID (little-endian int64)
 +89     01 01 00 00 00 00 00 00   Rune 1 flags
 +97     f4 99 0f e0 36 47 50 00   Rune 2 GUID (little-endian int64)
@@ -222,7 +222,7 @@ Offset  Bytes                      Description
 
 ### Key observations
 
-- The `22` byte acts as a **rune slot type marker**
+- The `22` byte acts as a **rune slot type marker** (offset varies by weapon)
 - Each rune entry is 16 bytes: 8-byte GUID + 8-byte flags
 - Weapons can have 1-4 rune entries; empty slots appear as zero GUIDs
 - Weapon and rune GUIDs typically appear 81 bytes apart
