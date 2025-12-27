@@ -12,6 +12,8 @@ from pathlib import Path
 import UnityPy
 from UnityPy import config as unity_config
 
+from extract_spawn_locations import extract_spawn_locations
+
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_GAME_DIR = "/mnt/c/Program Files (x86)/Steam/steamapps/common/NoRestForTheWicked"
@@ -19,6 +21,7 @@ DEFAULT_BUNDLES_SUBDIR = "NoRestForTheWicked_Data/StreamingAssets/aa/StandaloneW
 DEFAULT_QDB_SUBPATH = "NoRestForTheWicked_Data/StreamingAssets/quantumDatabase.bin"
 DEFAULT_OUTPUT_DIR = str(SCRIPT_DIR.parent / "out")
 DEFAULT_ITEM_BUNDLE_PATTERN = "qdb_assets_all_*.bundle,static_scenes_all_*.bundle"
+DEFAULT_SPAWN_BUNDLE_PATTERN = "static_scenes_all_*.bundle"
 
 
 LANG_KEYS = {
@@ -413,6 +416,23 @@ def crawl(args):
                 rune_detail_for(rune_id) for rune_id in runes["utility_runes"]
             ]
 
+    # Extract spawn locations from scene bundles
+    if args.spawn_scan:
+        spawn_bundle_pattern = args.spawn_bundle_pattern
+        spawn_patterns = [p.strip() for p in spawn_bundle_pattern.split(",") if p.strip()]
+        items_list = list(items.values())
+        print(f"Scanning spawn locations in: {spawn_bundle_pattern}")
+        spawn_locations = extract_spawn_locations(
+            bundles_dir,
+            items_list,
+            bundle_patterns=spawn_patterns,
+            verbose=True,
+        )
+        for item_id, locations in spawn_locations.items():
+            item = items.get(item_id)
+            if item:
+                item["spawn_locations"] = locations
+
     out_path = output_dir / "items.json"
     cleaned = []
     for item in items.values():
@@ -541,6 +561,17 @@ def build_parser():
         "--include-other",
         action="store_true",
         help="Include localization entries that are not Name/Description.",
+    )
+    parser.add_argument(
+        "--spawn-scan",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Scan scene bundles for spawn locations (vendors, loot pools, etc.).",
+    )
+    parser.add_argument(
+        "--spawn-bundle-pattern",
+        default=DEFAULT_SPAWN_BUNDLE_PATTERN,
+        help="Glob pattern for bundles to scan for spawn locations (comma-separated).",
     )
     parser.add_argument("--scan-runes-bundle", default="", help=argparse.SUPPRESS)
     parser.add_argument("--rune-guid-map", default="", help=argparse.SUPPRESS)

@@ -33,4 +33,5 @@ Tip: If port 4321 is blocked, run `bun run dev -- --port 4322`.
 
 ## Data & Content Notes
 - Item data is derived from the game install and `quantumDatabase.bin`.
+- Game files are located at `/mnt/c/Program Files (x86)/Steam/steamapps/common/NoRestForTheWicked`.
 - Update site pages after data changes by regenerating `items.json` and rebuilding the site.

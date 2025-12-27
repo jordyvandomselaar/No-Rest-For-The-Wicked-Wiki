@@ -9,6 +9,7 @@
     "items": "bun run crawl",
     "scan-items": "python src/crawl_items.py --mode scan",
     "dump-assets": "python src/crawl_items.py --mode dump",
-    "scan-bundles": "python src/scan_bundles.py"
+    "scan-bundles": "python src/scan_bundles.py",
+    "scan-spawns": "python src/extract_spawn_locations.py"
   }
 }
