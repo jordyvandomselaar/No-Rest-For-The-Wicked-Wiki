@@ -12,7 +12,7 @@ from pathlib import Path
 import UnityPy
 from UnityPy import config as unity_config
 
-from extract_spawn_locations import extract_spawn_locations
+from extract_default_runes import extract_default_runes
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -21,7 +21,7 @@ DEFAULT_BUNDLES_SUBDIR = "NoRestForTheWicked_Data/StreamingAssets/aa/StandaloneW
 DEFAULT_QDB_SUBPATH = "NoRestForTheWicked_Data/StreamingAssets/quantumDatabase.bin"
 DEFAULT_OUTPUT_DIR = str(SCRIPT_DIR.parent / "out")
 DEFAULT_ITEM_BUNDLE_PATTERN = "qdb_assets_all_*.bundle,static_scenes_all_*.bundle"
-DEFAULT_SPAWN_BUNDLE_PATTERN = "static_scenes_all_*.bundle"
+DEFAULT_DEFAULT_RUNE_BUNDLE_PATTERN = "static_scenes_all_*.bundle"
 
 
 LANG_KEYS = {
@@ -416,23 +416,18 @@ def crawl(args):
                 rune_detail_for(rune_id) for rune_id in runes["utility_runes"]
             ]
 
-    # Extract spawn locations from scene bundles
-    if args.spawn_scan:
-        spawn_bundle_pattern = args.spawn_bundle_pattern
-        spawn_patterns = [p.strip() for p in spawn_bundle_pattern.split(",") if p.strip()]
+    if args.default_rune_scan:
+        default_rune_bundle_pattern = args.default_rune_bundle_pattern
+        default_rune_patterns = [p.strip() for p in default_rune_bundle_pattern.split(",") if p.strip()]
         items_list = list(items.values())
-        print(f"Scanning spawn locations in: {spawn_bundle_pattern}")
-        spawn_locations, default_runes = extract_spawn_locations(
+        print(f"Scanning default runes in: {default_rune_bundle_pattern}")
+        default_runes = extract_default_runes(
             bundles_dir,
             items_list,
-            bundle_patterns=spawn_patterns,
+            bundle_patterns=default_rune_patterns,
             rune_guid_to_id=rune_guid_to_id,
             verbose=True,
         )
-        for item_id, locations in spawn_locations.items():
-            item = items.get(item_id)
-            if item:
-                item["spawn_locations"] = locations
         for item_id, rune_ids in default_runes.items():
             item = items.get(item_id)
             if not item:
@@ -570,15 +565,15 @@ def build_parser():
         help="Include localization entries that are not Name/Description.",
     )
     parser.add_argument(
-        "--spawn-scan",
+        "--default-rune-scan",
         action=argparse.BooleanOptionalAction,
         default=True,
-        help="Scan scene bundles for spawn locations (vendors, loot pools, etc.).",
+        help="Scan scene bundles for default weapon runes.",
     )
     parser.add_argument(
-        "--spawn-bundle-pattern",
-        default=DEFAULT_SPAWN_BUNDLE_PATTERN,
-        help="Glob pattern for bundles to scan for spawn locations (comma-separated).",
+        "--default-rune-bundle-pattern",
+        default=DEFAULT_DEFAULT_RUNE_BUNDLE_PATTERN,
+        help="Glob pattern for bundles to scan for default runes (comma-separated).",
     )
     parser.add_argument("--scan-runes-bundle", default="", help=argparse.SUPPRESS)
     parser.add_argument("--rune-guid-map", default="", help=argparse.SUPPRESS)
