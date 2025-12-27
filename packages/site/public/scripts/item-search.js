@@ -344,6 +344,28 @@ const renderGrouped = (list) => {
   applyGroupExpansionState();
 };
 
+const renderSearchResults = (results) => {
+  grid.textContent = "";
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60";
+
+  if (results.length) {
+    const content = document.createElement("div");
+    content.className = "p-4";
+    content.appendChild(createItemList(results.map((result) => result.item)));
+    wrapper.appendChild(content);
+  } else {
+    const empty = document.createElement("div");
+    empty.className = "p-4 text-sm text-slate-500";
+    empty.textContent = "No items found.";
+    wrapper.appendChild(empty);
+  }
+
+  grid.appendChild(wrapper);
+  count.textContent = String(results.length);
+};
+
 if (!dataNode || !grid || !input || !count) {
   console.warn("Item search: missing elements", {
     dataNode,
@@ -372,7 +394,7 @@ if (!dataNode || !grid || !input || !count) {
       return;
     }
 
-    const results = fuse.search(query).map((result) => result.item);
-    renderGrouped(results);
+    const results = fuse.search(query);
+    renderSearchResults(results);
   });
 }
