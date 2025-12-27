@@ -147,6 +147,8 @@ def extract_default_runes(
         item_id = item.get("id")
         if guid is None or not item_id:
             continue
+        if not item_id.startswith("items.gear.weapons."):
+            continue
         guid_to_item[guid] = item_id
         guid_patterns[guid] = struct.pack("<Q", guid)
 

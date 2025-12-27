@@ -37,7 +37,8 @@ captures input/output item IDs and a best-effort `minutes` value from the QDB bl
 Rune links are captured by scanning item definitions in bundles and attaching `runes` (weapon runes)
 and `utility_runes` (player utility runes) arrays of item IDs where found. Each entry also includes
 `runes_data` / `utility_runes_data` arrays with `{ id, name, description }` for the linked runes.
-Default weapon loadouts discovered in scene bundles are attached as `default_runes` arrays.
+Default weapon loadouts discovered in scene bundles are attached as `default_runes` arrays for
+weapon items only (`items.gear.weapons.*`).
 Default rune scanning uses `static_scenes_all_*.bundle` by default. Use `--no-default-rune-scan` to
 skip it for faster iteration, or `--default-rune-bundle-pattern` to override the bundle globs.
 
