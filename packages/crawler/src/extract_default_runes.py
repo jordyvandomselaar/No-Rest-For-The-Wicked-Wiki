@@ -16,7 +16,8 @@ MAX_WORKERS = min(8, os.cpu_count() or 4)
 
 RUNE_MARKER_OFFSET = 80
 RUNE_MARKER_BYTE = 0x22
-RUNE_PAIR_BYTES = 1 + 16 + 8  # marker + rune1 entry + rune2 GUID
+RUNE_ENTRY_SIZE = 16
+MAX_RUNE_SLOTS = 4
 
 
 def iter_bundles(bundles_dir: Path, pattern: str):
@@ -48,12 +49,21 @@ def search_patterns_worker(args):
                     if idx == -1:
                         break
                     marker_offset = idx + RUNE_MARKER_OFFSET
-                    if marker_offset + RUNE_PAIR_BYTES <= file_size:
+                    if marker_offset + 1 + RUNE_ENTRY_SIZE <= file_size:
                         if mm[marker_offset] == RUNE_MARKER_BYTE:
-                            rune1_guid = struct.unpack_from("<Q", mm, marker_offset + 1)[0]
-                            rune2_guid = struct.unpack_from("<Q", mm, marker_offset + 1 + 16)[0]
-                            if rune1_guid in rune_guid_to_id and rune2_guid in rune_guid_to_id:
-                                rune_pairs[guid].append((rune1_guid, rune2_guid))
+                            rune_guids = []
+                            for slot_index in range(MAX_RUNE_SLOTS):
+                                entry_offset = marker_offset + 1 + (RUNE_ENTRY_SIZE * slot_index)
+                                if entry_offset + 8 > file_size:
+                                    break
+                                rune_guid = struct.unpack_from("<Q", mm, entry_offset)[0]
+                                if rune_guid == 0:
+                                    break
+                                if rune_guid not in rune_guid_to_id:
+                                    break
+                                rune_guids.append(rune_guid)
+                            if rune_guids:
+                                rune_pairs[guid].append(tuple(rune_guids))
                     pos = idx + 1
 
     return dict(rune_pairs)
@@ -166,17 +176,16 @@ def extract_default_runes(
             item_id = guid_to_item.get(guid)
             if not item_id:
                 continue
-            for pair in pairs:
-                pair_counts[item_id][pair] += 1
+            for rune_tuple in pairs:
+                pair_counts[item_id][rune_tuple] += 1
 
     default_runes = {}
     for item_id, pairs in pair_counts.items():
         if not pairs:
             continue
-        (rune1_guid, rune2_guid), _ = max(pairs.items(), key=lambda x: x[1])
-        rune1_id = rune_guid_to_id.get(rune1_guid)
-        rune2_id = rune_guid_to_id.get(rune2_guid)
-        if rune1_id and rune2_id:
-            default_runes[item_id] = [rune1_id, rune2_id]
+        rune_tuple, _ = max(pairs.items(), key=lambda x: x[1])
+        rune_ids = [rune_guid_to_id.get(guid) for guid in rune_tuple]
+        if all(rune_ids):
+            default_runes[item_id] = rune_ids
 
     return default_runes

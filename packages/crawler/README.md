@@ -217,12 +217,14 @@ Offset  Bytes                      Description
 +89     01 01 00 00 00 00 00 00   Rune 1 flags
 +97     f4 99 0f e0 36 47 50 00   Rune 2 GUID (little-endian int64)
 +105    01 01 00 00 00 00 00 00   Rune 2 flags
+...     ...                        Additional rune GUID/flag pairs (up to 4 slots total)
 ```
 
 ### Key observations
 
 - The `22` byte acts as a **rune slot type marker**
 - Each rune entry is 16 bytes: 8-byte GUID + 8-byte flags
+- Weapons can have 1-4 rune entries; empty slots appear as zero GUIDs
 - Weapon and rune GUIDs typically appear 81 bytes apart
 - Multiple spawn instances define the same weapon-rune pairing
 

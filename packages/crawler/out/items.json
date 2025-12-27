@@ -5861,7 +5861,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3353145543610220699
+    "asset_guid": 3353145543610220699,
+    "default_runes": [
+      "items.runes.plagueArrow"
+    ]
   },
   "items.gear.offHands.bows.shortBow": {
     "id": "items.gear.offHands.bows.shortBow",
@@ -5870,7 +5873,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4501034379633562415
+    "asset_guid": 4501034379633562415,
+    "default_runes": [
+      "items.runes.multishot"
+    ]
   },
   "items.gear.offHands.bows.sirensCall": {
     "id": "items.gear.offHands.bows.sirensCall",
@@ -5915,7 +5921,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 911301351710787022
+    "asset_guid": 911301351710787022,
+    "default_runes": [
+      "items.runes.coneShot"
+    ]
   },
   "items.gear.offHands.hooks.jawGutter": {
     "id": "items.gear.offHands.hooks.jawGutter",
@@ -5960,7 +5969,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3915594136724318551
+    "asset_guid": 3915594136724318551,
+    "default_runes": [
+      "items.runes.heal"
+    ]
   },
   "items.gear.offHands.orbs.frigidSkull": {
     "id": "items.gear.offHands.orbs.frigidSkull",
@@ -6275,7 +6287,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1003298344721033391
+    "asset_guid": 1003298344721033391,
+    "default_runes": [
+      "items.runes.heal"
+    ]
   },
   "items.gear.offHands.shields.mediumShields.maidensVoyage": {
     "id": "items.gear.offHands.shields.mediumShields.maidensVoyage",
@@ -6599,7 +6614,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 982731936155127218
+    "asset_guid": 982731936155127218,
+    "default_runes": [
+      "items.runes.throwAxe"
+    ]
   },
   "items.gear.weapons.1Handed.axes.huntersAxe": {
     "id": "items.gear.weapons.1Handed.axes.huntersAxe",
@@ -6608,7 +6626,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1991866744408325423
+    "asset_guid": 1991866744408325423,
+    "default_runes": [
+      "items.runes.throw"
+    ]
   },
   "items.gear.weapons.1Handed.axes.jadeSpinedAxe": {
     "id": "items.gear.weapons.1Handed.axes.jadeSpinedAxe",
@@ -6617,7 +6638,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1569898541171169046
+    "asset_guid": 1569898541171169046,
+    "default_runes": [
+      "items.runes.frostStrike"
+    ]
   },
   "items.gear.weapons.1Handed.axes.ripper": {
     "id": "items.gear.weapons.1Handed.axes.ripper",
@@ -6626,7 +6650,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3631387061348855637
+    "asset_guid": 3631387061348855637,
+    "default_runes": [
+      "items.runes.tauntStrike"
+    ]
   },
   "items.gear.weapons.1Handed.axes.royalHewnAxe": {
     "id": "items.gear.weapons.1Handed.axes.royalHewnAxe",
@@ -6635,7 +6662,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2995162763598855681
+    "asset_guid": 2995162763598855681,
+    "default_runes": [
+      "items.runes.fireDash"
+    ]
   },
   "items.gear.weapons.1Handed.axes.shroudcleaver": {
     "id": "items.gear.weapons.1Handed.axes.shroudcleaver",
@@ -6662,7 +6692,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1704751983988405258
+    "asset_guid": 1704751983988405258,
+    "default_runes": [
+      "items.runes.whirl"
+    ]
   },
   "items.gear.weapons.1Handed.clubs.blacksmithsFolly": {
     "id": "items.gear.weapons.1Handed.clubs.blacksmithsFolly",
@@ -6671,7 +6704,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 379399373590859
+    "asset_guid": 379399373590859,
+    "default_runes": [
+      "items.runes.brutalReprise"
+    ]
   },
   "items.gear.weapons.1Handed.clubs.harvestersBonesaw": {
     "id": "items.gear.weapons.1Handed.clubs.harvestersBonesaw",
@@ -6680,7 +6716,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 600985550077647324
+    "asset_guid": 600985550077647324,
+    "default_runes": [
+      "items.runes.tornadoStrike"
+    ]
   },
   "items.gear.weapons.1Handed.clubs.nailLadenClub": {
     "id": "items.gear.weapons.1Handed.clubs.nailLadenClub",
@@ -6689,7 +6728,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 316810545775258337
+    "asset_guid": 316810545775258337,
+    "default_runes": [
+      "items.runes.crushingFlurry"
+    ]
   },
   "items.gear.weapons.1Handed.clubs.ogresClub": {
     "id": "items.gear.weapons.1Handed.clubs.ogresClub",
@@ -6698,7 +6740,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4535256375045761712
+    "asset_guid": 4535256375045761712,
+    "default_runes": [
+      "items.runes.plagueStrike"
+    ]
   },
   "items.gear.weapons.1Handed.clubs.unholyHearth": {
     "id": "items.gear.weapons.1Handed.clubs.unholyHearth",
@@ -6716,7 +6761,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 901790500784149911
+    "asset_guid": 901790500784149911,
+    "default_runes": [
+      "items.runes.lightningFlurry"
+    ]
   },
   "items.gear.weapons.1Handed.curvedSwords.ceruleanBlade": {
     "id": "items.gear.weapons.1Handed.curvedSwords.ceruleanBlade",
@@ -6743,7 +6791,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3594955709376663371
+    "asset_guid": 3594955709376663371,
+    "default_runes": [
+      "items.runes.slashingPirouette"
+    ]
   },
   "items.gear.weapons.1Handed.curvedSwords.filleter": {
     "id": "items.gear.weapons.1Handed.curvedSwords.filleter",
@@ -6761,7 +6812,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 999922168482564701
+    "asset_guid": 999922168482564701,
+    "default_runes": [
+      "items.runes.iceThrow"
+    ]
   },
   "items.gear.weapons.1Handed.curvedSwords.rustyKhopesh": {
     "id": "items.gear.weapons.1Handed.curvedSwords.rustyKhopesh",
@@ -6788,7 +6842,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4251470804837549341
+    "asset_guid": 4251470804837549341,
+    "default_runes": [
+      "items.runes.fireWhirl"
+    ]
   },
   "items.gear.weapons.1Handed.daggers.aSingularPurpose": {
     "id": "items.gear.weapons.1Handed.daggers.aSingularPurpose",
@@ -6797,7 +6854,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1985442680644053848
+    "asset_guid": 1985442680644053848,
+    "default_runes": [
+      "items.runes.fierceDash"
+    ]
   },
   "items.gear.weapons.1Handed.daggers.butchersWork": {
     "id": "items.gear.weapons.1Handed.daggers.butchersWork",
@@ -6806,7 +6866,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2666466125973412499
+    "asset_guid": 2666466125973412499,
+    "default_runes": [
+      "items.runes.wildRush"
+    ]
   },
   "items.gear.weapons.1Handed.daggers.huntersKnife": {
     "id": "items.gear.weapons.1Handed.daggers.huntersKnife",
@@ -6815,7 +6878,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1442414760766785657
+    "asset_guid": 1442414760766785657,
+    "default_runes": [
+      "items.runes.piercingDash"
+    ]
   },
   "items.gear.weapons.1Handed.daggers.jackknife": {
     "id": "items.gear.weapons.1Handed.daggers.jackknife",
@@ -6842,7 +6908,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1912329725715842378
+    "asset_guid": 1912329725715842378,
+    "default_runes": [
+      "items.runes.circular"
+    ]
   },
   "items.gear.weapons.1Handed.hammers.brutalMaul": {
     "id": "items.gear.weapons.1Handed.hammers.brutalMaul",
@@ -6851,7 +6920,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2848412716860606663
+    "asset_guid": 2848412716860606663,
+    "default_runes": [
+      "items.runes.trinityBarrage"
+    ]
   },
   "items.gear.weapons.1Handed.hammers.climbersPick": {
     "id": "items.gear.weapons.1Handed.hammers.climbersPick",
@@ -6860,7 +6932,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4410110109858048500
+    "asset_guid": 4410110109858048500,
+    "default_runes": [
+      "items.runes.fireThrow"
+    ]
   },
   "items.gear.weapons.1Handed.hammers.grimacingStone": {
     "id": "items.gear.weapons.1Handed.hammers.grimacingStone",
@@ -6869,7 +6944,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1983783651005226550
+    "asset_guid": 1983783651005226550,
+    "default_runes": [
+      "items.runes.chargeStrike"
+    ]
   },
   "items.gear.weapons.1Handed.hammers.rostock": {
     "id": "items.gear.weapons.1Handed.hammers.rostock",
@@ -6878,7 +6956,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1691304765198801029
+    "asset_guid": 1691304765198801029,
+    "default_runes": [
+      "items.runes.whirlstepStrike"
+    ]
   },
   "items.gear.weapons.1Handed.hammers.singingPeal": {
     "id": "items.gear.weapons.1Handed.hammers.singingPeal",
@@ -6887,7 +6968,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2963734542609082228
+    "asset_guid": 2963734542609082228,
+    "default_runes": [
+      "items.runes.leap"
+    ]
   },
   "items.gear.weapons.1Handed.maces.clericsMace": {
     "id": "items.gear.weapons.1Handed.maces.clericsMace",
@@ -6896,7 +6980,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4515573433040410258
+    "asset_guid": 4515573433040410258,
+    "default_runes": [
+      "items.runes.thrust"
+    ]
   },
   "items.gear.weapons.1Handed.maces.malice": {
     "id": "items.gear.weapons.1Handed.maces.malice",
@@ -6905,7 +6992,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3805452435047506019
+    "asset_guid": 3805452435047506019,
+    "default_runes": [
+      "items.runes.somersault"
+    ]
   },
   "items.gear.weapons.1Handed.maces.shrikeTree": {
     "id": "items.gear.weapons.1Handed.maces.shrikeTree",
@@ -6914,7 +7004,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3135745083252785824
+    "asset_guid": 3135745083252785824,
+    "default_runes": [
+      "items.runes.lightningWhirl"
+    ]
   },
   "items.gear.weapons.1Handed.maces.theLastWord": {
     "id": "items.gear.weapons.1Handed.maces.theLastWord",
@@ -6941,7 +7034,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3218729480081295004
+    "asset_guid": 3218729480081295004,
+    "default_runes": [
+      "items.runes.piercingFlurry"
+    ]
   },
   "items.gear.weapons.1Handed.rapiers.reachingNail": {
     "id": "items.gear.weapons.1Handed.rapiers.reachingNail",
@@ -6950,7 +7046,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1706978434911508381
+    "asset_guid": 1706978434911508381,
+    "default_runes": [
+      "items.runes.shockStrike"
+    ]
   },
   "items.gear.weapons.1Handed.rapiers.sinew": {
     "id": "items.gear.weapons.1Handed.rapiers.sinew",
@@ -6968,7 +7067,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1865036539131107735
+    "asset_guid": 1865036539131107735,
+    "default_runes": [
+      "items.runes.plagueThrow"
+    ]
   },
   "items.gear.weapons.1Handed.rapiers.tuckedFalcon": {
     "id": "items.gear.weapons.1Handed.rapiers.tuckedFalcon",
@@ -6977,7 +7079,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2891418159663963189
+    "asset_guid": 2891418159663963189,
+    "default_runes": [
+      "items.runes.evasivePierce"
+    ]
   },
   "items.gear.weapons.1Handed.spears.assegai": {
     "id": "items.gear.weapons.1Handed.spears.assegai",
@@ -6986,7 +7091,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 400537420489606684
+    "asset_guid": 400537420489606684,
+    "default_runes": [
+      "items.runes.twirlSpin"
+    ]
   },
   "items.gear.weapons.1Handed.spears.coralPiercer": {
     "id": "items.gear.weapons.1Handed.spears.coralPiercer",
@@ -7004,7 +7112,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 695462746213477186
+    "asset_guid": 695462746213477186,
+    "default_runes": [
+      "items.runes.gyroSlash"
+    ]
   },
   "items.gear.weapons.1Handed.spears.needleSpear": {
     "id": "items.gear.weapons.1Handed.spears.needleSpear",
@@ -7013,7 +7124,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 210126444413164284
+    "asset_guid": 210126444413164284,
+    "default_runes": [
+      "items.runes.damage"
+    ]
   },
   "items.gear.weapons.1Handed.spears.petaledSpear": {
     "id": "items.gear.weapons.1Handed.spears.petaledSpear",
@@ -7040,7 +7154,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 267148156067985240
+    "asset_guid": 267148156067985240,
+    "default_runes": [
+      "items.runes.iceWhirl"
+    ]
   },
   "items.gear.weapons.1Handed.straightSwords.azureBlade": {
     "id": "items.gear.weapons.1Handed.straightSwords.azureBlade",
@@ -7049,7 +7166,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3259805795598341325
+    "asset_guid": 3259805795598341325,
+    "default_runes": [
+      "items.runes.heatEnchantment"
+    ]
   },
   "items.gear.weapons.1Handed.straightSwords.bloodRustedSword": {
     "id": "items.gear.weapons.1Handed.straightSwords.bloodRustedSword",
@@ -7058,7 +7178,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 231897934933291761
+    "asset_guid": 231897934933291761,
+    "default_runes": [
+      "items.runes.spin"
+    ]
   },
   "items.gear.weapons.1Handed.straightSwords.cronus": {
     "id": "items.gear.weapons.1Handed.straightSwords.cronus",
@@ -7067,7 +7190,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1774200840389439599
+    "asset_guid": 1774200840389439599,
+    "default_runes": [
+      "items.runes.electricEnchantment"
+    ]
   },
   "items.gear.weapons.1Handed.straightSwords.governorsDagger": {
     "id": "items.gear.weapons.1Handed.straightSwords.governorsDagger",
@@ -7094,7 +7220,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3050563823469747899
+    "asset_guid": 3050563823469747899,
+    "default_runes": [
+      "items.runes.slashingDodge"
+    ]
   },
   "items.gear.weapons.1Handed.straightSwords.scorchedBroadblade": {
     "id": "items.gear.weapons.1Handed.straightSwords.scorchedBroadblade",
@@ -7103,7 +7232,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1760259951179828482
+    "asset_guid": 1760259951179828482,
+    "default_runes": [
+      "items.runes.stormpiercer"
+    ]
   },
   "items.gear.weapons.1Handed.straightSwords.spiritEdge": {
     "id": "items.gear.weapons.1Handed.straightSwords.spiritEdge",
@@ -7121,7 +7253,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2708626935495085138
+    "asset_guid": 2708626935495085138,
+    "default_runes": [
+      "items.runes.overrun"
+    ]
   },
   "items.gear.weapons.1Handed.straightSwords.woodenSword": {
     "id": "items.gear.weapons.1Handed.straightSwords.woodenSword",
@@ -7130,7 +7265,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2007123158224043520
+    "asset_guid": 2007123158224043520,
+    "default_runes": [
+      "items.runes.jumpCut"
+    ]
   },
   "items.gear.weapons.1Handed.wakizashis.TorturedBlade": {
     "id": "items.gear.weapons.1Handed.wakizashis.TorturedBlade",
@@ -7148,7 +7286,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2214693326029893710
+    "asset_guid": 2214693326029893710,
+    "default_runes": [
+      "items.runes.fireFlurry"
+    ]
   },
   "items.gear.weapons.1Handed.wakizashis.honedFrenzy": {
     "id": "items.gear.weapons.1Handed.wakizashis.honedFrenzy",
@@ -7157,7 +7298,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3824734634523281862
+    "asset_guid": 3824734634523281862,
+    "default_runes": [
+      "items.runes.plagueSwirl"
+    ]
   },
   "items.gear.weapons.1Handed.wakizashis.windOfDeath": {
     "id": "items.gear.weapons.1Handed.wakizashis.windOfDeath",
@@ -7342,7 +7486,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4038138760236720226
+    "asset_guid": 4038138760236720226,
+    "default_runes": [
+      "items.runes.knockdownSwirl"
+    ]
   },
   "items.gear.weapons.2Handed.curvedGreatswords.sunbeam": {
     "id": "items.gear.weapons.2Handed.curvedGreatswords.sunbeam",
@@ -7351,7 +7498,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2641479164185925814
+    "asset_guid": 2641479164185925814,
+    "default_runes": [
+      "items.runes.cycloneSwipe"
+    ]
   },
   "items.gear.weapons.2Handed.doubleDaggers.ashSoothedDaggers": {
     "id": "items.gear.weapons.2Handed.doubleDaggers.ashSoothedDaggers",
@@ -7360,7 +7510,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3544621973185388107
+    "asset_guid": 3544621973185388107,
+    "default_runes": [
+      "items.runes.piercingFlash"
+    ]
   },
   "items.gear.weapons.2Handed.doubleDaggers.bleedersDelight": {
     "id": "items.gear.weapons.2Handed.doubleDaggers.bleedersDelight",
@@ -7378,7 +7531,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2015248703842407367
+    "asset_guid": 2015248703842407367,
+    "default_runes": [
+      "items.runes.dualBreaker"
+    ]
   },
   "items.gear.weapons.2Handed.doubleDaggers.chippedDaggers": {
     "id": "items.gear.weapons.2Handed.doubleDaggers.chippedDaggers",
@@ -7387,7 +7543,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1029814847506162097
+    "asset_guid": 1029814847506162097,
+    "default_runes": [
+      "items.runes.dashingStab"
+    ]
   },
   "items.gear.weapons.2Handed.doubleDaggers.rogueMesser": {
     "id": "items.gear.weapons.2Handed.doubleDaggers.rogueMesser",
@@ -7396,7 +7555,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2958893223366543108
+    "asset_guid": 2958893223366543108,
+    "default_runes": [
+      "items.runes.dualSlash"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.clawOfTheCrescentMoon": {
     "id": "items.gear.weapons.2Handed.gauntlets.clawOfTheCrescentMoon",
@@ -7405,7 +7567,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2093358184819734015
+    "asset_guid": 2093358184819734015,
+    "default_runes": [
+      "items.runes.recoilStrike"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.crystalFist": {
     "id": "items.gear.weapons.2Handed.gauntlets.crystalFist",
@@ -7414,7 +7579,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 730649138231830651
+    "asset_guid": 730649138231830651,
+    "default_runes": [
+      "items.runes.breakrush"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.cursedUnguis": {
     "id": "items.gear.weapons.2Handed.gauntlets.cursedUnguis",
@@ -7423,7 +7591,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2382106236773060700
+    "asset_guid": 2382106236773060700,
+    "default_runes": [
+      "items.runes.plagueRetch"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.deadfang": {
     "id": "items.gear.weapons.2Handed.gauntlets.deadfang",
@@ -7432,7 +7603,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4008560343105315002
+    "asset_guid": 4008560343105315002,
+    "default_runes": [
+      "items.runes.tremorWave"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.emeraldTalons": {
     "id": "items.gear.weapons.2Handed.gauntlets.emeraldTalons",
@@ -7441,7 +7615,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3228342987845246761
+    "asset_guid": 3228342987845246761,
+    "default_runes": [
+      "items.runes.skyfallSmash"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.gossamerGauntlets": {
     "id": "items.gear.weapons.2Handed.gauntlets.gossamerGauntlets",
@@ -7468,7 +7645,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2917265454818029008
+    "asset_guid": 2917265454818029008,
+    "default_runes": [
+      "items.runes.tempestKick"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.nithGrovebinders": {
     "id": "items.gear.weapons.2Handed.gauntlets.nithGrovebinders",
@@ -7486,7 +7666,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2386385602694888332
+    "asset_guid": 2386385602694888332,
+    "default_runes": [
+      "items.runes.driveBreak"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.shellguardGauntlets": {
     "id": "items.gear.weapons.2Handed.gauntlets.shellguardGauntlets",
@@ -7495,7 +7678,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3373960239179827072
+    "asset_guid": 3373960239179827072,
+    "default_runes": [
+      "items.runes.busterRift"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.sunsScorn": {
     "id": "items.gear.weapons.2Handed.gauntlets.sunsScorn",
@@ -7504,7 +7690,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1494748677527998372
+    "asset_guid": 1494748677527998372,
+    "default_runes": [
+      "items.runes.risingFang"
+    ]
   },
   "items.gear.weapons.2Handed.gauntlets.swampNail": {
     "id": "items.gear.weapons.2Handed.gauntlets.swampNail",
@@ -7531,7 +7720,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2635424158047053292
+    "asset_guid": 2635424158047053292,
+    "default_runes": [
+      "items.runes.spiritBurst"
+    ]
   },
   "items.gear.weapons.2Handed.greataxes.banditsCleaver": {
     "id": "items.gear.weapons.2Handed.greataxes.banditsCleaver",
@@ -7540,7 +7732,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3339056522444723531
+    "asset_guid": 3339056522444723531,
+    "default_runes": [
+      "items.runes.dodgeSlamdown"
+    ]
   },
   "items.gear.weapons.2Handed.greataxes.boarskinReaper": {
     "id": "items.gear.weapons.2Handed.greataxes.boarskinReaper",
@@ -7549,7 +7744,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1940601525081790518
+    "asset_guid": 1940601525081790518,
+    "default_runes": [
+      "items.runes.relentlessCleave"
+    ]
   },
   "items.gear.weapons.2Handed.greataxes.brokenFang": {
     "id": "items.gear.weapons.2Handed.greataxes.brokenFang",
@@ -7585,7 +7783,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1967531629606450569
+    "asset_guid": 1967531629606450569,
+    "default_runes": [
+      "items.runes.breakerThrust"
+    ]
   },
   "items.gear.weapons.2Handed.greataxes.hurosGreatAxe": {
     "id": "items.gear.weapons.2Handed.greataxes.hurosGreatAxe",
@@ -7603,7 +7804,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2466263575822227387
+    "asset_guid": 2466263575822227387,
+    "default_runes": [
+      "items.runes.ragingSpiral"
+    ]
   },
   "items.gear.weapons.2Handed.greataxes.shortBardiche": {
     "id": "items.gear.weapons.2Handed.greataxes.shortBardiche",
@@ -7612,7 +7816,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4111682373665215796
+    "asset_guid": 4111682373665215796,
+    "default_runes": [
+      "items.runes.poleDodge"
+    ]
   },
   "items.gear.weapons.2Handed.greataxes.spalledAxe": {
     "id": "items.gear.weapons.2Handed.greataxes.spalledAxe",
@@ -7621,7 +7828,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3401185876640704353
+    "asset_guid": 3401185876640704353,
+    "default_runes": [
+      "items.runes.plagueCrush"
+    ]
   },
   "items.gear.weapons.2Handed.greatclubs.brutishCudgel": {
     "id": "items.gear.weapons.2Handed.greatclubs.brutishCudgel",
@@ -7657,7 +7867,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 389221922459539149
+    "asset_guid": 389221922459539149,
+    "default_runes": [
+      "items.runes.stamina"
+    ]
   },
   "items.gear.weapons.2Handed.greathammers.budOfTheEverlastingTree": {
     "id": "items.gear.weapons.2Handed.greathammers.budOfTheEverlastingTree",
@@ -7666,7 +7879,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3895635661094988027
+    "asset_guid": 3895635661094988027,
+    "default_runes": [
+      "items.runes.berserkStrike"
+    ]
   },
   "items.gear.weapons.2Handed.greathammers.cinder&Stone": {
     "id": "items.gear.weapons.2Handed.greathammers.cinder&Stone",
@@ -7693,7 +7909,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 930136801098882912
+    "asset_guid": 930136801098882912,
+    "default_runes": [
+      "items.runes.fireSlam"
+    ]
   },
   "items.gear.weapons.2Handed.greathammers.splicedHammer": {
     "id": "items.gear.weapons.2Handed.greathammers.splicedHammer",
@@ -7702,7 +7921,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4220696937069008185
+    "asset_guid": 4220696937069008185,
+    "default_runes": [
+      "items.runes.doubleCrush"
+    ]
   },
   "items.gear.weapons.2Handed.greathammers.toothOfTheAncientOne": {
     "id": "items.gear.weapons.2Handed.greathammers.toothOfTheAncientOne",
@@ -7720,7 +7942,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3531758029158791863
+    "asset_guid": 3531758029158791863,
+    "default_runes": [
+      "items.runes.balanceSmash"
+    ]
   },
   "items.gear.weapons.2Handed.greatswords.blister": {
     "id": "items.gear.weapons.2Handed.greatswords.blister",
@@ -7729,7 +7954,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2507593859999045271
+    "asset_guid": 2507593859999045271,
+    "default_runes": [
+      "items.runes.fireSwipe"
+    ]
   },
   "items.gear.weapons.2Handed.greatswords.claymore": {
     "id": "items.gear.weapons.2Handed.greatswords.claymore",
@@ -7738,7 +7966,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3203039669243719294
+    "asset_guid": 3203039669243719294,
+    "default_runes": [
+      "items.runes.juggleStrike"
+    ]
   },
   "items.gear.weapons.2Handed.greatswords.corpseSmearedBlade": {
     "id": "items.gear.weapons.2Handed.greatswords.corpseSmearedBlade",
@@ -7765,7 +7996,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1519088681411431713
+    "asset_guid": 1519088681411431713,
+    "default_runes": [
+      "items.runes.groundSlam"
+    ]
   },
   "items.gear.weapons.2Handed.greatswords.freiheit": {
     "id": "items.gear.weapons.2Handed.greatswords.freiheit",
@@ -7774,7 +8008,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 646476660609601900
+    "asset_guid": 646476660609601900,
+    "default_runes": [
+      "items.runes.slashingSpin"
+    ]
   },
   "items.gear.weapons.2Handed.greatswords.gnarledSaw": {
     "id": "items.gear.weapons.2Handed.greatswords.gnarledSaw",
@@ -7783,7 +8020,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 457264233710956550
+    "asset_guid": 457264233710956550,
+    "default_runes": [
+      "items.runes.limitBreak"
+    ]
   },
   "items.gear.weapons.2Handed.greatswords.icebreaker": {
     "id": "items.gear.weapons.2Handed.greatswords.icebreaker",
@@ -7810,7 +8050,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3959451171090235309
+    "asset_guid": 3959451171090235309,
+    "default_runes": [
+      "items.runes.whirlwind"
+    ]
   },
   "items.gear.weapons.2Handed.greatswords.sieger": {
     "id": "items.gear.weapons.2Handed.greatswords.sieger",
@@ -7846,7 +8089,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1830109395211169065
+    "asset_guid": 1830109395211169065,
+    "default_runes": [
+      "items.runes.spinCrush"
+    ]
   },
   "items.gear.weapons.2Handed.halberds.serratedCutter": {
     "id": "items.gear.weapons.2Handed.halberds.serratedCutter",
@@ -7864,7 +8110,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1248413328891240530
+    "asset_guid": 1248413328891240530,
+    "default_runes": [
+      "items.runes.ripAndTear"
+    ]
   },
   "items.gear.weapons.2Handed.scythes.scytheOfWretches": {
     "id": "items.gear.weapons.2Handed.scythes.scytheOfWretches",
@@ -7873,7 +8122,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 565551180463263339
+    "asset_guid": 565551180463263339,
+    "default_runes": [
+      "items.runes.reap"
+    ]
   },
   "items.gear.weapons.2Handed.scythes.soulThresher": {
     "id": "items.gear.weapons.2Handed.scythes.soulThresher",
@@ -7990,7 +8242,8 @@
     "asset_guid": 804758895252150240,
     "default_runes": [
       "items.runes.spark",
-      "items.runes.shockNova"
+      "items.runes.shockNova",
+      "items.runes.thunderstrike"
     ]
   },
   "items.gear.weapons.2Handed.staves.spherin": {
@@ -11112,7 +11365,10 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4367213926817392495
+    "asset_guid": 4367213926817392495,
+    "default_runes": [
+      "items.runes.flameSweep"
+    ]
   },
   "items.runes.heatResistance": {
     "id": "items.runes.heatResistance",
