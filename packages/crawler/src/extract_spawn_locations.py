@@ -27,6 +27,10 @@ CONTEXT_WINDOW = 512  # Bytes around GUID to extract for context
 PROXIMITY_THRESHOLD = 50 * 1024  # 50KB - entries within this distance are grouped
 MAX_WORKERS = min(8, os.cpu_count() or 4)  # Use up to 8 cores
 
+RUNE_MARKER_OFFSET = 80
+RUNE_MARKER_BYTE = 0x22
+RUNE_PAIR_BYTES = 1 + 16 + 8  # marker + rune1 entry + rune2 GUID
+
 
 # Keywords that identify spawn source types
 SPAWN_TYPE_KEYWORDS = {
@@ -119,9 +123,13 @@ def build_spawn_source(group: list, bundle_name: str) -> dict:
 
 def search_patterns_worker(args):
     """Worker: search for a subset of patterns in file using mmap."""
-    bundle_path, guid_patterns_serialized = args
+    bundle_path, guid_patterns_serialized, rune_guid_map_serialized = args
     guid_patterns = {int(k): bytes.fromhex(v) for k, v in guid_patterns_serialized.items()}
+    rune_guid_to_id = {
+        int(guid): rune_id for guid, rune_id in (rune_guid_map_serialized or {}).items()
+    }
     occurrences = defaultdict(list)
+    rune_pairs = defaultdict(list)
 
     file_size = Path(bundle_path).stat().st_size
 
@@ -143,14 +151,28 @@ def search_patterns_worker(args):
                         "offset": idx,
                         "strings": strings,
                     })
+
+                    if rune_guid_to_id:
+                        marker_offset = idx + RUNE_MARKER_OFFSET
+                        if marker_offset + RUNE_PAIR_BYTES <= file_size:
+                            if mm[marker_offset] == RUNE_MARKER_BYTE:
+                                rune1_guid = struct.unpack_from("<Q", mm, marker_offset + 1)[0]
+                                rune2_guid = struct.unpack_from("<Q", mm, marker_offset + 1 + 16)[0]
+                                if rune1_guid in rune_guid_to_id and rune2_guid in rune_guid_to_id:
+                                    rune_pairs[guid].append((rune1_guid, rune2_guid))
+
                     pos = idx + 1
 
-    return dict(occurrences)
+    return {
+        "occurrences": dict(occurrences),
+        "rune_pairs": dict(rune_pairs),
+    }
 
 
 def search_bundle_for_guids(
     bundle_path: Path,
     guid_patterns: dict,
+    rune_guid_to_id: dict | None = None,
     verbose: bool = False,
 ):
     """
@@ -163,8 +185,18 @@ def search_bundle_for_guids(
         return {}
 
     # For small pattern counts, single-threaded is fine
+    rune_guid_map = None
+    if rune_guid_to_id:
+        rune_guid_map = {str(guid): rune_id for guid, rune_id in rune_guid_to_id.items()}
+
     if len(guid_patterns) <= 50:
-        return search_patterns_worker((str(bundle_path), {str(k): v.hex() for k, v in guid_patterns.items()}))
+        result = search_patterns_worker(
+            (str(bundle_path), {str(k): v.hex() for k, v in guid_patterns.items()}, rune_guid_map)
+        )
+        return (
+            result.get("occurrences", {}),
+            result.get("rune_pairs", {}),
+        )
 
     # Split patterns across workers
     pattern_items = list(guid_patterns.items())
@@ -177,9 +209,10 @@ def search_bundle_for_guids(
         subset = dict(pattern_items[start:end])
         if subset:
             serialized = {str(k): v.hex() for k, v in subset.items()}
-            chunks.append((str(bundle_path), serialized))
+            chunks.append((str(bundle_path), serialized, rune_guid_map))
 
     occurrences_by_guid = defaultdict(list)
+    rune_pairs_by_guid = defaultdict(list)
 
     with ProcessPoolExecutor(max_workers=min(MAX_WORKERS, len(chunks))) as executor:
         futures = [executor.submit(search_patterns_worker, chunk) for chunk in chunks]
@@ -188,19 +221,24 @@ def search_bundle_for_guids(
             if verbose:
                 print(f"\r  Worker {i + 1}/{len(chunks)} done", end="", flush=True)
             result = future.result()
-            for guid, occs in result.items():
+            occurrences = result.get("occurrences", {})
+            rune_pairs = result.get("rune_pairs", {})
+            for guid, occs in occurrences.items():
                 occurrences_by_guid[guid].extend(occs)
+            for guid, pairs in rune_pairs.items():
+                rune_pairs_by_guid[guid].extend(pairs)
 
     if verbose:
         print()
 
-    return occurrences_by_guid
+    return dict(occurrences_by_guid), dict(rune_pairs_by_guid)
 
 
 def extract_spawn_locations(
     bundles_dir: Path,
     items: list,
     bundle_patterns: list = None,
+    rune_guid_to_id: dict | None = None,
     verbose: bool = False,
 ):
     """
@@ -250,6 +288,7 @@ def extract_spawn_locations(
                 bundles.append(path)
 
     spawn_locations = defaultdict(list)
+    default_rune_pairs = defaultdict(lambda: defaultdict(int))
 
     for bundle_path in sorted(bundles):
         file_size = bundle_path.stat().st_size
@@ -259,9 +298,10 @@ def extract_spawn_locations(
             method = "parallel" if file_size > 2 * 1024 * 1024 * 1024 else "mmap"
             print(f"Scanning {bundle_path.name} ({size_mb:.1f} MB, {method})...", flush=True)
 
-        occurrences_by_guid = search_bundle_for_guids(
+        occurrences_by_guid, rune_pairs_by_guid = search_bundle_for_guids(
             bundle_path,
             guid_patterns,
+            rune_guid_to_id=rune_guid_to_id,
             verbose=verbose,
         )
 
@@ -278,7 +318,22 @@ def extract_spawn_locations(
                 spawn_source = build_spawn_source(group, bundle_path.name)
                 spawn_locations[item_id].append(spawn_source)
 
-    return dict(spawn_locations)
+            if rune_pairs_by_guid:
+                for rune_pair in rune_pairs_by_guid.get(guid, []):
+                    default_rune_pairs[item_id][rune_pair] += 1
+
+    default_runes = {}
+    if rune_guid_to_id:
+        for item_id, pair_counts in default_rune_pairs.items():
+            if not pair_counts:
+                continue
+            (rune1_guid, rune2_guid), _ = max(pair_counts.items(), key=lambda x: x[1])
+            rune1_id = rune_guid_to_id.get(rune1_guid)
+            rune2_id = rune_guid_to_id.get(rune2_guid)
+            if rune1_id and rune2_id:
+                default_runes[item_id] = [rune1_id, rune2_id]
+
+    return dict(spawn_locations), default_runes
 
 
 def iter_bundles(bundles_dir: Path, pattern: str):
@@ -366,7 +421,7 @@ def main():
     if args.include_world_scenes and "world_scenes_all_*.bundle" not in bundle_patterns:
         bundle_patterns.append("world_scenes_all_*.bundle")
 
-    spawn_locations = extract_spawn_locations(
+    spawn_locations, _ = extract_spawn_locations(
         bundles_dir,
         items,
         bundle_patterns=bundle_patterns,

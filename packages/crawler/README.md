@@ -36,6 +36,8 @@ captures input/output item IDs and a best-effort `minutes` value from the QDB bl
 Rune links are captured by scanning item definitions in bundles and attaching `runes` (weapon runes)
 and `utility_runes` (player utility runes) arrays of item IDs where found. Each entry also includes
 `runes_data` / `utility_runes_data` arrays with `{ id, name, description }` for the linked runes.
+Default weapon loadouts discovered in scene bundles are attached as `default_runes` /
+`default_runes_data` arrays with the same shape as `runes_data`.
 
 Spawn locations are extracted by default from `static_scenes_all_*.bundle` and `world_scenes_all_*.bundle`.
 These indicate where items can be obtained (vendors, loot pools, world spawns). Each item may have a
@@ -312,3 +314,116 @@ Multiple entries per group are likely difficulty tiers or drop weight variants.
 
 The consistent weapon+rune pairing across all entries confirms the weapon's
 **default loadout** is applied universally regardless of acquisition source.
+
+## Spawn Location Investigation (Incomplete)
+
+Investigation into extracting meaningful spawn location data (vendor names, loot pool names, etc.)
+revealed that this data is not easily accessible. This section documents findings for future work.
+
+### What we found
+
+**Item GUID occurrences in `static_scenes_all_*.bundle`:**
+
+When searching for item GUIDs in static_scenes, matches are found in `CinematicReplaySave` objects:
+- `theRisenAttackCinematicReplaySave`
+- `theBreachCinematicReplaySave`
+- `theFallenCityCinematicReplaySave`
+- etc.
+
+These are **pre-recorded gameplay sessions** used for in-game cinematics. They contain serialized
+player inventory state (`SerializedSaveData` field) - NOT spawn configuration data. The item GUIDs
+appear because the replay captured the player's inventory at recording time.
+
+**Item GUID occurrences in `quantumDatabase.bin`:**
+
+| Structure | Description |
+|-----------|-------------|
+| `ArmamentFilters` (offset ~128M) | Weapon category lists - groups weapons by type (wands, staves, etc.) |
+| Near `LootSource` markers | Crafting materials found, but NOT weapons |
+| Weapon clusters (12-byte spacing) | Compact weapon ID lists, purpose unknown |
+
+Example context around Nith Gate in quantumDatabase.bin:
+```
+moltenClutch, moonShard, nithGate, Filter, runeStricken, sanglier, tarnished...
+```
+This shows Nith Gate in a **filter list** with other wands, not a loot/drop table.
+
+**What's NOT accessible:**
+
+| Data | Location | Issue |
+|------|----------|-------|
+| Loot tables | `quantumDatabase.bin` | Custom serialization (likely MessagePack), structure not decoded |
+| Vendor inventories | Unknown | Not found in parsed Unity objects |
+| Drop rates/weights | Unknown | No `Drop`, `Chance`, `Weight`, `Rate` markers near weapon GUIDs |
+| World spawn points | `world_scenes_all_*.bundle` | 20GB file, same cinematic replay issue |
+
+### Bundle contents summary
+
+| Bundle | Size | Unity Objects | Item GUIDs Found In |
+|--------|------|---------------|---------------------|
+| `qdb_assets_all_*.bundle` | 1.7GB | MonoBehaviour (item defs), worldlut | Item definitions, ArmamentViews |
+| `qdb_binary_assets_all_*.bundle` | 428MB | TextAsset, Mesh | Not searched |
+| `static_scenes_all_*.bundle` | 586MB | 54K MonoBehaviour, 40K GameObject | CinematicReplaySave only |
+| `world_scenes_all_*.bundle` | 20GB | Not fully explored | Likely same pattern |
+| `pooled_prefabs_assets_all_*.bundle` | 10GB | Not explored | Unknown |
+| `quantumDatabase.bin` | 553MB | Binary blob | ArmamentFilters, LootSource (materials only) |
+
+### worldlut structure
+
+The `worldlut` object in `qdb_assets_all_*.bundle` contains:
+
+```
+Keys: m_GameObject, m_Enabled, m_Script, m_Name, AssetGuid, Assets, ChunkAssets,
+      UnityPayloads, ArmamentViews, ArmamentViewsFilters, HeroItemSortingOrder,
+      PooledPrefabs, DebugNames, CharacterMap, PrefabDependencyGraph
+
+ArmamentViews: 210 entries (weapon view/animation configs)
+PooledPrefabs: 4915 entries (prefab references, empty Configuration dicts)
+```
+
+`ArmamentViews[144]` contains Nith Gate's weapon view config:
+```python
+{
+  'Data': ...,
+  'Filter': ...,
+  'ParentViewFilterIndex': ...,
+  'WwiseConfig': ...,
+  'AnimationSet': ...,
+  'ViewPrefabs': ...,
+  'Weapon': {'Id': {'Value': 4360494222496306584}}  # Nith Gate GUID
+}
+```
+
+This is **animation/view configuration**, not spawn data.
+
+### Scripts created
+
+| Script | Purpose | Status |
+|--------|---------|--------|
+| `extract_spawn_locations.py` | Parallel GUID search in bundles | Works, but data not useful |
+| `find_rune_link_streaming.py` | Find weapon-rune pairs | Works |
+| `find_nearby_runes.py` | Find all runes near a weapon | Works |
+| `search_ids.py` | Search for specific IDs | Works |
+
+### Future investigation paths
+
+1. **Decode quantumDatabase.bin format** - Likely MessagePack with custom schema. The `LootSource`
+   markers (630 occurrences) suggest loot table data exists but in an unparsed structure.
+
+2. **Explore pooled_prefabs_assets** - 10GB bundle with 4915 prefab references. May contain
+   actual spawn/drop configurations.
+
+3. **Game memory analysis** - Runtime inspection might reveal how loot tables are loaded/used.
+
+4. **Community resources** - Check if modding communities have decoded these formats.
+
+### Current spawn_locations output
+
+The `spawn_locations` field in items.json currently shows:
+- Bundle name where GUID was found
+- Number of occurrences
+- Offset ranges
+- Type: "unknown" (context detection failed)
+
+This data is of **limited utility** since it's detecting cinematic replay inventory snapshots,
+not actual spawn configurations. Consider disabling with `--no-spawn-scan`.

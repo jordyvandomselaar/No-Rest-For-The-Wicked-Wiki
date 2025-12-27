@@ -422,16 +422,23 @@ def crawl(args):
         spawn_patterns = [p.strip() for p in spawn_bundle_pattern.split(",") if p.strip()]
         items_list = list(items.values())
         print(f"Scanning spawn locations in: {spawn_bundle_pattern}")
-        spawn_locations = extract_spawn_locations(
+        spawn_locations, default_runes = extract_spawn_locations(
             bundles_dir,
             items_list,
             bundle_patterns=spawn_patterns,
+            rune_guid_to_id=rune_guid_to_id,
             verbose=True,
         )
         for item_id, locations in spawn_locations.items():
             item = items.get(item_id)
             if item:
                 item["spawn_locations"] = locations
+        for item_id, rune_ids in default_runes.items():
+            item = items.get(item_id)
+            if not item:
+                continue
+            item["default_runes"] = rune_ids
+            item["default_runes_data"] = [rune_detail_for(rune_id) for rune_id in rune_ids]
 
     out_path = output_dir / "items.json"
     cleaned = []
