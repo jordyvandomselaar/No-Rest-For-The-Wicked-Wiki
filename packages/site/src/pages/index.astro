@@ -20,12 +20,17 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </header>
 
-    <section class="space-y-4">
-      <div class="flex items-center justify-between">
-        <h2 class="text-xl font-semibold text-white">Starter docs</h2>
-        <p class="text-sm text-slate-400">Fresh research, ready for edits</p>
-      </div>
+    <section>
       <div class="grid gap-4 md:grid-cols-2">
+        <a
+          class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition hover:border-slate-600"
+          href="/items"
+        >
+          <h3 class="text-lg font-semibold text-white">Items</h3>
+          <p class="mt-2 text-sm text-slate-300">
+            Browse every item, rune, and refinement path in the database.
+          </p>
+        </a>
         <a
           class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition hover:border-slate-600"
           href="/overview"
@@ -65,36 +70,5 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
 
-    <section class="grid gap-6 md:grid-cols-3">
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-        <h2 class="text-lg font-semibold text-white">Items & Drops</h2>
-        <p class="mt-2 text-sm text-slate-300">
-          Learn where to farm specific weapons, armor, and materials.
-        </p>
-      </div>
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-        <h2 class="text-lg font-semibold text-white">Refinement</h2>
-        <p class="mt-2 text-sm text-slate-300">
-          Map the exact refinements and upgrade paths for every tier.
-        </p>
-      </div>
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-        <h2 class="text-lg font-semibold text-white">Guides</h2>
-        <p class="mt-2 text-sm text-slate-300">
-          Curated builds, progression tips, and boss strategies.
-        </p>
-      </div>
-    </section>
-
-    <section class="rounded-2xl border border-slate-800 bg-slate-900/70 p-8">
-      <h2 class="text-xl font-semibold text-white">Get started</h2>
-      <p class="mt-2 text-sm text-slate-300">
-        Add your first item entry or begin a refinement guide. We will wire up
-        content collections next.
-      </p>
-      <div class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-900">
-        Build the first entry
-      </div>
-    </section>
   </main>
 </Layout>
