@@ -304,7 +304,8 @@ const renderGroupDetails = (node, level) => {
 
   if (children.length) {
     const container = document.createElement("div");
-    container.className = "ml-6 space-y-1 border-l-2 border-slate-800 pl-6";
+    container.className =
+      "ml-0 space-y-1 border-l-0 border-slate-800 pl-0 md:ml-6 md:border-l-2 md:pl-6";
 
     children.forEach((child) => {
       container.appendChild(renderGroupDetails(child, level + 1));
@@ -312,7 +313,7 @@ const renderGroupDetails = (node, level) => {
 
     if (items.length) {
       const itemWrap = document.createElement("div");
-      itemWrap.className = "pl-6 ml-6";
+      itemWrap.className = "pl-0 ml-0 md:pl-6 md:ml-6";
       itemWrap.appendChild(createItemList(items));
       container.appendChild(itemWrap);
     }
@@ -320,7 +321,7 @@ const renderGroupDetails = (node, level) => {
     details.appendChild(container);
   } else if (items.length) {
     const itemWrap = document.createElement("div");
-    itemWrap.className = "ml-6 pl-6";
+    itemWrap.className = "ml-0 pl-0 md:ml-6 md:pl-6";
     itemWrap.appendChild(createItemList(items));
     details.appendChild(itemWrap);
   }

@@ -213,11 +213,11 @@ const renderGroupSection = (node: GroupNode, level: number): string => {
     const blocks: string[] = [];
     if (childrenHtml) blocks.push(childrenHtml);
     if (itemsHtml) {
-      blocks.push(`<div class="pl-6 ml-6">${itemsHtml}</div>`);
+      blocks.push(`<div class="pl-0 md:pl-6 ml-0 md:ml-6">${itemsHtml}</div>`);
     }
-    contentHtml = `<div class="ml-6 space-y-1 border-l-2 border-slate-800 pl-6">${blocks.join("")}</div>`;
+    contentHtml = `<div class="ml-0 md:ml-6 space-y-1 border-l-0 md:border-l-2 border-slate-800 pl-0 md:pl-6">${blocks.join("")}</div>`;
   } else if (itemsHtml) {
-    contentHtml = `<div class="ml-6 pl-6">${itemsHtml}</div>`;
+    contentHtml = `<div class="ml-0 md:ml-6 pl-0 md:pl-6">${itemsHtml}</div>`;
   }
 
   return [
@@ -259,7 +259,7 @@ const groupedHtml = (() => {
 ---
 
 <Layout title="Items | No Rest For The Wicked Wiki" description="Browse all items and refinement paths.">
-  <main class="mx-auto flex max-w-5xl flex-col gap-10 px-6 py-16">
+  <main class="mx-auto flex max-w-5xl flex-col gap-10 px-4 py-10 md:px-6 md:py-16">
     <header class="space-y-4">
       <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Item database</p>
       <h1 class="text-4xl font-semibold text-white md:text-6xl">Items</h1>
@@ -298,7 +298,9 @@ const groupedHtml = (() => {
 
     <section>
       <script type="application/json" id="items-data" set:html={JSON.stringify(listItems)}></script>
-      <div id="items-grid" class="space-y-10" aria-live="polite" set:html={groupedHtml} />
+      <div class="-mx-4 md:mx-0">
+        <div id="items-grid" class="space-y-10" aria-live="polite" set:html={groupedHtml} />
+      </div>
     </section>
   </main>
 
