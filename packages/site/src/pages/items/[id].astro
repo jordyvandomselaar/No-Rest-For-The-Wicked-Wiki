@@ -234,9 +234,9 @@ const renderTree = (node: any): string => {
                         href={`/items/${encodeURIComponent(runeId)}`}
                         title={runeId}
                       >
-                        <div class="flex items-center justify-between gap-3">
+                        <div class="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                           <span class="font-semibold text-white">{label}</span>
-                          <span class="text-xs text-slate-500">{runeId}</span>
+                          <span class="text-xs text-slate-500 break-all sm:text-right">{runeId}</span>
                         </div>
                         <p
                           class="mt-2 text-xs text-slate-300"
@@ -266,9 +266,9 @@ const renderTree = (node: any): string => {
                 href={`/items/${encodeURIComponent(weapon.id)}`}
                 title={weapon.id}
               >
-                <div class="flex items-center justify-between gap-3">
+                <div class="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                   <span class="font-semibold text-white">{weaponName}</span>
-                  <span class="text-xs text-slate-500">{weapon.id}</span>
+                  <span class="text-xs text-slate-500 break-all sm:text-right">{weapon.id}</span>
                 </div>
                 <p
                   class="mt-2 text-xs text-slate-300"
