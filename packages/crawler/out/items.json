@@ -438,10 +438,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3759976748581656156,
-    "default_runes": [
-      "items.runes.fireThrow"
-    ]
+    "asset_guid": 3759976748581656156
   },
   "items.consumables.potions.purifyingBrew": {
     "id": "items.consumables.potions.purifyingBrew",
@@ -576,10 +573,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3500315572454028651,
-    "default_runes": [
-      "items.runes.poleDodge"
-    ]
+    "asset_guid": 3500315572454028651
   },
   "items.consumables.weaponOils.frostscaleOil": {
     "id": "items.consumables.weaponOils.frostscaleOil",
@@ -1158,9 +1152,6 @@
         "input": "items.craftingMaterials.ore.copperOre",
         "minutes": 1.6025
       }
-    ],
-    "default_runes": [
-      "items.runes.spin"
     ]
   },
   "items.craftingMaterials.ingots.goldIngot": {
@@ -1179,10 +1170,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3603118581874915257,
-    "default_runes": [
-      "items.runes.dashingStab"
-    ]
+    "asset_guid": 3603118581874915257
   },
   "items.craftingMaterials.ingots.obsidianIngot": {
     "id": "items.craftingMaterials.ingots.obsidianIngot",
@@ -1200,10 +1188,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1973276685780311532,
-    "default_runes": [
-      "items.runes.poleDodge"
-    ]
+    "asset_guid": 1973276685780311532
   },
   "items.craftingMaterials.ingots.titaniteIngot": {
     "id": "items.craftingMaterials.ingots.titaniteIngot",
@@ -1237,9 +1222,6 @@
         "input": "items.craftingMaterials.hides.basicHide",
         "minutes": 1.6025
       }
-    ],
-    "default_runes": [
-      "items.runes.iceWhirl"
     ]
   },
   "items.craftingMaterials.leathers.durableLeather": {
@@ -1249,10 +1231,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 569441041420542515,
-    "default_runes": [
-      "items.runes.breakrush"
-    ]
+    "asset_guid": 569441041420542515
   },
   "items.craftingMaterials.leathers.fullGrainLeather": {
     "id": "items.craftingMaterials.leathers.fullGrainLeather",
@@ -1279,10 +1258,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3501980573290754370,
-    "default_runes": [
-      "items.runes.plagueStrike"
-    ]
+    "asset_guid": 3501980573290754370
   },
   "items.craftingMaterials.leathers.topGrainLeather": {
     "id": "items.craftingMaterials.leathers.topGrainLeather",
@@ -1424,10 +1400,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 657806243605478168,
-    "default_runes": [
-      "items.runes.gyroSlash"
-    ]
+    "asset_guid": 657806243605478168
   },
   "items.craftingMaterials.planks.darkOakPlanks": {
     "id": "items.craftingMaterials.planks.darkOakPlanks",
@@ -1470,9 +1443,6 @@
         "input": "items.craftingMaterials.wood.pineWood",
         "minutes": 0.5039
       }
-    ],
-    "default_runes": [
-      "items.runes.multishot"
     ]
   },
   "items.craftingMaterials.planks.sprucePlanks": {
@@ -1482,10 +1452,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2245098455649632079,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 2245098455649632079
   },
   "items.craftingMaterials.research.researchPaper": {
     "id": "items.craftingMaterials.research.researchPaper",
@@ -1742,9 +1709,6 @@
         "output": "items.craftingMaterials.planks.pinePlanks",
         "minutes": 0.5039
       }
-    ],
-    "default_runes": [
-      "items.runes.wildRush"
     ]
   },
   "items.craftingMaterials.wood.spruceWood": {
@@ -1763,10 +1727,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4065365552824813465,
-    "default_runes": [
-      "items.runes.breakerThrust"
-    ]
+    "asset_guid": 4065365552824813465
   },
   "items.currency.gloamseed": {
     "id": "items.currency.gloamseed",
@@ -1874,10 +1835,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2395085955379544213,
-    "default_runes": [
-      "items.runes.dashingStab"
-    ]
+    "asset_guid": 2395085955379544213
   },
   "items.farming.seeds.potatoSeeds": {
     "id": "items.farming.seeds.potatoSeeds",
@@ -2015,10 +1973,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2984069860971318305,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 2984069860971318305
   },
   "items.gear.armor.tier1.beggar.tatteredJuteTunic": {
     "id": "items.gear.armor.tier1.beggar.tatteredJuteTunic",
@@ -2027,10 +1982,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4293978039118322873,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 4293978039118322873
   },
   "items.gear.armor.tier1.cleric.heroClericBodyArmor": {
     "id": "items.gear.armor.tier1.cleric.heroClericBodyArmor",
@@ -2138,10 +2090,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3366396411246502341,
-    "default_runes": [
-      "items.runes.piercingDash"
-    ]
+    "asset_guid": 3366396411246502341
   },
   "items.gear.armor.tier1.fallenPhoenix.fallenPhoenixGloves": {
     "id": "items.gear.armor.tier1.fallenPhoenix.fallenPhoenixGloves",
@@ -2177,10 +2126,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1046405399894291651,
-    "default_runes": [
-      "items.runes.spinCrush"
-    ]
+    "asset_guid": 1046405399894291651
   },
   "items.gear.armor.tier1.farmer.heroFarmerGloves": {
     "id": "items.gear.armor.tier1.farmer.heroFarmerGloves",
@@ -2189,11 +2135,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2372244824949124789,
-    "default_runes": [
-      "items.runes.chainLightning",
-      "items.runes.lightningSweep"
-    ]
+    "asset_guid": 2372244824949124789
   },
   "items.gear.armor.tier1.farmer.heroFarmerHelmet": {
     "id": "items.gear.armor.tier1.farmer.heroFarmerHelmet",
@@ -2202,10 +2144,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2936382939271769509,
-    "default_runes": [
-      "items.runes.iceWhirl"
-    ]
+    "asset_guid": 2936382939271769509
   },
   "items.gear.armor.tier1.farmer.heroFarmerPants": {
     "id": "items.gear.armor.tier1.farmer.heroFarmerPants",
@@ -2214,11 +2153,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1698349693959893818,
-    "default_runes": [
-      "items.runes.lightningDart",
-      "items.runes.lightningBlast"
-    ]
+    "asset_guid": 1698349693959893818
   },
   "items.gear.armor.tier1.herbalist.herbalistBodyArmor": {
     "id": "items.gear.armor.tier1.herbalist.herbalistBodyArmor",
@@ -2245,10 +2180,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4322324033609217662,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 4322324033609217662
   },
   "items.gear.armor.tier1.herbalist.herbalistPants": {
     "id": "items.gear.armor.tier1.herbalist.herbalistPants",
@@ -2329,10 +2261,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2612687569601424849,
-    "default_runes": [
-      "items.runes.dualBreaker"
-    ]
+    "asset_guid": 2612687569601424849
   },
   "items.gear.armor.tier1.ranger.heroRangerBodyArmor": {
     "id": "items.gear.armor.tier1.ranger.heroRangerBodyArmor",
@@ -2377,11 +2306,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1417986430003378169,
-    "default_runes": [
-      "items.runes.lightningDart",
-      "items.runes.lightningBlast"
-    ]
+    "asset_guid": 1417986430003378169
   },
   "items.gear.armor.tier1.risenCaptain.heroRisenCaptainGloves": {
     "id": "items.gear.armor.tier1.risenCaptain.heroRisenCaptainGloves",
@@ -2390,11 +2315,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2704203363032250513,
-    "default_runes": [
-      "items.runes.iceDart",
-      "items.runes.coldSling"
-    ]
+    "asset_guid": 2704203363032250513
   },
   "items.gear.armor.tier1.risenCaptain.heroRisenCaptainHelmet": {
     "id": "items.gear.armor.tier1.risenCaptain.heroRisenCaptainHelmet",
@@ -2403,11 +2324,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1838235934543696561,
-    "default_runes": [
-      "items.runes.fireball",
-      "items.runes.fireNova"
-    ]
+    "asset_guid": 1838235934543696561
   },
   "items.gear.armor.tier1.risenCaptain.heroRisenCaptainPants": {
     "id": "items.gear.armor.tier1.risenCaptain.heroRisenCaptainPants",
@@ -2416,10 +2333,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3586891500627168427,
-    "default_runes": [
-      "items.runes.tremorSlam"
-    ]
+    "asset_guid": 3586891500627168427
   },
   "items.gear.armor.tier1.risenCrawler.heroRisenCrawlerBodyArmor": {
     "id": "items.gear.armor.tier1.risenCrawler.heroRisenCrawlerBodyArmor",
@@ -2428,10 +2342,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1037257009206324230,
-    "default_runes": [
-      "items.runes.multiSpin"
-    ]
+    "asset_guid": 1037257009206324230
   },
   "items.gear.armor.tier1.risenCrawler.heroRisenCrawlerGloves": {
     "id": "items.gear.armor.tier1.risenCrawler.heroRisenCrawlerGloves",
@@ -2440,10 +2351,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1320849294161730835,
-    "default_runes": [
-      "items.runes.plagueThrow"
-    ]
+    "asset_guid": 1320849294161730835
   },
   "items.gear.armor.tier1.risenCrawler.heroRisenCrawlerPants": {
     "id": "items.gear.armor.tier1.risenCrawler.heroRisenCrawlerPants",
@@ -2452,10 +2360,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3000066580874253652,
-    "default_runes": [
-      "items.runes.fierceDash"
-    ]
+    "asset_guid": 3000066580874253652
   },
   "items.gear.armor.tier1.risenScoundrel.heroRisenScoundrelBodyArmor": {
     "id": "items.gear.armor.tier1.risenScoundrel.heroRisenScoundrelBodyArmor",
@@ -2473,11 +2378,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1172937753820093540,
-    "default_runes": [
-      "items.runes.fireDart",
-      "items.runes.fireBlast"
-    ]
+    "asset_guid": 1172937753820093540
   },
   "items.gear.armor.tier1.risenScoundrel.heroRisenScoundrelHelmet": {
     "id": "items.gear.armor.tier1.risenScoundrel.heroRisenScoundrelHelmet",
@@ -2486,10 +2387,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2323470844641629177,
-    "default_runes": [
-      "items.runes.plagueCrush"
-    ]
+    "asset_guid": 2323470844641629177
   },
   "items.gear.armor.tier1.risenScoundrel.heroRisenScoundrelPants": {
     "id": "items.gear.armor.tier1.risenScoundrel.heroRisenScoundrelPants",
@@ -2570,11 +2468,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 205163951239427360,
-    "default_runes": [
-      "items.runes.fireBurst",
-      "items.runes.convergingFlame"
-    ]
+    "asset_guid": 205163951239427360
   },
   "items.gear.armor.tier1.sailorB.heroSailorBBodyArmor": {
     "id": "items.gear.armor.tier1.sailorB.heroSailorBBodyArmor",
@@ -2664,11 +2558,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 184154113430383694,
-    "default_runes": [
-      "items.runes.plagueBreath",
-      "items.runes.plagueNova"
-    ]
+    "asset_guid": 184154113430383694
   },
   "items.gear.armor.tier1.skybornPaladin.skybornPaladinGloves": {
     "id": "items.gear.armor.tier1.skybornPaladin.skybornPaladinGloves",
@@ -2677,10 +2567,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2902980807290111504,
-    "default_runes": [
-      "items.runes.spin"
-    ]
+    "asset_guid": 2902980807290111504
   },
   "items.gear.armor.tier1.skybornPaladin.skybornPaladinHelmet": {
     "id": "items.gear.armor.tier1.skybornPaladin.skybornPaladinHelmet",
@@ -2716,10 +2603,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1835484784045151295,
-    "default_runes": [
-      "items.runes.plagueCrush"
-    ]
+    "asset_guid": 1835484784045151295
   },
   "items.gear.armor.tier1.soddenKnight.dredgeKnightHelmet": {
     "id": "items.gear.armor.tier1.soddenKnight.dredgeKnightHelmet",
@@ -2782,10 +2666,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4083462526729292654,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 4083462526729292654
   },
   "items.gear.armor.tier2.banditLeader.heroBanditLeaderGloves": {
     "id": "items.gear.armor.tier2.banditLeader.heroBanditLeaderGloves",
@@ -2812,10 +2693,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3838688761673386009,
-    "default_runes": [
-      "items.runes.twirlSpin"
-    ]
+    "asset_guid": 3838688761673386009
   },
   "items.gear.armor.tier2.banditLeaderVariation.fellhornsFist": {
     "id": "items.gear.armor.tier2.banditLeaderVariation.fellhornsFist",
@@ -2842,10 +2720,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2992819476751975983,
-    "default_runes": [
-      "items.runes.driveBreak"
-    ]
+    "asset_guid": 2992819476751975983
   },
   "items.gear.armor.tier2.banditLeaderVariation.fellhornsTunic": {
     "id": "items.gear.armor.tier2.banditLeaderVariation.fellhornsTunic",
@@ -2854,10 +2729,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4152606161832178919,
-    "default_runes": [
-      "items.runes.driveBreak"
-    ]
+    "asset_guid": 4152606161832178919
   },
   "items.gear.armor.tier2.blacksmith.heroBlacksmithBodyArmor": {
     "id": "items.gear.armor.tier2.blacksmith.heroBlacksmithBodyArmor",
@@ -2902,10 +2774,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4470196835527983988,
-    "default_runes": [
-      "items.runes.ripAndTear"
-    ]
+    "asset_guid": 4470196835527983988
   },
   "items.gear.armor.tier2.boarskinBastard.boarskinBastardHelmet": {
     "id": "items.gear.armor.tier2.boarskinBastard.boarskinBastardHelmet",
@@ -3076,10 +2945,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2742252024618514868,
-    "default_runes": [
-      "items.runes.jumpCut"
-    ]
+    "asset_guid": 2742252024618514868
   },
   "items.gear.armor.tier2.druid.heroDruidPants": {
     "id": "items.gear.armor.tier2.druid.heroDruidPants",
@@ -3097,10 +2963,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 701264944740776142,
-    "default_runes": [
-      "items.runes.thrust"
-    ]
+    "asset_guid": 701264944740776142
   },
   "items.gear.armor.tier2.firebombBandit.heroFirebombBanditHelmet": {
     "id": "items.gear.armor.tier2.firebombBandit.heroFirebombBanditHelmet",
@@ -3190,10 +3053,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3610475636934476847,
-    "default_runes": [
-      "items.runes.pestilentRecoil"
-    ]
+    "asset_guid": 3610475636934476847
   },
   "items.gear.armor.tier2.heavyBruiserBandit.banesCrestedArmor": {
     "id": "items.gear.armor.tier2.heavyBruiserBandit.banesCrestedArmor",
@@ -3220,10 +3080,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2979127663073566622,
-    "default_runes": [
-      "items.runes.plagueStrike"
-    ]
+    "asset_guid": 2979127663073566622
   },
   "items.gear.armor.tier2.heavyBruiserBandit.bastionsBulwark": {
     "id": "items.gear.armor.tier2.heavyBruiserBandit.bastionsBulwark",
@@ -3367,10 +3224,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3781598423901834570,
-    "default_runes": [
-      "items.runes.breakrush"
-    ]
+    "asset_guid": 3781598423901834570
   },
   "items.gear.armor.tier2.orlandA.heroOrlandAHelmet": {
     "id": "items.gear.armor.tier2.orlandA.heroOrlandAHelmet",
@@ -3478,11 +3332,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1770869113788594451,
-    "default_runes": [
-      "items.runes.plagueColumn",
-      "items.runes.plagueSplatter"
-    ]
+    "asset_guid": 1770869113788594451
   },
   "items.gear.armor.tier2.risenIronhand.risenIronhandHelmet": {
     "id": "items.gear.armor.tier2.risenIronhand.risenIronhandHelmet",
@@ -3518,10 +3368,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3989574434266764091,
-    "default_runes": [
-      "items.runes.ragingSpiral"
-    ]
+    "asset_guid": 3989574434266764091
   },
   "items.gear.armor.tier2.risenStormwall.risenStormwallHelmet": {
     "id": "items.gear.armor.tier2.risenStormwall.risenStormwallHelmet",
@@ -3548,10 +3395,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2354005923344600593,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 2354005923344600593
   },
   "items.gear.armor.tier2.risenVagabond.heroRisenVagabondGloves": {
     "id": "items.gear.armor.tier2.risenVagabond.heroRisenVagabondGloves",
@@ -3596,11 +3440,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1128958733250158805,
-    "default_runes": [
-      "items.runes.fireball",
-      "items.runes.fireNova"
-    ]
+    "asset_guid": 1128958733250158805
   },
   "items.gear.armor.tier2.sacramentSoldier.heroSacramentSoldierHelmet": {
     "id": "items.gear.armor.tier2.sacramentSoldier.heroSacramentSoldierHelmet",
@@ -3618,10 +3458,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2316613920905699187,
-    "default_runes": [
-      "items.runes.driveBreak"
-    ]
+    "asset_guid": 2316613920905699187
   },
   "items.gear.armor.tier2.spearman.heroSpearmanBodyArmor": {
     "id": "items.gear.armor.tier2.spearman.heroSpearmanBodyArmor",
@@ -3666,11 +3503,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2697519523998159550,
-    "default_runes": [
-      "items.runes.plagueDart",
-      "items.runes.plagueSmite"
-    ]
+    "asset_guid": 2697519523998159550
   },
   "items.gear.armor.tier2.spearmanVariationB.gildedSpearmansGauntlets": {
     "id": "items.gear.armor.tier2.spearmanVariationB.gildedSpearmansGauntlets",
@@ -3697,11 +3530,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2761582641182128580,
-    "default_runes": [
-      "items.runes.chainLightning",
-      "items.runes.lightningSweep"
-    ]
+    "asset_guid": 2761582641182128580
   },
   "items.gear.armor.tier2.swampEnemy.ceremonialNithLegguards": {
     "id": "items.gear.armor.tier2.swampEnemy.ceremonialNithLegguards",
@@ -3710,10 +3539,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3359778442688248265,
-    "default_runes": [
-      "items.runes.ragingSpiral"
-    ]
+    "asset_guid": 3359778442688248265
   },
   "items.gear.armor.tier2.swampEnemy.ceremonialNithMask": {
     "id": "items.gear.armor.tier2.swampEnemy.ceremonialNithMask",
@@ -3722,10 +3548,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 322993130306567508,
-    "default_runes": [
-      "items.runes.piercingDash"
-    ]
+    "asset_guid": 322993130306567508
   },
   "items.gear.armor.tier2.swampEnemy.ceremonialNithTunic": {
     "id": "items.gear.armor.tier2.swampEnemy.ceremonialNithTunic",
@@ -3743,10 +3566,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1661036001135443934,
-    "default_runes": [
-      "items.runes.fireFlurry"
-    ]
+    "asset_guid": 1661036001135443934
   },
   "items.gear.armor.tier2.swampEnemy.heroSwampEnemyGloves": {
     "id": "items.gear.armor.tier2.swampEnemy.heroSwampEnemyGloves",
@@ -3773,10 +3593,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 663464337782421860,
-    "default_runes": [
-      "items.runes.limitBreak"
-    ]
+    "asset_guid": 663464337782421860
   },
   "items.gear.armor.tier2.swampEnemy.traditionalNithGarbs": {
     "id": "items.gear.armor.tier2.swampEnemy.traditionalNithGarbs",
@@ -3893,10 +3710,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1430069617808633246,
-    "default_runes": [
-      "items.runes.fireThrow"
-    ]
+    "asset_guid": 1430069617808633246
   },
   "items.gear.armor.tier3.archer.heroArcherHelmet": {
     "id": "items.gear.armor.tier3.archer.heroArcherHelmet",
@@ -3914,11 +3728,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2543283038537216737,
-    "default_runes": [
-      "items.runes.plagueDart",
-      "items.runes.plagueSmite"
-    ]
+    "asset_guid": 2543283038537216737
   },
   "items.gear.armor.tier3.archer.heroCrestfallenArcherBodyArmor": {
     "id": "items.gear.armor.tier3.archer.heroCrestfallenArcherBodyArmor",
@@ -3936,10 +3746,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4442284504233812936,
-    "default_runes": [
-      "items.runes.iceThrow"
-    ]
+    "asset_guid": 4442284504233812936
   },
   "items.gear.armor.tier3.archer.heroCrestfallenArcherHelmet": {
     "id": "items.gear.armor.tier3.archer.heroCrestfallenArcherHelmet",
@@ -3948,10 +3755,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3921482032211303739,
-    "default_runes": [
-      "items.runes.stamina"
-    ]
+    "asset_guid": 3921482032211303739
   },
   "items.gear.armor.tier3.archer.heroCrestfallenArcherPants": {
     "id": "items.gear.armor.tier3.archer.heroCrestfallenArcherPants",
@@ -4014,10 +3818,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1379645004017653480,
-    "default_runes": [
-      "items.runes.dodgeSlamdown"
-    ]
+    "asset_guid": 1379645004017653480
   },
   "items.gear.armor.tier3.birdWarriorA.madBramblersLegs": {
     "id": "items.gear.armor.tier3.birdWarriorA.madBramblersLegs",
@@ -4215,10 +4016,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2791636628832870889,
-    "default_runes": [
-      "items.runes.frostStrike"
-    ]
+    "asset_guid": 2791636628832870889
   },
   "items.gear.armor.tier3.birdWarriorG.championOfTheEgg": {
     "id": "items.gear.armor.tier3.birdWarriorG.championOfTheEgg",
@@ -4299,10 +4097,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2815959424901832496,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 2815959424901832496
   },
   "items.gear.armor.tier3.cartographer.cartographerBodyArmor": {
     "id": "items.gear.armor.tier3.cartographer.cartographerBodyArmor",
@@ -4356,10 +4151,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 850581263420055364,
-    "default_runes": [
-      "items.runes.heatEnchantment"
-    ]
+    "asset_guid": 850581263420055364
   },
   "items.gear.armor.tier3.caylenPrisonerGarbs.heroCaylenPrisonerGarbsPants": {
     "id": "items.gear.armor.tier3.caylenPrisonerGarbs.heroCaylenPrisonerGarbsPants",
@@ -4404,10 +4196,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4112182371695340355,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 4112182371695340355
   },
   "items.gear.armor.tier3.dummy.groveguardArmor": {
     "id": "items.gear.armor.tier3.dummy.groveguardArmor",
@@ -4425,10 +4214,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2837347192565546761,
-    "default_runes": [
-      "items.runes.fireThrow"
-    ]
+    "asset_guid": 2837347192565546761
   },
   "items.gear.armor.tier3.dummy.groveguardHelm": {
     "id": "items.gear.armor.tier3.dummy.groveguardHelm",
@@ -4500,10 +4286,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4193554010597437771,
-    "default_runes": [
-      "items.runes.spinCrush"
-    ]
+    "asset_guid": 4193554010597437771
   },
   "items.gear.armor.tier3.ellsworth.heroEllsworthPants": {
     "id": "items.gear.armor.tier3.ellsworth.heroEllsworthPants",
@@ -4512,10 +4295,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3325661482613191699,
-    "default_runes": [
-      "items.runes.trinityBarrage"
-    ]
+    "asset_guid": 3325661482613191699
   },
   "items.gear.armor.tier3.falseGuardian.falseGuardianBodyArmor": {
     "id": "items.gear.armor.tier3.falseGuardian.falseGuardianBodyArmor",
@@ -4650,12 +4430,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3905480147215448637,
-    "default_runes": [
-      "items.runes.spark",
-      "items.runes.shockNova",
-      "items.runes.thunderstrike"
-    ]
+    "asset_guid": 3905480147215448637
   },
   "items.gear.armor.tier3.irmgard.heroIrmgardPants": {
     "id": "items.gear.armor.tier3.irmgard.heroIrmgardPants",
@@ -4664,11 +4439,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 789370302535011194,
-    "default_runes": [
-      "items.runes.fireball",
-      "items.runes.fireNova"
-    ]
+    "asset_guid": 789370302535011194
   },
   "items.gear.armor.tier3.knight.heroKnightBodyArmor": {
     "id": "items.gear.armor.tier3.knight.heroKnightBodyArmor",
@@ -4965,10 +4736,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4378943760299199994,
-    "default_runes": [
-      "items.runes.fierceDash"
-    ]
+    "asset_guid": 4378943760299199994
   },
   "items.gear.armor.tier3.saladKnight.heroSaladKnightGloves": {
     "id": "items.gear.armor.tier3.saladKnight.heroSaladKnightGloves",
@@ -4977,11 +4745,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 879289557689870243,
-    "default_runes": [
-      "items.runes.chainLightning",
-      "items.runes.lightningSweep"
-    ]
+    "asset_guid": 879289557689870243
   },
   "items.gear.armor.tier3.saladKnight.heroSaladKnightHelmet": {
     "id": "items.gear.armor.tier3.saladKnight.heroSaladKnightHelmet",
@@ -4990,10 +4754,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3948758227796337864,
-    "default_runes": [
-      "items.runes.knockdownSwirl"
-    ]
+    "asset_guid": 3948758227796337864
   },
   "items.gear.armor.tier3.saladKnight.heroSaladKnightPants": {
     "id": "items.gear.armor.tier3.saladKnight.heroSaladKnightPants",
@@ -5002,10 +4763,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2946345338886585967,
-    "default_runes": [
-      "items.runes.tauntStrike"
-    ]
+    "asset_guid": 2946345338886585967
   },
   "items.gear.armor.tier3.swampGiant.heroSwampGiantBodyArmor": {
     "id": "items.gear.armor.tier3.swampGiant.heroSwampGiantBodyArmor",
@@ -5086,10 +4844,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3791199917092218726,
-    "default_runes": [
-      "items.runes.doubleCrush"
-    ]
+    "asset_guid": 3791199917092218726
   },
   "items.gear.armor.tier3.theGloam.brightWalkersGreaves": {
     "id": "items.gear.armor.tier3.theGloam.brightWalkersGreaves",
@@ -5098,10 +4853,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3388438254583899193,
-    "default_runes": [
-      "items.runes.groundSlam"
-    ]
+    "asset_guid": 3388438254583899193
   },
   "items.gear.armor.tier3.theGloam.cavernWretchGloves": {
     "id": "items.gear.armor.tier3.theGloam.cavernWretchGloves",
@@ -5137,10 +4889,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3634999027184514080,
-    "default_runes": [
-      "items.runes.circular"
-    ]
+    "asset_guid": 3634999027184514080
   },
   "items.gear.armor.tier3.theGloam.duskChildsTrick": {
     "id": "items.gear.armor.tier3.theGloam.duskChildsTrick",
@@ -5284,11 +5033,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1916889076217952393,
-    "default_runes": [
-      "items.runes.lightningLeap",
-      "items.runes.lightningStorm"
-    ]
+    "asset_guid": 1916889076217952393
   },
   "items.gear.armor.tier4.bear.heroBearBodyArmor": {
     "id": "items.gear.armor.tier4.bear.heroBearBodyArmor",
@@ -5423,10 +5168,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 621273769392684687,
-    "default_runes": [
-      "items.runes.stamina"
-    ]
+    "asset_guid": 621273769392684687
   },
   "items.gear.armor.tier4.winnick.heroWinnickGloves": {
     "id": "items.gear.armor.tier4.winnick.heroWinnickGloves",
@@ -5444,10 +5186,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3427797587447113287,
-    "default_runes": [
-      "items.runes.thrust"
-    ]
+    "asset_guid": 3427797587447113287
   },
   "items.gear.armor.tier5.boleinKnight.heroBoleinKnightBodyArmor": {
     "id": "items.gear.armor.tier5.boleinKnight.heroBoleinKnightBodyArmor",
@@ -5501,10 +5240,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4333837654687801025,
-    "default_runes": [
-      "items.runes.tauntStrike"
-    ]
+    "asset_guid": 4333837654687801025
   },
   "items.gear.armor.tier5.channing.heroChanningPants": {
     "id": "items.gear.armor.tier5.channing.heroChanningPants",
@@ -5513,10 +5249,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 433038512261088964,
-    "default_runes": [
-      "items.runes.dualBreaker"
-    ]
+    "asset_guid": 433038512261088964
   },
   "items.gear.armor.tier5.chicken.heroChickenBodyArmor": {
     "id": "items.gear.armor.tier5.chicken.heroChickenBodyArmor",
@@ -5660,11 +5393,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1266423690238257735,
-    "default_runes": [
-      "items.runes.iceDart",
-      "items.runes.coldSling"
-    ]
+    "asset_guid": 1266423690238257735
   },
   "items.gear.armor.tier5.odessaBattle.heroOdessaBattleGloves": {
     "id": "items.gear.armor.tier5.odessaBattle.heroOdessaBattleGloves",
@@ -5673,10 +5402,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3540398148196568207,
-    "default_runes": [
-      "items.runes.fireDash"
-    ]
+    "asset_guid": 3540398148196568207
   },
   "items.gear.armor.tier5.odessaBattle.heroOdessaBattlePants": {
     "id": "items.gear.armor.tier5.odessaBattle.heroOdessaBattlePants",
@@ -5685,10 +5411,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4515753179627809944,
-    "default_runes": [
-      "items.runes.fierceDash"
-    ]
+    "asset_guid": 4515753179627809944
   },
   "items.gear.armor.tier5.plagueDoctor.heroPlagueDoctorBodyArmor": {
     "id": "items.gear.armor.tier5.plagueDoctor.heroPlagueDoctorBodyArmor",
@@ -5868,10 +5591,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 194269117331812142,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 194269117331812142
   },
   "items.gear.armor.tier6.finley.planeswalkerCrown": {
     "id": "items.gear.armor.tier6.finley.planeswalkerCrown",
@@ -5880,11 +5600,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4148948125089915199,
-    "default_runes": [
-      "items.runes.fireWave",
-      "items.runes.hellfire"
-    ]
+    "asset_guid": 4148948125089915199
   },
   "items.gear.armor.tier6.finley.planeswalkerKnuckles": {
     "id": "items.gear.armor.tier6.finley.planeswalkerKnuckles",
@@ -5893,11 +5609,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2298565680099883532,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 2298565680099883532
   },
   "items.gear.armor.tier6.finley.planeswalkerRobes": {
     "id": "items.gear.armor.tier6.finley.planeswalkerRobes",
@@ -5906,10 +5618,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1755855904500930555,
-    "default_runes": [
-      "items.runes.dualBreaker"
-    ]
+    "asset_guid": 1755855904500930555
   },
   "items.gear.armor.tier6.grimReaper.heroGrimReaperBodyArmor": {
     "id": "items.gear.armor.tier6.grimReaper.heroGrimReaperBodyArmor",
@@ -6143,10 +5852,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3705989024610824162,
-    "default_runes": [
-      "items.runes.knockoutShot"
-    ]
+    "asset_guid": 3705989024610824162
   },
   "items.gear.offHands.bows.patience": {
     "id": "items.gear.offHands.bows.patience",
@@ -6155,10 +5861,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3353145543610220699,
-    "default_runes": [
-      "items.runes.plagueArrow"
-    ]
+    "asset_guid": 3353145543610220699
   },
   "items.gear.offHands.bows.shortBow": {
     "id": "items.gear.offHands.bows.shortBow",
@@ -6167,10 +5870,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4501034379633562415,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 4501034379633562415
   },
   "items.gear.offHands.bows.sirensCall": {
     "id": "items.gear.offHands.bows.sirensCall",
@@ -6215,10 +5915,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 911301351710787022,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 911301351710787022
   },
   "items.gear.offHands.hooks.jawGutter": {
     "id": "items.gear.offHands.hooks.jawGutter",
@@ -6263,10 +5960,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3915594136724318551,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 3915594136724318551
   },
   "items.gear.offHands.orbs.frigidSkull": {
     "id": "items.gear.offHands.orbs.frigidSkull",
@@ -6383,10 +6077,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3928386462322281541,
-    "default_runes": [
-      "items.runes.somersault"
-    ]
+    "asset_guid": 3928386462322281541
   },
   "items.gear.offHands.shields.greatshields.risenPavise": {
     "id": "items.gear.offHands.shields.greatshields.risenPavise",
@@ -6467,10 +6158,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 262179132767830823,
-    "default_runes": [
-      "items.runes.lightningFlurry"
-    ]
+    "asset_guid": 262179132767830823
   },
   "items.gear.offHands.shields.lightShields.woodenHowler": {
     "id": "items.gear.offHands.shields.lightShields.woodenHowler",
@@ -6488,10 +6176,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 716007893309524987,
-    "default_runes": [
-      "items.runes.plagueCrush"
-    ]
+    "asset_guid": 716007893309524987
   },
   "items.gear.offHands.shields.mediumShields.arcaneSentinelShield": {
     "id": "items.gear.offHands.shields.mediumShields.arcaneSentinelShield",
@@ -6518,10 +6203,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2367177880487800923,
-    "default_runes": [
-      "items.runes.fireFlurry"
-    ]
+    "asset_guid": 2367177880487800923
   },
   "items.gear.offHands.shields.mediumShields.bearheartGuard": {
     "id": "items.gear.offHands.shields.mediumShields.bearheartGuard",
@@ -6593,10 +6275,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1003298344721033391,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 1003298344721033391
   },
   "items.gear.offHands.shields.mediumShields.maidensVoyage": {
     "id": "items.gear.offHands.shields.mediumShields.maidensVoyage",
@@ -6857,10 +6536,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1422090269706676108,
-    "default_runes": [
-      "items.runes.damage"
-    ]
+    "asset_guid": 1422090269706676108
   },
   "items.gear.rings.snakeRing": {
     "id": "items.gear.rings.snakeRing",
@@ -8677,11 +8353,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3309518401243604794,
-    "default_runes": [
-      "items.runes.plagueBreath",
-      "items.runes.plagueNova"
-    ]
+    "asset_guid": 3309518401243604794
   },
   "items.gems.amethysts.clearAmethyst": {
     "id": "items.gems.amethysts.clearAmethyst",
@@ -8735,11 +8407,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2723586631354824235,
-    "default_runes": [
-      "items.runes.fireDart",
-      "items.runes.fireBlast"
-    ]
+    "asset_guid": 2723586631354824235
   },
   "items.gems.bloodStones.clearBloodStone": {
     "id": "items.gems.bloodStones.clearBloodStone",
@@ -8757,10 +8425,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4534125204586717504,
-    "default_runes": [
-      "items.runes.lightningWhirl"
-    ]
+    "asset_guid": 4534125204586717504
   },
   "items.gems.diamonds.chippedDiamond": {
     "id": "items.gems.diamonds.chippedDiamond",
@@ -8769,11 +8434,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2825364970668741043,
-    "default_runes": [
-      "items.runes.plagueColumn",
-      "items.runes.plagueSplatter"
-    ]
+    "asset_guid": 2825364970668741043
   },
   "items.gems.diamonds.clearDiamond": {
     "id": "items.gems.diamonds.clearDiamond",
@@ -8800,10 +8461,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2048554267325085923,
-    "default_runes": [
-      "items.runes.blazingRupture"
-    ]
+    "asset_guid": 2048554267325085923
   },
   "items.gems.dianites.clearDianite": {
     "id": "items.gems.dianites.clearDianite",
@@ -8830,10 +8488,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3681256810326729351,
-    "default_runes": [
-      "items.runes.tremorWave"
-    ]
+    "asset_guid": 3681256810326729351
   },
   "items.gems.emeralds.clearEmerald": {
     "id": "items.gems.emeralds.clearEmerald",
@@ -8878,10 +8533,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 61995666478825046,
-    "default_runes": [
-      "items.runes.breakerThrust"
-    ]
+    "asset_guid": 61995666478825046
   },
   "items.gems.feathers.clearFeather": {
     "id": "items.gems.feathers.clearFeather",
@@ -8908,11 +8560,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2973054046766731971,
-    "default_runes": [
-      "items.runes.lightningDart",
-      "items.runes.lightningBlast"
-    ]
+    "asset_guid": 2973054046766731971
   },
   "items.gems.granites.chippedGranite": {
     "id": "items.gems.granites.chippedGranite",
@@ -8921,10 +8569,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2707064685416276085,
-    "default_runes": [
-      "items.runes.limitBreak"
-    ]
+    "asset_guid": 2707064685416276085
   },
   "items.gems.granites.clearGranite": {
     "id": "items.gems.granites.clearGranite",
@@ -8951,10 +8596,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 994150335710522137,
-    "default_runes": [
-      "items.runes.knockdownSwirl"
-    ]
+    "asset_guid": 994150335710522137
   },
   "items.gems.jades.clearJade": {
     "id": "items.gems.jades.clearJade",
@@ -8981,10 +8623,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 79543393030588856,
-    "default_runes": [
-      "items.runes.crushingFlurry"
-    ]
+    "asset_guid": 79543393030588856
   },
   "items.gems.jewels.clearJewel": {
     "id": "items.gems.jewels.clearJewel",
@@ -9011,11 +8650,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2330777079347888372,
-    "default_runes": [
-      "items.runes.plagueBreath",
-      "items.runes.plagueNova"
-    ]
+    "asset_guid": 2330777079347888372
   },
   "items.gems.marbles.clearMarble": {
     "id": "items.gems.marbles.clearMarble",
@@ -9042,10 +8677,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 402303035105344293,
-    "default_runes": [
-      "items.runes.slashingPirouette"
-    ]
+    "asset_guid": 402303035105344293
   },
   "items.gems.meteorites.clearMeteorite": {
     "id": "items.gems.meteorites.clearMeteorite",
@@ -9072,10 +8704,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2862022067196058174,
-    "default_runes": [
-      "items.runes.groundSlam"
-    ]
+    "asset_guid": 2862022067196058174
   },
   "items.gems.moonStones.clearMoonStone": {
     "id": "items.gems.moonStones.clearMoonStone",
@@ -9129,10 +8758,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3187871656023379566,
-    "default_runes": [
-      "items.runes.fireThrow"
-    ]
+    "asset_guid": 3187871656023379566
   },
   "items.gems.rubies.clearRuby": {
     "id": "items.gems.rubies.clearRuby",
@@ -9159,11 +8785,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1269306428342547616,
-    "default_runes": [
-      "items.runes.plagueBreath",
-      "items.runes.plagueNova"
-    ]
+    "asset_guid": 1269306428342547616
   },
   "items.gems.sapphires.clearSapphire": {
     "id": "items.gems.sapphires.clearSapphire",
@@ -9190,10 +8812,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2945949552161393074,
-    "default_runes": [
-      "items.runes.iceWhirl"
-    ]
+    "asset_guid": 2945949552161393074
   },
   "items.gems.shieldEmblems.clearShieldEmblem": {
     "id": "items.gems.shieldEmblems.clearShieldEmblem",
@@ -9229,10 +8848,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2773338231326825262,
-    "default_runes": [
-      "items.runes.trinityBarrage"
-    ]
+    "asset_guid": 2773338231326825262
   },
   "items.gems.skulls.tinySkull": {
     "id": "items.gems.skulls.tinySkull",
@@ -9241,10 +8857,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1295494016809672370,
-    "default_runes": [
-      "items.runes.breakrush"
-    ]
+    "asset_guid": 1295494016809672370
   },
   "items.gems.spikes.largeSpike": {
     "id": "items.gems.spikes.largeSpike",
@@ -9271,10 +8884,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4080977350168865337,
-    "default_runes": [
-      "items.runes.tauntStrike"
-    ]
+    "asset_guid": 4080977350168865337
   },
   "items.gems.topaz.chippedTopaz": {
     "id": "items.gems.topaz.chippedTopaz",
@@ -9283,10 +8893,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 114142808936367436,
-    "default_runes": [
-      "items.runes.jumpCut"
-    ]
+    "asset_guid": 114142808936367436
   },
   "items.gems.topaz.clearTopaz": {
     "id": "items.gems.topaz.clearTopaz",
@@ -9547,10 +9154,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 450998633319327013,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 450998633319327013
   },
   "items.houseItems.decorativeItems.lights.candleHolderB.candleHolderB": {
     "id": "items.houseItems.decorativeItems.lights.candleHolderB.candleHolderB",
@@ -9568,10 +9172,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 61036129732148469,
-    "default_runes": [
-      "items.runes.gyroSlash"
-    ]
+    "asset_guid": 61036129732148469
   },
   "items.houseItems.decorativeItems.lights.classicHomesteadLuchina.homesteadLuchina": {
     "id": "items.houseItems.decorativeItems.lights.classicHomesteadLuchina.homesteadLuchina",
@@ -9589,10 +9190,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3725051814176954175,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 3725051814176954175
   },
   "items.houseItems.decorativeItems.lumberStack.lumberStack": {
     "id": "items.houseItems.decorativeItems.lumberStack.lumberStack",
@@ -9601,10 +9199,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 891672764125777759,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 891672764125777759
   },
   "items.houseItems.decorativeItems.vases.crimsonTulipVase.crimsonTulipVase": {
     "id": "items.houseItems.decorativeItems.vases.crimsonTulipVase.crimsonTulipVase",
@@ -9694,10 +9289,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2270920679074191938,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 2270920679074191938
   },
   "items.houseItems.furniture.chairs.jadeWovenStool": {
     "id": "items.houseItems.furniture.chairs.jadeWovenStool",
@@ -9706,10 +9298,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2332576526977302854,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 2332576526977302854
   },
   "items.houseItems.furniture.chairs.pinewoodBenchA.pinewoodBenchA": {
     "id": "items.houseItems.furniture.chairs.pinewoodBenchA.pinewoodBenchA",
@@ -9781,10 +9370,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1174300472395727549,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 1174300472395727549
   },
   "items.houseItems.furniture.chests.engravedHearthsideChest": {
     "id": "items.houseItems.furniture.chests.engravedHearthsideChest",
@@ -9829,10 +9415,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1430534749465889154,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 1430534749465889154
   },
   "items.houseItems.furniture.cupboards.mediumNobleCupboard.mediumNobleCupboard": {
     "id": "items.houseItems.furniture.cupboards.mediumNobleCupboard.mediumNobleCupboard",
@@ -9841,10 +9424,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1973882669063997809,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 1973882669063997809
   },
   "items.houseItems.furniture.cupboards.smallNobleCupboard.smallNobleCupboard": {
     "id": "items.houseItems.furniture.cupboards.smallNobleCupboard.smallNobleCupboard",
@@ -9853,10 +9433,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1071217344745827286,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 1071217344745827286
   },
   "items.houseItems.furniture.pedestals.acanthusCarvedPedestal.acanthusCarvedPedestal": {
     "id": "items.houseItems.furniture.pedestals.acanthusCarvedPedestal.acanthusCarvedPedestal",
@@ -9901,10 +9478,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4007104413354817229,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 4007104413354817229
   },
   "items.houseItems.furniture.shelves.pinewoodCupboard.pinewoodCupboard": {
     "id": "items.houseItems.furniture.shelves.pinewoodCupboard.pinewoodCupboard",
@@ -9931,10 +9505,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2538538940982695506,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 2538538940982695506
   },
   "items.houseItems.furniture.stands.carvedLecternStand.carvedLecternStand": {
     "id": "items.houseItems.furniture.stands.carvedLecternStand.carvedLecternStand",
@@ -9952,10 +9523,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2162258787963818058,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 2162258787963818058
   },
   "items.houseItems.furniture.tables.pinewoodTable.pinewoodTable": {
     "id": "items.houseItems.furniture.tables.pinewoodTable.pinewoodTable",
@@ -9964,10 +9532,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 267448254516847163,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 267448254516847163
   },
   "items.houseItems.furniture.tables.smallPinewoodRoundTable.smallPinewoodRoundTable": {
     "id": "items.houseItems.furniture.tables.smallPinewoodRoundTable.smallPinewoodRoundTable",
@@ -10947,11 +10512,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3409714389760517357,
-    "default_runes": [
-      "items.runes.flameSweep",
-      "items.runes.inferno"
-    ]
+    "asset_guid": 3409714389760517357
   },
   "items.runes.arrowstorm": {
     "id": "items.runes.arrowstorm",
@@ -10996,10 +10557,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 129188487361991509,
-    "default_runes": [
-      "items.runes.crushingFlurry"
-    ]
+    "asset_guid": 129188487361991509
   },
   "items.runes.blazingRupture": {
     "id": "items.runes.blazingRupture",
@@ -11017,11 +10575,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1742791377702654896,
-    "default_runes": [
-      "items.runes.fireWall",
-      "items.runes.armageddon"
-    ]
+    "asset_guid": 1742791377702654896
   },
   "items.runes.bolt": {
     "id": "items.runes.bolt",
@@ -11084,10 +10638,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2074319938338630530,
-    "default_runes": [
-      "items.runes.crushingFlurry"
-    ]
+    "asset_guid": 2074319938338630530
   },
   "items.runes.channel": {
     "id": "items.runes.channel",
@@ -11096,11 +10647,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2260878218614060253,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 2260878218614060253
   },
   "items.runes.chargeStrike": {
     "id": "items.runes.chargeStrike",
@@ -11154,10 +10701,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4157409531145223832,
-    "default_runes": [
-      "items.runes.electricEnchantment"
-    ]
+    "asset_guid": 4157409531145223832
   },
   "items.runes.coldResistance": {
     "id": "items.runes.coldResistance",
@@ -11175,11 +10719,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2500324970914093171,
-    "default_runes": [
-      "items.runes.fireball",
-      "items.runes.fireNova"
-    ]
+    "asset_guid": 2500324970914093171
   },
   "items.runes.coneShot": {
     "id": "items.runes.coneShot",
@@ -11197,10 +10737,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4444598686857872115,
-    "default_runes": [
-      "items.runes.twirlSpin"
-    ]
+    "asset_guid": 4444598686857872115
   },
   "items.runes.crosscut": {
     "id": "items.runes.crosscut",
@@ -11245,10 +10782,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2262150894464831015,
-    "default_runes": [
-      "items.runes.jumpCut"
-    ]
+    "asset_guid": 2262150894464831015
   },
   "items.runes.crushingQuad": {
     "id": "items.runes.crushingQuad",
@@ -11311,11 +10845,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4541316365676769348,
-    "default_runes": [
-      "items.runes.plagueColumn",
-      "items.runes.plagueSplatter"
-    ]
+    "asset_guid": 4541316365676769348
   },
   "items.runes.dashingStab": {
     "id": "items.runes.dashingStab",
@@ -11324,10 +10854,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4322302990844201726,
-    "default_runes": [
-      "items.runes.recoilStrike"
-    ]
+    "asset_guid": 4322302990844201726
   },
   "items.runes.deflect": {
     "id": "items.runes.deflect",
@@ -11381,10 +10908,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4440236429854153732,
-    "default_runes": [
-      "items.runes.stormpiercer"
-    ]
+    "asset_guid": 4440236429854153732
   },
   "items.runes.driveBreak": {
     "id": "items.runes.driveBreak",
@@ -11393,10 +10917,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4370172606529549591,
-    "default_runes": [
-      "items.runes.recoilStrike"
-    ]
+    "asset_guid": 4370172606529549591
   },
   "items.runes.droneTrap": {
     "id": "items.runes.droneTrap",
@@ -11405,10 +10926,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 940505683543453145,
-    "default_runes": [
-      "items.runes.driveBreak"
-    ]
+    "asset_guid": 940505683543453145
   },
   "items.runes.dropkick": {
     "id": "items.runes.dropkick",
@@ -11417,10 +10935,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4108774201610135227,
-    "default_runes": [
-      "items.runes.spiritBurst"
-    ]
+    "asset_guid": 4108774201610135227
   },
   "items.runes.dualBreaker": {
     "id": "items.runes.dualBreaker",
@@ -11429,10 +10944,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3118406044295730004,
-    "default_runes": [
-      "items.runes.throw"
-    ]
+    "asset_guid": 3118406044295730004
   },
   "items.runes.dualFlurry": {
     "id": "items.runes.dualFlurry",
@@ -11477,11 +10989,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 588068954941947977,
-    "default_runes": [
-      "items.runes.fireball",
-      "items.runes.fireNova"
-    ]
+    "asset_guid": 588068954941947977
   },
   "items.runes.electricResistance": {
     "id": "items.runes.electricResistance",
@@ -11562,11 +11070,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3716769456665212619,
-    "default_runes": [
-      "items.runes.lightningDart",
-      "items.runes.lightningBlast"
-    ]
+    "asset_guid": 3716769456665212619
   },
   "items.runes.fireArrow": {
     "id": "items.runes.fireArrow",
@@ -11584,10 +11088,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 572392739616368446,
-    "default_runes": [
-      "items.runes.stamina"
-    ]
+    "asset_guid": 572392739616368446
   },
   "items.runes.fireBurst": {
     "id": "items.runes.fireBurst",
@@ -11596,10 +11097,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 595798154631475079,
-    "default_runes": [
-      "items.runes.twirlSpin"
-    ]
+    "asset_guid": 595798154631475079
   },
   "items.runes.fireDart": {
     "id": "items.runes.fireDart",
@@ -11608,10 +11106,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 709973357846815709,
-    "default_runes": [
-      "items.runes.stamina"
-    ]
+    "asset_guid": 709973357846815709
   },
   "items.runes.fireDash": {
     "id": "items.runes.fireDash",
@@ -11629,10 +11124,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1826788492681128282,
-    "default_runes": [
-      "items.runes.plagueCrush"
-    ]
+    "asset_guid": 1826788492681128282
   },
   "items.runes.fireNova": {
     "id": "items.runes.fireNova",
@@ -11641,11 +11133,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 601475074917651680,
-    "default_runes": [
-      "items.runes.iceDart",
-      "items.runes.coldSling"
-    ]
+    "asset_guid": 601475074917651680
   },
   "items.runes.fireSlam": {
     "id": "items.runes.fireSlam",
@@ -11672,10 +11160,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4487192392230842766,
-    "default_runes": [
-      "items.runes.piercingDash"
-    ]
+    "asset_guid": 4487192392230842766
   },
   "items.runes.fireWalk": {
     "id": "items.runes.fireWalk",
@@ -11693,11 +11178,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 562810352442823424,
-    "default_runes": [
-      "items.runes.flameSweep",
-      "items.runes.inferno"
-    ]
+    "asset_guid": 562810352442823424
   },
   "items.runes.fireWave": {
     "id": "items.runes.fireWave",
@@ -11715,10 +11196,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3008237909744556927,
-    "default_runes": [
-      "items.runes.wildRush"
-    ]
+    "asset_guid": 3008237909744556927
   },
   "items.runes.fireWhirlwind": {
     "id": "items.runes.fireWhirlwind",
@@ -11736,11 +11214,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4512811323975887056,
-    "default_runes": [
-      "items.runes.iceDart",
-      "items.runes.coldSling"
-    ]
+    "asset_guid": 4512811323975887056
   },
   "items.runes.firefall": {
     "id": "items.runes.firefall",
@@ -11758,11 +11232,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4269898584950211047,
-    "default_runes": [
-      "items.runes.fireWall",
-      "items.runes.armageddon"
-    ]
+    "asset_guid": 4269898584950211047
   },
   "items.runes.flipkickBurst": {
     "id": "items.runes.flipkickBurst",
@@ -11780,11 +11250,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 969122126482669651,
-    "default_runes": [
-      "items.runes.flameSweep",
-      "items.runes.inferno"
-    ]
+    "asset_guid": 969122126482669651
   },
   "items.runes.frenziedCleave": {
     "id": "items.runes.frenziedCleave",
@@ -11811,10 +11277,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1496794752253721987,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 1496794752253721987
   },
   "items.runes.frostBlade": {
     "id": "items.runes.frostBlade",
@@ -11832,10 +11295,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4439453227947616454,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 4439453227947616454
   },
   "items.runes.frostNeedles": {
     "id": "items.runes.frostNeedles",
@@ -11871,11 +11331,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 374603350845669260,
-    "default_runes": [
-      "items.runes.plagueColumn",
-      "items.runes.plagueSplatter"
-    ]
+    "asset_guid": 374603350845669260
   },
   "items.runes.frostStrike": {
     "id": "items.runes.frostStrike",
@@ -11911,10 +11367,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2888749868516503482,
-    "default_runes": [
-      "items.runes.spinCrush"
-    ]
+    "asset_guid": 2888749868516503482
   },
   "items.runes.gyroSlash": {
     "id": "items.runes.gyroSlash",
@@ -11923,10 +11376,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4426701845280104389,
-    "default_runes": [
-      "items.runes.plagueArrow"
-    ]
+    "asset_guid": 4426701845280104389
   },
   "items.runes.hail": {
     "id": "items.runes.hail",
@@ -11944,10 +11394,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4384702748080131279,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 4384702748080131279
   },
   "items.runes.healAura": {
     "id": "items.runes.healAura",
@@ -11956,11 +11403,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2252989086070227011,
-    "default_runes": [
-      "items.runes.plagueColumn",
-      "items.runes.plagueSplatter"
-    ]
+    "asset_guid": 2252989086070227011
   },
   "items.runes.health": {
     "id": "items.runes.health",
@@ -11969,11 +11412,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4438847146502021167,
-    "default_runes": [
-      "items.runes.plagueColumn",
-      "items.runes.plagueSplatter"
-    ]
+    "asset_guid": 4438847146502021167
   },
   "items.runes.heatAffliction": {
     "id": "items.runes.heatAffliction",
@@ -11991,11 +11430,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4367213926817392495,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 4367213926817392495
   },
   "items.runes.heatResistance": {
     "id": "items.runes.heatResistance",
@@ -12022,11 +11457,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1019982021738449010,
-    "default_runes": [
-      "items.runes.plagueColumn",
-      "items.runes.plagueSplatter"
-    ]
+    "asset_guid": 1019982021738449010
   },
   "items.runes.iceArrow": {
     "id": "items.runes.iceArrow",
@@ -12044,11 +11475,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2355168337068596188,
-    "default_runes": [
-      "items.runes.fireball",
-      "items.runes.fireNova"
-    ]
+    "asset_guid": 2355168337068596188
   },
   "items.runes.iceSweep": {
     "id": "items.runes.iceSweep",
@@ -12066,10 +11493,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 698707283948532789,
-    "default_runes": [
-      "items.runes.dodgeSlamdown"
-    ]
+    "asset_guid": 698707283948532789
   },
   "items.runes.iceWhirl": {
     "id": "items.runes.iceWhirl",
@@ -12096,11 +11520,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3128125765326475670,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 3128125765326475670
   },
   "items.runes.inferno": {
     "id": "items.runes.inferno",
@@ -12109,11 +11529,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2671463997427338343,
-    "default_runes": [
-      "items.runes.fireWall",
-      "items.runes.armageddon"
-    ]
+    "asset_guid": 2671463997427338343
   },
   "items.runes.juggleStrike": {
     "id": "items.runes.juggleStrike",
@@ -12122,10 +11538,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3726417958434299470,
-    "default_runes": [
-      "items.runes.fierceDash"
-    ]
+    "asset_guid": 3726417958434299470
   },
   "items.runes.jumpCut": {
     "id": "items.runes.jumpCut",
@@ -12134,10 +11547,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1277454977354197546,
-    "default_runes": [
-      "items.runes.spin"
-    ]
+    "asset_guid": 1277454977354197546
   },
   "items.runes.kickSlash": {
     "id": "items.runes.kickSlash",
@@ -12218,11 +11628,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2950113389815706885,
-    "default_runes": [
-      "items.runes.fireball",
-      "items.runes.fireNova"
-    ]
+    "asset_guid": 2950113389815706885
   },
   "items.runes.lightningBolt": {
     "id": "items.runes.lightningBolt",
@@ -12267,10 +11673,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1516103055673977465,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 1516103055673977465
   },
   "items.runes.lightningLeap": {
     "id": "items.runes.lightningLeap",
@@ -12315,10 +11718,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3903849283299422194,
-    "default_runes": [
-      "items.runes.crushingFlurry"
-    ]
+    "asset_guid": 3903849283299422194
   },
   "items.runes.lightningThrow": {
     "id": "items.runes.lightningThrow",
@@ -12363,10 +11763,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3094817568735432197,
-    "default_runes": [
-      "items.runes.jumpCut"
-    ]
+    "asset_guid": 3094817568735432197
   },
   "items.runes.overrun": {
     "id": "items.runes.overrun",
@@ -12411,10 +11808,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4237850986028055582,
-    "default_runes": [
-      "items.runes.berserkStrike"
-    ]
+    "asset_guid": 4237850986028055582
   },
   "items.runes.piercingDodge": {
     "id": "items.runes.piercingDodge",
@@ -12432,11 +11826,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3450687068571509517,
-    "default_runes": [
-      "items.runes.fireball",
-      "items.runes.fireNova"
-    ]
+    "asset_guid": 3450687068571509517
   },
   "items.runes.piercingFlurry": {
     "id": "items.runes.piercingFlurry",
@@ -12445,10 +11835,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3061021514271308809,
-    "default_runes": [
-      "items.runes.twirlSpin"
-    ]
+    "asset_guid": 3061021514271308809
   },
   "items.runes.piercingSpin": {
     "id": "items.runes.piercingSpin",
@@ -12511,11 +11898,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1737564386904892761,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 1737564386904892761
   },
   "items.runes.plagueCrush": {
     "id": "items.runes.plagueCrush",
@@ -12524,10 +11907,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2080508781185032061,
-    "default_runes": [
-      "items.runes.spin"
-    ]
+    "asset_guid": 2080508781185032061
   },
   "items.runes.plagueDart": {
     "id": "items.runes.plagueDart",
@@ -12554,11 +11934,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 930723931439290273,
-    "default_runes": [
-      "items.runes.fireball",
-      "items.runes.fireNova"
-    ]
+    "asset_guid": 930723931439290273
   },
   "items.runes.plagueExplosion": {
     "id": "items.runes.plagueExplosion",
@@ -12603,10 +11979,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2697887544261217621,
-    "default_runes": [
-      "items.runes.knockdownSwirl"
-    ]
+    "asset_guid": 2697887544261217621
   },
   "items.runes.plagueSmite": {
     "id": "items.runes.plagueSmite",
@@ -12624,11 +11997,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 22596299149777396,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 22596299149777396
   },
   "items.runes.plagueStrike": {
     "id": "items.runes.plagueStrike",
@@ -12646,11 +12015,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1484698989144894896,
-    "default_runes": [
-      "items.runes.fireDart",
-      "items.runes.fireBlast"
-    ]
+    "asset_guid": 1484698989144894896
   },
   "items.runes.plagueSwirl": {
     "id": "items.runes.plagueSwirl",
@@ -12677,11 +12042,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2455613907772917541,
-    "default_runes": [
-      "items.runes.fireDart",
-      "items.runes.fireBlast"
-    ]
+    "asset_guid": 2455613907772917541
   },
   "items.runes.plagueWhirl": {
     "id": "items.runes.plagueWhirl",
@@ -12699,10 +12060,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3655060827570716740,
-    "default_runes": [
-      "items.runes.piercingFlash"
-    ]
+    "asset_guid": 3655060827570716740
   },
   "items.runes.poleDodge": {
     "id": "items.runes.poleDodge",
@@ -12711,10 +12069,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2188721048531478025,
-    "default_runes": [
-      "items.runes.fireWhirl"
-    ]
+    "asset_guid": 2188721048531478025
   },
   "items.runes.poleFlurry": {
     "id": "items.runes.poleFlurry",
@@ -12741,10 +12096,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3390279225550455836,
-    "default_runes": [
-      "items.runes.dualBreaker"
-    ]
+    "asset_guid": 3390279225550455836
   },
   "items.runes.recoilStrike": {
     "id": "items.runes.recoilStrike",
@@ -12753,10 +12105,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1851837574400786201,
-    "default_runes": [
-      "items.runes.driveBreak"
-    ]
+    "asset_guid": 1851837574400786201
   },
   "items.runes.regurgitate": {
     "id": "items.runes.regurgitate",
@@ -12792,11 +12141,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2942758767993469102,
-    "default_runes": [
-      "items.runes.flameSweep",
-      "items.runes.inferno"
-    ]
+    "asset_guid": 2942758767993469102
   },
   "items.runes.retreatingTrimshot": {
     "id": "items.runes.retreatingTrimshot",
@@ -12814,11 +12159,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 448234635234904088,
-    "default_runes": [
-      "items.runes.flameSweep",
-      "items.runes.inferno"
-    ]
+    "asset_guid": 448234635234904088
   },
   "items.runes.ripAndTear": {
     "id": "items.runes.ripAndTear",
@@ -12854,11 +12195,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2917299912740972188,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 2917299912740972188
   },
   "items.runes.seismicCrush": {
     "id": "items.runes.seismicCrush",
@@ -12885,10 +12222,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 17845796907495789,
-    "default_runes": [
-      "items.runes.slashingSpin"
-    ]
+    "asset_guid": 17845796907495789
   },
   "items.runes.skybreaker": {
     "id": "items.runes.skybreaker",
@@ -12924,10 +12258,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4209072087672005962,
-    "default_runes": [
-      "items.runes.shockStrike"
-    ]
+    "asset_guid": 4209072087672005962
   },
   "items.runes.slamdown": {
     "id": "items.runes.slamdown",
@@ -12963,11 +12294,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2996101457835571940,
-    "default_runes": [
-      "items.runes.fireDart",
-      "items.runes.fireBlast"
-    ]
+    "asset_guid": 2996101457835571940
   },
   "items.runes.slashingPirouette": {
     "id": "items.runes.slashingPirouette",
@@ -12985,10 +12312,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 814650376550364149,
-    "default_runes": [
-      "items.runes.dashingStab"
-    ]
+    "asset_guid": 814650376550364149
   },
   "items.runes.slowAura": {
     "id": "items.runes.slowAura",
@@ -13006,10 +12330,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 65426943683162514,
-    "default_runes": [
-      "items.runes.spin"
-    ]
+    "asset_guid": 65426943683162514
   },
   "items.runes.spark": {
     "id": "items.runes.spark",
@@ -13045,10 +12366,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3820994722620289270,
-    "default_runes": [
-      "items.runes.dualBreaker"
-    ]
+    "asset_guid": 3820994722620289270
   },
   "items.runes.spinCrush": {
     "id": "items.runes.spinCrush",
@@ -13057,10 +12375,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3878500112507168971,
-    "default_runes": [
-      "items.runes.stamina"
-    ]
+    "asset_guid": 3878500112507168971
   },
   "items.runes.spinStrike": {
     "id": "items.runes.spinStrike",
@@ -13087,10 +12402,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3209590727690784563,
-    "default_runes": [
-      "items.runes.throw"
-    ]
+    "asset_guid": 3209590727690784563
   },
   "items.runes.stamina": {
     "id": "items.runes.stamina",
@@ -13099,10 +12411,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3873937807161689394,
-    "default_runes": [
-      "items.runes.juggleStrike"
-    ]
+    "asset_guid": 3873937807161689394
   },
   "items.runes.static": {
     "id": "items.runes.static",
@@ -13120,11 +12429,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2935435245331159393,
-    "default_runes": [
-      "items.runes.fireWall",
-      "items.runes.armageddon"
-    ]
+    "asset_guid": 2935435245331159393
   },
   "items.runes.swipeKick": {
     "id": "items.runes.swipeKick",
@@ -13133,10 +12438,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 845996656867224042,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 845996656867224042
   },
   "items.runes.tauntStrike": {
     "id": "items.runes.tauntStrike",
@@ -13145,10 +12447,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1520279887957779325,
-    "default_runes": [
-      "items.runes.knockdownSwirl"
-    ]
+    "asset_guid": 1520279887957779325
   },
   "items.runes.tempestKick": {
     "id": "items.runes.tempestKick",
@@ -13157,10 +12456,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4124272060944119733,
-    "default_runes": [
-      "items.runes.spiritBurst"
-    ]
+    "asset_guid": 4124272060944119733
   },
   "items.runes.thorns": {
     "id": "items.runes.thorns",
@@ -13169,11 +12465,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4227377370616330604,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 4227377370616330604
   },
   "items.runes.throw": {
     "id": "items.runes.throw",
@@ -13182,10 +12474,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4044466393876037244,
-    "default_runes": [
-      "items.runes.thrust"
-    ]
+    "asset_guid": 4044466393876037244
   },
   "items.runes.throwAxe": {
     "id": "items.runes.throwAxe",
@@ -13194,10 +12483,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1316641276213448040,
-    "default_runes": [
-      "items.runes.driveBreak"
-    ]
+    "asset_guid": 1316641276213448040
   },
   "items.runes.throwKnife": {
     "id": "items.runes.throwKnife",
@@ -13206,10 +12492,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1948348564290254801,
-    "default_runes": [
-      "items.runes.driveBreak"
-    ]
+    "asset_guid": 1948348564290254801
   },
   "items.runes.thrust": {
     "id": "items.runes.thrust",
@@ -13218,10 +12501,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4052539030505690582,
-    "default_runes": [
-      "items.runes.juggleStrike"
-    ]
+    "asset_guid": 4052539030505690582
   },
   "items.runes.thunderstrike": {
     "id": "items.runes.thunderstrike",
@@ -13239,10 +12519,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2596197552556439934,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 2596197552556439934
   },
   "items.runes.tremorSlam": {
     "id": "items.runes.tremorSlam",
@@ -13269,10 +12546,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1810186561623857851,
-    "default_runes": [
-      "items.runes.thrust"
-    ]
+    "asset_guid": 1810186561623857851
   },
   "items.runes.tripleSwipe": {
     "id": "items.runes.tripleSwipe",
@@ -13290,10 +12564,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4514463477850100068,
-    "default_runes": [
-      "items.runes.spiritBurst"
-    ]
+    "asset_guid": 4514463477850100068
   },
   "items.runes.twirlDash": {
     "id": "items.runes.twirlDash",
@@ -13311,10 +12582,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3521637318283462458,
-    "default_runes": [
-      "items.runes.tremorWave"
-    ]
+    "asset_guid": 3521637318283462458
   },
   "items.runes.wallbreaker": {
     "id": "items.runes.wallbreaker",
@@ -13332,10 +12600,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 788655136485454550,
-    "default_runes": [
-      "items.runes.crush"
-    ]
+    "asset_guid": 788655136485454550
   },
   "items.runes.whirlstepStrike": {
     "id": "items.runes.whirlstepStrike",
@@ -13362,10 +12627,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4324691228874446864,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 4324691228874446864
   },
   "items.scrolls.blueprintsAndPatterns.bombsAndFlasks.concussiveBombBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.bombsAndFlasks.concussiveBombBlueprint",
@@ -13383,10 +12645,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1571302764216695301,
-    "default_runes": [
-      "items.runes.poleDodge"
-    ]
+    "asset_guid": 1571302764216695301
   },
   "items.scrolls.blueprintsAndPatterns.bombsAndFlasks.flameflaskRecipe": {
     "id": "items.scrolls.blueprintsAndPatterns.bombsAndFlasks.flameflaskRecipe",
@@ -13404,10 +12663,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3711490753805467415,
-    "default_runes": [
-      "items.runes.throw"
-    ]
+    "asset_guid": 3711490753805467415
   },
   "items.scrolls.blueprintsAndPatterns.bombsAndFlasks.plagueflaskRecipe": {
     "id": "items.scrolls.blueprintsAndPatterns.bombsAndFlasks.plagueflaskRecipe",
@@ -13461,10 +12717,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2448025725177212188,
-    "default_runes": [
-      "items.runes.whirlstepStrike"
-    ]
+    "asset_guid": 2448025725177212188
   },
   "items.scrolls.blueprintsAndPatterns.gear.armors.cleric.clericArmorSetPattern": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.armors.cleric.clericArmorSetPattern",
@@ -13527,10 +12780,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3990891430928525881,
-    "default_runes": [
-      "items.runes.driveBreak"
-    ]
+    "asset_guid": 3990891430928525881
   },
   "items.scrolls.blueprintsAndPatterns.gear.armors.ranger.paddedFencingArmorSetPattern": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.armors.ranger.paddedFencingArmorSetPattern",
@@ -13691,11 +12941,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2869496714935657864,
-    "default_runes": [
-      "items.runes.fireWall",
-      "items.runes.armageddon"
-    ]
+    "asset_guid": 2869496714935657864
   },
   "items.scrolls.blueprintsAndPatterns.gear.weapons.assegaiBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.weapons.assegaiBlueprint",
@@ -13704,10 +12950,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2710780891149401148,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 2710780891149401148
   },
   "items.scrolls.blueprintsAndPatterns.gear.weapons.azureBladeBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.weapons.azureBladeBlueprint",
@@ -13779,10 +13022,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2091054136777179641,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 2091054136777179641
   },
   "items.scrolls.blueprintsAndPatterns.gear.weapons.coralPiercerBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.weapons.coralPiercerBlueprint",
@@ -13809,11 +13049,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1053502455431583213,
-    "default_runes": [
-      "items.runes.plagueColumn",
-      "items.runes.plagueSplatter"
-    ]
+    "asset_guid": 1053502455431583213
   },
   "items.scrolls.blueprintsAndPatterns.gear.weapons.emeraldTalonsBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.weapons.emeraldTalonsBlueprint",
@@ -13867,10 +13103,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 380724737735291124,
-    "default_runes": [
-      "items.runes.dashingStab"
-    ]
+    "asset_guid": 380724737735291124
   },
   "items.scrolls.blueprintsAndPatterns.gear.weapons.lordOfTheMuckBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.weapons.lordOfTheMuckBlueprint",
@@ -13897,10 +13130,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3055824503374537479,
-    "default_runes": [
-      "items.runes.dashingStab"
-    ]
+    "asset_guid": 3055824503374537479
   },
   "items.scrolls.blueprintsAndPatterns.gear.weapons.reachingNailBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.weapons.reachingNailBlueprint",
@@ -13927,10 +13157,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 175400088674626969,
-    "default_runes": [
-      "items.runes.wildRush"
-    ]
+    "asset_guid": 175400088674626969
   },
   "items.scrolls.blueprintsAndPatterns.gear.weapons.spherinBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.weapons.spherinBlueprint",
@@ -13939,11 +13166,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 444386769356955927,
-    "default_runes": [
-      "items.runes.iceDart",
-      "items.runes.coldSling"
-    ]
+    "asset_guid": 444386769356955927
   },
   "items.scrolls.blueprintsAndPatterns.gear.weapons.sunbeamBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.weapons.sunbeamBlueprint",
@@ -13970,10 +13193,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2091056476565050594,
-    "default_runes": [
-      "items.runes.dashingStab"
-    ]
+    "asset_guid": 2091056476565050594
   },
   "items.scrolls.blueprintsAndPatterns.gear.weapons.weepingEarthBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.gear.weapons.weepingEarthBlueprint",
@@ -14009,10 +13229,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 678691592239331440,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 678691592239331440
   },
   "items.scrolls.blueprintsAndPatterns.housing.craftingTables.apprenticeSewingTableBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.housing.craftingTables.apprenticeSewingTableBlueprint",
@@ -14048,10 +13265,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 152932609312366537,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 152932609312366537
   },
   "items.scrolls.blueprintsAndPatterns.housing.craftingTables.buildersWorkbenchBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.housing.craftingTables.buildersWorkbenchBlueprint",
@@ -14078,10 +13292,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 144508663416499722,
-    "default_runes": [
-      "items.runes.skyfallSmash"
-    ]
+    "asset_guid": 144508663416499722
   },
   "items.scrolls.blueprintsAndPatterns.housing.craftingTables.crudeAnvilBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.housing.craftingTables.crudeAnvilBlueprint",
@@ -14225,10 +13436,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1410719927114957372,
-    "default_runes": [
-      "items.runes.dualSlash"
-    ]
+    "asset_guid": 1410719927114957372
   },
   "items.scrolls.blueprintsAndPatterns.housing.decorativeItems.homesteadLuchinaBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.housing.decorativeItems.homesteadLuchinaBlueprint",
@@ -14246,10 +13454,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4142361839513928946,
-    "default_runes": [
-      "items.runes.plagueStrike"
-    ]
+    "asset_guid": 4142361839513928946
   },
   "items.scrolls.blueprintsAndPatterns.housing.decorativeItems.lavenderVaseBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.housing.decorativeItems.lavenderVaseBlueprint",
@@ -14357,10 +13562,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4084924969046291041,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 4084924969046291041
   },
   "items.scrolls.blueprintsAndPatterns.housing.furniture.benches.naturalContourBenchBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.housing.furniture.benches.naturalContourBenchBlueprint",
@@ -14441,10 +13643,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1228263510109013525,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 1228263510109013525
   },
   "items.scrolls.blueprintsAndPatterns.housing.furniture.chests.mediumChestBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.housing.furniture.chests.mediumChestBlueprint",
@@ -14831,10 +14030,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3395640596246632327,
-    "default_runes": [
-      "items.runes.gyroSlash"
-    ]
+    "asset_guid": 3395640596246632327
   },
   "items.scrolls.blueprintsAndPatterns.tools.birchHoeBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.tools.birchHoeBlueprint",
@@ -14852,11 +14048,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2780749648970688779,
-    "default_runes": [
-      "items.runes.iceDart",
-      "items.runes.coldSling"
-    ]
+    "asset_guid": 2780749648970688779
   },
   "items.scrolls.blueprintsAndPatterns.tools.copperShovelBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.tools.copperShovelBlueprint",
@@ -14946,10 +14138,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 890253326866286524,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 890253326866286524
   },
   "items.scrolls.blueprintsAndPatterns.tools.ironShovelBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.tools.ironShovelBlueprint",
@@ -14958,10 +14147,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3818870571025650687,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 3818870571025650687
   },
   "items.scrolls.blueprintsAndPatterns.tools.ironWateringCanBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.tools.ironWateringCanBlueprint",
@@ -14979,10 +14165,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4179494845226774447,
-    "default_runes": [
-      "items.runes.reap"
-    ]
+    "asset_guid": 4179494845226774447
   },
   "items.scrolls.blueprintsAndPatterns.tools.mapleFishingRodBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.tools.mapleFishingRodBlueprint",
@@ -15081,10 +14264,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1391160217373780533,
-    "default_runes": [
-      "items.runes.skyfallSmash"
-    ]
+    "asset_guid": 1391160217373780533
   },
   "items.scrolls.blueprintsAndPatterns.tools.silverShovelBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.tools.silverShovelBlueprint",
@@ -15093,10 +14273,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4183006275000487067,
-    "default_runes": [
-      "items.runes.skyfallSmash"
-    ]
+    "asset_guid": 4183006275000487067
   },
   "items.scrolls.blueprintsAndPatterns.tools.silverWateringCanBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.tools.silverWateringCanBlueprint",
@@ -15123,10 +14300,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2580334965562350139,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 2580334965562350139
   },
   "items.scrolls.blueprintsAndPatterns.tools.spruceHoeBlueprint": {
     "id": "items.scrolls.blueprintsAndPatterns.tools.spruceHoeBlueprint",
@@ -15243,10 +14417,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3471535428736184891,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 3471535428736184891
   },
   "items.scrolls.foodRecipes.elegantPlatter.mushroomAndMeatCurryFoodRecipe": {
     "id": "items.scrolls.foodRecipes.elegantPlatter.mushroomAndMeatCurryFoodRecipe",
@@ -15255,10 +14426,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2458712288024338773,
-    "default_runes": [
-      "items.runes.relentlessCleave"
-    ]
+    "asset_guid": 2458712288024338773
   },
   "items.scrolls.foodRecipes.elegantPlatter.potatoSoupFoodRecipe": {
     "id": "items.scrolls.foodRecipes.elegantPlatter.potatoSoupFoodRecipe",
@@ -15276,10 +14444,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 653776062020222454,
-    "default_runes": [
-      "items.runes.twirlSpin"
-    ]
+    "asset_guid": 653776062020222454
   },
   "items.scrolls.foodRecipes.elegantPlatter.tomatoAndMeatStewFoodRecipe": {
     "id": "items.scrolls.foodRecipes.elegantPlatter.tomatoAndMeatStewFoodRecipe",
@@ -15315,10 +14480,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2410784549547249467,
-    "default_runes": [
-      "items.runes.juggleStrike"
-    ]
+    "asset_guid": 2410784549547249467
   },
   "items.scrolls.foodRecipes.simpleMeal.dracaenaDumplingFoodRecipe": {
     "id": "items.scrolls.foodRecipes.simpleMeal.dracaenaDumplingFoodRecipe",
@@ -15336,10 +14498,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2111383177462043554,
-    "default_runes": [
-      "items.runes.fierceDash"
-    ]
+    "asset_guid": 2111383177462043554
   },
   "items.scrolls.foodRecipes.succulentFeast.crabStuffedMushroomFoodRecipe": {
     "id": "items.scrolls.foodRecipes.succulentFeast.crabStuffedMushroomFoodRecipe",
@@ -15348,11 +14507,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2598521242104064766,
-    "default_runes": [
-      "items.runes.chainLightning",
-      "items.runes.lightningSweep"
-    ]
+    "asset_guid": 2598521242104064766
   },
   "items.scrolls.foodRecipes.succulentFeast.fruitPieFoodRecipe": {
     "id": "items.scrolls.foodRecipes.succulentFeast.fruitPieFoodRecipe",
@@ -15388,10 +14543,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 214764918285236896,
-    "default_runes": [
-      "items.runes.piercingDash"
-    ]
+    "asset_guid": 214764918285236896
   },
   "items.scrolls.potionAndOilRecipes.oils.bladeOilRecipe": {
     "id": "items.scrolls.potionAndOilRecipes.oils.bladeOilRecipe",
@@ -15409,10 +14561,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1643596345335441826,
-    "default_runes": [
-      "items.runes.throw"
-    ]
+    "asset_guid": 1643596345335441826
   },
   "items.scrolls.potionAndOilRecipes.oils.frostscaleOilRecipe": {
     "id": "items.scrolls.potionAndOilRecipes.oils.frostscaleOilRecipe",
@@ -15421,10 +14570,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4290670784720346113,
-    "default_runes": [
-      "items.runes.dualBreaker"
-    ]
+    "asset_guid": 4290670784720346113
   },
   "items.scrolls.potionAndOilRecipes.oils.sparkscaleOilRecipe": {
     "id": "items.scrolls.potionAndOilRecipes.oils.sparkscaleOilRecipe",
@@ -15442,10 +14588,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 864707932248872346,
-    "default_runes": [
-      "items.runes.poleDodge"
-    ]
+    "asset_guid": 864707932248872346
   },
   "items.scrolls.potionAndOilRecipes.potions.largeAntidotePotionRecipe": {
     "id": "items.scrolls.potionAndOilRecipes.potions.largeAntidotePotionRecipe",
@@ -15535,10 +14678,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 569218561543401669,
-    "default_runes": [
-      "items.runes.stamina"
-    ]
+    "asset_guid": 569218561543401669
   },
   "items.scrolls.potionAndOilRecipes.potions.mediumVialOfDefenseRecipe": {
     "id": "items.scrolls.potionAndOilRecipes.potions.mediumVialOfDefenseRecipe",
@@ -15646,10 +14786,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3927900663353098849,
-    "default_runes": [
-      "items.runes.gyroSlash"
-    ]
+    "asset_guid": 3927900663353098849
   },
   "items.tools.fishingRods.darkOakFishingRod": {
     "id": "items.tools.fishingRods.darkOakFishingRod",
@@ -15685,10 +14822,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3281884552852974859,
-    "default_runes": [
-      "items.runes.heal"
-    ]
+    "asset_guid": 3281884552852974859
   },
   "items.tools.fishingRods.spruceFishingRod": {
     "id": "items.tools.fishingRods.spruceFishingRod",
@@ -15697,10 +14831,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 519310767279555426,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 519310767279555426
   },
   "items.tools.hoes.birchHoe": {
     "id": "items.tools.hoes.birchHoe",
@@ -15727,10 +14858,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3809816377762620217,
-    "default_runes": [
-      "items.runes.spin"
-    ]
+    "asset_guid": 3809816377762620217
   },
   "items.tools.pickaxes.goldenPickaxe": {
     "id": "items.tools.pickaxes.goldenPickaxe",
@@ -15766,10 +14894,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 71153730994955898,
-    "default_runes": [
-      "items.runes.poleDodge"
-    ]
+    "asset_guid": 71153730994955898
   },
   "items.tools.pickaxes.titanitePickaxe": {
     "id": "items.tools.pickaxes.titanitePickaxe",
@@ -15787,10 +14912,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 4035307286508899593,
-    "default_runes": [
-      "items.runes.spin"
-    ]
+    "asset_guid": 4035307286508899593
   },
   "items.tools.shovels.goldenShovel": {
     "id": "items.tools.shovels.goldenShovel",
@@ -15826,10 +14948,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1074150982333250619,
-    "default_runes": [
-      "items.runes.poleDodge"
-    ]
+    "asset_guid": 1074150982333250619
   },
   "items.tools.shovels.titaniteShovel": {
     "id": "items.tools.shovels.titaniteShovel",
@@ -15856,10 +14975,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3384353366787423874,
-    "default_runes": [
-      "items.runes.multishot"
-    ]
+    "asset_guid": 3384353366787423874
   },
   "items.tools.woodcuttersAxes.goldenWoodcuttersAxe": {
     "id": "items.tools.woodcuttersAxes.goldenWoodcuttersAxe",
@@ -15922,11 +15038,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3850271380396010980,
-    "default_runes": [
-      "items.runes.chainLightning",
-      "items.runes.lightningSweep"
-    ]
+    "asset_guid": 3850271380396010980
   },
   "items.upgradeMaterials.gearComponents.armorComponent.wornRingShank": {
     "id": "items.upgradeMaterials.gearComponents.armorComponent.wornRingShank",
@@ -15989,10 +15101,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 176427120695416376,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 176427120695416376
   },
   "items.upgradeMaterials.parts.boar.boarHoof": {
     "id": "items.upgradeMaterials.parts.boar.boarHoof",
@@ -16010,11 +15119,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2430793436759048744,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 2430793436759048744
   },
   "items.upgradeMaterials.parts.boar.boarTusk": {
     "id": "items.upgradeMaterials.parts.boar.boarTusk",
@@ -16077,10 +15182,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1978135680961855810,
-    "default_runes": [
-      "items.runes.tempestKick"
-    ]
+    "asset_guid": 1978135680961855810
   },
   "items.upgradeMaterials.parts.humanoids.humanHand": {
     "id": "items.upgradeMaterials.parts.humanoids.humanHand",
@@ -16260,11 +15362,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 1824559763003114189,
-    "default_runes": [
-      "items.runes.homingFrost",
-      "items.runes.frostStream"
-    ]
+    "asset_guid": 1824559763003114189
   },
   "items.upgradeMaterials.plaguedResources.tornEffigy": {
     "id": "items.upgradeMaterials.plaguedResources.tornEffigy",
@@ -16282,10 +15380,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 937362113592786649,
-    "default_runes": [
-      "items.runes.spin"
-    ]
+    "asset_guid": 937362113592786649
   },
   "items.upgradeMaterials.plaguedResources.tornMarrow": {
     "id": "items.upgradeMaterials.plaguedResources.tornMarrow",
@@ -16294,10 +15389,7 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 2646259454170186187,
-    "default_runes": [
-      "items.runes.limitBreak"
-    ]
+    "asset_guid": 2646259454170186187
   },
   "items.upgradeMaterials.plaguedResources.tornSinew": {
     "id": "items.upgradeMaterials.plaguedResources.tornSinew",
@@ -16306,9 +15398,6 @@
     "sources": [
       "qdb_assets_all_031c9317807aff14922fc8f1c5b5e78d.bundle"
     ],
-    "asset_guid": 3485584028029478409,
-    "default_runes": [
-      "items.runes.coneShot"
-    ]
+    "asset_guid": 3485584028029478409
   }
 }
