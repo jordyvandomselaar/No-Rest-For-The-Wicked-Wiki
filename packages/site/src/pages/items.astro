@@ -108,6 +108,23 @@ const escapeHtml = (value: string) =>
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 
+const formatGameText = (value: string) => {
+  const input = value ?? "";
+  const colorRegex = /<color=#[0-9a-fA-F]{6}>(.*?)<\/color>/gs;
+  let output = "";
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = colorRegex.exec(input)) !== null) {
+    output += escapeHtml(input.slice(lastIndex, match.index));
+    output += `<strong>${escapeHtml(match[1])}</strong>`;
+    lastIndex = match.index + match[0].length;
+  }
+
+  output += escapeHtml(input.slice(lastIndex));
+  return output.replace(/&lt;\/?color[^&]*?&gt;/gi, "");
+};
+
 const pluralize = (count: number, singular: string, plural = `${singular}s`) =>
   count === 1 ? singular : plural;
 
@@ -145,7 +162,7 @@ const renderGroupSummary = (level: number, id: string, label: string, countLabel
 
 const renderItemCard = (item: ListItem) => {
   const href = `/items/${encodeURIComponent(item.id)}`;
-  const description = item.description || "No description yet.";
+  const description = formatGameText(item.description || "No description yet.");
 
   const idPill = item.assetGuid
     ? `<span class="shrink-0 rounded bg-white/5 px-2 py-1 text-xs text-slate-300">ID: ${item.assetGuid}</span>`
@@ -168,7 +185,7 @@ const renderItemCard = (item: ListItem) => {
     `    <h3 class="font-semibold text-white">${escapeHtml(item.name)}</h3>`,
     `    ${idPill}`,
     "  </div>",
-    `  <p class="mt-2 text-sm leading-relaxed text-slate-300">${escapeHtml(description)}</p>`,
+    `  <p class="mt-2 text-sm leading-relaxed text-slate-300">${description}</p>`,
     `  ${sourceLine}`,
     `  <div class="mt-3 text-xs text-slate-400"><code class="rounded bg-white/5 px-2 py-1">${escapeHtml(item.id)}</code></div>`,
     "</a>",

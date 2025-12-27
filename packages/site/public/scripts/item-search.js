@@ -164,6 +164,30 @@ const getCountLabel = (node) => {
   return `${node.items.length} ${pluralize(node.items.length, "item")}`;
 };
 
+const appendFormattedDescription = (element, value) => {
+  element.textContent = "";
+  const text = value || "No description yet.";
+  const colorRegex = /<color=#[0-9a-fA-F]{6}>(.*?)<\/color>/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = colorRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      const segment = text.slice(lastIndex, match.index).replace(/<\/?color[^>]*>/gi, "");
+      element.appendChild(document.createTextNode(segment));
+    }
+    const strong = document.createElement("strong");
+    strong.textContent = match[1];
+    element.appendChild(strong);
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    const segment = text.slice(lastIndex).replace(/<\/?color[^>]*>/gi, "");
+    element.appendChild(document.createTextNode(segment));
+  }
+};
+
 const createItemCard = (item) => {
   const card = document.createElement("a");
   card.href = `/items/${encodeURIComponent(item.id)}`;
@@ -188,7 +212,7 @@ const createItemCard = (item) => {
 
   const description = document.createElement("p");
   description.className = "mt-2 text-sm leading-relaxed text-slate-300";
-  description.textContent = item.description || "No description yet.";
+  appendFormattedDescription(description, item.description);
 
   const codeRow = document.createElement("div");
   codeRow.className = "mt-3 text-xs text-slate-400";

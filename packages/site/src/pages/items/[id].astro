@@ -74,6 +74,24 @@ const escapeHtml = (value: string) =>
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 
+const stripColorTags = (value: string) => value.replace(/<\/?color[^>]*>/gi, "");
+
+const formatGameText = (value: string) => {
+  const input = value ?? "";
+  const colorRegex = /<color=#[0-9a-fA-F]{6}>(.*?)<\/color>/gs;
+  let output = "";
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = colorRegex.exec(input)) !== null) {
+    output += escapeHtml(input.slice(lastIndex, match.index));
+    output += `<strong>${escapeHtml(match[1])}</strong>`;
+    lastIndex = match.index + match[0].length;
+  }
+
+  output += escapeHtml(input.slice(lastIndex));
+  return output.replace(/&lt;\/?color[^&]*?&gt;/gi, "");
+};
 const renderTree = (node: any): string => {
   if (!node) {
     return '<p class="text-sm text-slate-400">No known refinement chain.</p>';
@@ -125,16 +143,17 @@ const renderTree = (node: any): string => {
 
 <Layout
   title={itemName + " | No Rest For The Wicked Wiki"}
-  description={item.description ?? "Details for " + itemName + "."}
+  description={stripColorTags(item.description ?? "Details for " + itemName + ".")}
 >
   <main class="mx-auto flex min-h-screen max-w-5xl flex-col gap-10 px-6 py-16">
     <header class="space-y-4">
       <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Item detail</p>
       <h1 class="text-4xl font-semibold text-white md:text-6xl">{itemName}</h1>
       <p class="text-sm text-slate-400">{item.id}</p>
-      <p class="max-w-2xl text-lg text-slate-300">
-        {item.description ?? "No description yet."}
-      </p>
+      <p
+        class="max-w-2xl text-lg text-slate-300"
+        set:html={formatGameText(item.description ?? "No description yet.")}
+      />
     </header>
 
     <section class="grid gap-6 md:grid-cols-2">
@@ -219,7 +238,10 @@ const renderTree = (node: any): string => {
                           <span class="font-semibold text-white">{label}</span>
                           <span class="text-xs text-slate-500">{runeId}</span>
                         </div>
-                        <p class="mt-2 text-xs text-slate-300">{description}</p>
+                        <p
+                          class="mt-2 text-xs text-slate-300"
+                          set:html={formatGameText(description)}
+                        />
                       </a>
                     </li>
                   );
@@ -248,7 +270,10 @@ const renderTree = (node: any): string => {
                   <span class="font-semibold text-white">{weaponName}</span>
                   <span class="text-xs text-slate-500">{weapon.id}</span>
                 </div>
-                <p class="mt-2 text-xs text-slate-300">{weaponDescription}</p>
+                <p
+                  class="mt-2 text-xs text-slate-300"
+                  set:html={formatGameText(weaponDescription)}
+                />
               </a>
             );
           })}
