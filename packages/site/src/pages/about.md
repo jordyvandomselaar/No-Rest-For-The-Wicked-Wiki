@@ -4,7 +4,7 @@ title: "About | No Rest For The Wicked Wiki"
 description: "About this community wiki and its non-affiliation disclaimer."
 ---
 
-<main class="mx-auto flex min-h-screen max-w-5xl flex-col gap-10 px-6 py-16">
+<main class="mx-auto flex max-w-5xl flex-col gap-10 px-6 py-16">
   <header class="space-y-4">
     <p class="text-sm uppercase tracking-[0.35em] text-slate-400">Site info</p>
     <h1 class="text-4xl font-semibold text-white md:text-6xl">About</h1>
