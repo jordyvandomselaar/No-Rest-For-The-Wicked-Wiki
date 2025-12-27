@@ -13,7 +13,7 @@ description: "About this community wiki and its non-affiliation disclaimer."
     </p>
   </header>
 
-  <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+  <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 -mx-4 md:mx-0">
     <h2 class="text-xl font-semibold text-white">Non-affiliation</h2>
     <p class="text-slate-200">
       This website is a fan-made community wiki and is not affiliated with,

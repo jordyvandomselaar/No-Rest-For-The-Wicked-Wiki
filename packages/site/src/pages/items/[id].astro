@@ -131,7 +131,7 @@ const renderTree = (node: any): string => {
     `      <a class="text-base font-semibold text-white" href="${link}">`,
     `        ${escapeHtml(node.name)}`,
     "      </a>",
-    `      <p class="text-xs text-slate-500">${escapeHtml(node.id)}</p>`,
+    `      <p class="break-all text-xs text-slate-500">${escapeHtml(node.id)}</p>`,
     `      ${truncated}`,
     "    </div>",
     `    ${childBlock}`,
@@ -156,15 +156,16 @@ const renderTree = (node: any): string => {
       />
     </header>
 
-    <section class="grid gap-6 md:grid-cols-2">
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+    <section class="-mx-4 md:mx-0">
+      <div class="grid gap-6 md:grid-cols-2">
+      <div class="min-w-0 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
         <h2 class="text-lg font-semibold text-white">Refinement tree</h2>
         <p class="mt-2 text-sm text-slate-300">
           Items and processes that build toward this item.
         </p>
         <div class="mt-4" set:html={renderTree(tree)} />
       </div>
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+      <div class="min-w-0 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
         <h2 class="text-lg font-semibold text-white">Refinery links</h2>
         <div class="mt-4 space-y-4 text-sm text-slate-300">
           <div>
@@ -214,10 +215,11 @@ const renderTree = (node: any): string => {
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     {hasRunes ? (
-      <section class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+      <section class="-mx-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:mx-0">
         <h2 class="text-lg font-semibold text-white">Default runes</h2>
         <div class="mt-4 space-y-4">
           {runeGroups.map((group) => (
@@ -254,7 +256,7 @@ const renderTree = (node: any): string => {
     ) : null}
 
     {hasDefaultRuneForItems ? (
-      <section class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+      <section class="-mx-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:mx-0">
         <h2 class="text-lg font-semibold text-white">Weapons with this rune</h2>
         <div class="mt-4 grid gap-3 text-sm sm:grid-cols-2">
           {defaultRuneForItems.map((weapon) => {

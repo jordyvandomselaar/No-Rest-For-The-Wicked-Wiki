@@ -14,7 +14,7 @@ description: "What Early Access includes today and what the team plans to add."
     </p>
   </header>
 
-  <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+  <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 -mx-4 md:mx-0">
     <h2 class="text-xl font-semibold text-white">Current status</h2>
     <ul class="list-disc space-y-2 pl-5 text-slate-200">
       <li>Early Access launched on April 18, 2024 for PC via Steam.</li>

@@ -14,7 +14,7 @@ description: "What No Rest For The Wicked is, who makes it, and where to play."
     </p>
   </header>
 
-  <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+  <section class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 -mx-4 md:mx-0">
     <h2 class="text-xl font-semibold text-white">At a glance</h2>
     <ul class="list-disc space-y-2 pl-5 text-slate-200">
       <li>Genre: action role-playing game with precision, timing-driven combat.</li>

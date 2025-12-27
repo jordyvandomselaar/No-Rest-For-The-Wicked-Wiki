@@ -251,7 +251,7 @@ const createItemCard = (item) => {
 
 const createItemList = (items) => {
   const container = document.createElement("div");
-  container.className = "space-y-3 py-2";
+  container.className = "space-y-5 py-2";
   items.forEach((item) => container.appendChild(createItemCard(item)));
   return container;
 };

@@ -57,13 +57,21 @@ const navItems = [
 
     <div
       id="mobile-nav"
-      class="fixed inset-0 z-50 hidden md:hidden"
+      class="fixed inset-0 z-50 pointer-events-none md:hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Site navigation"
     >
-      <button class="absolute inset-0 bg-slate-950/70" data-nav-close type="button"></button>
-      <aside class="absolute left-0 top-0 h-full w-72 max-w-[85%] overflow-y-auto border-r border-slate-800 bg-slate-950 p-5 shadow-2xl">
+      <button
+        class="absolute inset-0 bg-slate-950/70 opacity-0 transition-opacity duration-300"
+        data-nav-overlay
+        data-nav-close
+        type="button"
+      ></button>
+      <aside
+        class="absolute left-0 top-0 h-full w-72 max-w-[85%] -translate-x-full overflow-y-auto border-r border-slate-800 bg-slate-950 p-5 shadow-2xl transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        data-nav-drawer
+      >
         <div class="flex items-start justify-between gap-4">
           <div>
             <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Wiki</p>
@@ -101,7 +109,7 @@ const navItems = [
       </aside>
     </div>
 
-    <div class="mx-auto flex min-h-screen max-w-6IPxl flex-col gap-8 px-4 py-6 md:flex-row md:gap-10 md:px-6 md:py-10">
+    <div class="mx-auto flex max-w-6IPxl flex-col gap-8 px-4 py-6 md:min-h-screen md:flex-row md:gap-10 md:px-6 md:py-10">
       <aside class="hidden md:block md:w-56 md:mt-16">
         <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
           <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Wiki</p>
@@ -137,13 +145,20 @@ const navItems = [
     <script>
       const navToggle = document.getElementById("mobile-nav-toggle");
       const mobileNav = document.getElementById("mobile-nav");
+      const overlay = mobileNav?.querySelector("[data-nav-overlay]");
+      const drawer = mobileNav?.querySelector("[data-nav-drawer]");
       const closeButtons = mobileNav?.querySelectorAll("[data-nav-close]") ?? [];
 
       const setNavOpen = (open) => {
         if (!mobileNav || !navToggle) return;
-        mobileNav.classList.toggle("hidden", !open);
         document.body.classList.toggle("overflow-hidden", open);
         navToggle.setAttribute("aria-expanded", String(open));
+        mobileNav.classList.toggle("pointer-events-none", !open);
+        mobileNav.classList.toggle("pointer-events-auto", open);
+        overlay?.classList.toggle("opacity-0", !open);
+        overlay?.classList.toggle("opacity-100", open);
+        drawer?.classList.toggle("-translate-x-full", !open);
+        drawer?.classList.toggle("translate-x-0", open);
       };
 
       navToggle?.addEventListener("click", () => setNavOpen(true));
